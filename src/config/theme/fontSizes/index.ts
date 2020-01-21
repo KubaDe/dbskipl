@@ -1,28 +1,37 @@
 export interface Index {
-  h1?: string
-  h2?: string
-  h3?: string
-  h4?: string
-  h5?: string
-  h6?: string
-  [index: number]: string
+  h1: string
+  h2: string
+  h3: string
+  h4: string
+  h5: string
+  h6: string
+  display1: string
+  display2: string
+  display3: string
+  display4: string
+  blockquote: string
+  lead: string
+  paragraph: string
+  buttonSmall: string
+  buttonNormal: string
+  buttonLarge: string
 }
 
-export const fontSizes: Index = [
-  '12px',
-  '14px',
-  '16px',
-  '24px',
-  '32px',
-  '48px',
-  '64px',
-  '96px',
-  '128px',
-]
-
-fontSizes.h1 = fontSizes[5]
-fontSizes.h2 = fontSizes[4]
-fontSizes.h3 = fontSizes[3]
-fontSizes.h4 = fontSizes[2]
-fontSizes.h5 = fontSizes[1]
-fontSizes.h6 = fontSizes[0]
+export const fontSizes = {
+  h1: "50px",
+  h2: "38px",
+  h3: "28px",
+  h4: "21px",
+  h5: "13px",
+  h6: "15px",
+  display1: "72px",
+  display2: "66px",
+  display3: "54px",
+  display4: "42px",
+  blockquote: "20px",
+  lead: "20px",
+  paragraph: "16px",
+  buttonSmall: "14px",
+  buttonNormal: "16px",
+  buttonLarge: "20px",
+}

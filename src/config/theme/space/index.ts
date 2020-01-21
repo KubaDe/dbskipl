@@ -12,7 +12,7 @@ export interface Index {
   [index: number]: number
 }
 
-export const space: Index = [0, 4, 8, 16, 24, 32, 40, 64, 128, 256]
+export const space: Index = [0, 2, 4, 8, 12, 16, 24, 32, 40, 48]
 
 space['none'] = space[0]
 space['3xs'] = space[1] + 'px'

@@ -27,8 +27,8 @@ export interface Borders {
   primary: string
 }
 
-const primaryBorderColor: string = colors.grayScale[900];
+const primaryBorderColor: string = colors.black;
 
 export const borders: Borders = {
-  primary: `1px solid ${primaryBorderColor}`,
+  primary: `${borderWidths.normal} solid ${primaryBorderColor}`,
 }

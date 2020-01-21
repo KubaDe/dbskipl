@@ -12,7 +12,7 @@ export interface Index {
   [index: number]: number
 }
 
-export const sizes: Index = [0, 4, 8, 16, 24, 32, 40, 64, 128, 256]
+export const sizes: Index = [0, 8, 16, 24, 32, 40, 48, 64, 96, 160]
 
 sizes['none'] = sizes[0]
 sizes['3xs'] = sizes[1] + 'px'

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-11.8%" y="-11.8%" width="123.6%" height="123.6%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="3" dy="3" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.8 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ScrollDownButton" transform="translate(-5.000000, -5.000000)">
+            <g id="Group" filter="url(#filter-1)">
+                <rect id="Rectangle" fill="#000000" x="0" y="0" width="55" height="55"></rect>
+                <g id="Group-3" transform="translate(5.000000, 5.000000)" stroke="#FFFFFF" stroke-width="2">
+                    <circle id="Oval" cx="22.5" cy="22.5" r="21.5"></circle>
+                </g>
+            </g>
+            <path d="M30.7697778,24.4346697 L27.0000804,28.6933659 L23.2329543,24.432003 C22.9954732,24.1688901 22.661189,24 22.2857085,24 C21.5759974,24 21,24.5973375 21,25.3333426 C21,25.6809006 21.1311423,25.9937916 21.3411413,26.2319599 L26.0519774,31.567997 C26.2962621,31.8427211 26.6391177,32 26.9999732,32 C27.3608287,32 27.7036844,31.8426656 27.9471118,31.567997 L32.6613765,26.2346822 C32.8688577,25.9938472 33,25.6809561 33,25.3333981 C33,24.5973375 32.4240026,24 31.7142915,24 C31.3389181,24 31.0046339,24.1688901 30.7697778,24.4346697 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

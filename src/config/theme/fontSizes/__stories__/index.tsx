@@ -1,23 +1,9 @@
 import React from 'react'
 import Text from 'components/simpleUi/Text'
 
-
 export default {
   title: 'Theme|FontSizes',
 }
-
-export const SizeIndex = () => (
-  <>
-    <Text fontSize={1}>Font Size "1"</Text>
-    <Text fontSize={2}>Font Size "2"</Text>
-    <Text fontSize={3}>Font Size "3"</Text>
-    <Text fontSize={4}>Font Size "4"</Text>
-    <Text fontSize={5}>Font Size "5"</Text>
-    <Text fontSize={6}>Font Size "6"</Text>
-    <Text fontSize={7}>Font Size "7"</Text>
-    <Text fontSize={8}>Font Size "8"</Text>
-  </>
-)
 
 export const SizeAlias = () => (
   <>
@@ -27,5 +13,17 @@ export const SizeAlias = () => (
     <Text fontSize={'h4'}>Font Alias "h4"</Text>
     <Text fontSize={'h5'}>Font Alias "h5"</Text>
     <Text fontSize={'h6'}>Font Alias "h6"</Text>
+    <hr />
+    <Text fontSize={'display1'}>Font Alias "display1"</Text>
+    <Text fontSize={'display2'}>Font Alias "display2"</Text>
+    <Text fontSize={'display3'}>Font Alias "display3"</Text>
+    <Text fontSize={'display4'}>Font Alias "display4"</Text>
+    <hr />
+    <Text fontSize={'blockquote'}>Font Alias "blockquote"</Text>
+    <Text fontSize={'lead'}>Font Alias "lead"</Text>
+    <Text fontSize={'paragraph'}>Font Alias "paragraph"</Text>
+    <Text fontSize={'buttonSmall'}>Font Alias "buttonSmall"</Text>
+    <Text fontSize={'buttonNormal'}>Font Alias "buttonNormal"</Text>
+    <Text fontSize={'buttonLarge'}>Font Alias "buttonLarge"</Text>
   </>
 )

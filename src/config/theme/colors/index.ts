@@ -57,16 +57,18 @@ export interface Colors {
   secondaries: Palette
   black: string
   white: string
+  inverted: string
   gray: string
   grayScale: Palette
   functionalColors: FunctionalColors
 }
 
 const primaryColors = {
-  primary: '#2EC4B6',
-  secondary: '#FF9F1C',
+  primary: '#AA6232',
+  secondary: '#D3DBCB',
   black: '#000000',
   white: '#FFFFFF',
+  inverted: '#FFFFFE',
   gray: '#7f7f7f',
 }
 

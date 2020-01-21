@@ -1,67 +1,72 @@
 import React from 'react'
 import styled from 'styled-components'
+import { SizeProps } from 'styled-system'
 import { variant } from 'styled-system'
 import css from '@styled-system/css'
 
 import Flex, { BaseFlexProps } from 'components/simpleUi/Flex'
-
-import types, { TypesProps } from './types'
 
 interface ButtonRelatedProps {
   outline?: boolean
 }
 
 const sizeVariant = variant({
-  prop: 'size',
+  prop: 'sizeVariant',
   variants: {
     small: {
-      fontSize: 'h5',
+      fontSize: 'buttonSmall',
+      fontWeight: '700',
       height: 'md',
       px: 'md',
     },
     normal: {
-      fontSize: 'h3',
+      fontSize: 'buttonNormal',
+      fontWeight: '700',
       height: 'lg',
       px: 'lg',
     },
     large: {
-      fontSize: 'h1',
+      fontSize: 'buttonLarge',
+      fontWeight: '700',
       height: 'xl',
       px: 'xl',
     },
+    none: {
+      p: 'none'
+    }
   },
 })
 
 interface SizeVariantsProps {
-  size?: 'small' | 'normal' | 'large'
+  sizeVariant?: 'small' | 'normal' | 'large' | 'none'
 }
 
 export type BasicButtonProps = BaseFlexProps &
   ButtonRelatedProps &
-  SizeVariantsProps &
-  TypesProps
+  SizeVariantsProps
 
-const BasicButton: React.FC<BasicButtonProps> = styled(Flex).attrs({
+export const BasicButton: React.FC<BasicButtonProps> = styled(Flex).attrs({
   as: 'button',
   flexWrap: 'nowrap',
 })<BasicButtonProps>`
-  ${types};
   ${sizeVariant};
+  ${css({
+    fontFamily: 'primary',
+    boxShadow: 'primaries.500',
+    border: 'primary',
+    borderColor: 'normal',
+  })};
   cursor: pointer;
   white-space: nowrap;
+  box-sizing: border-box;
   ${props =>
-    props.outline &&
-    css({
-      backgroundColor: 'rgba(255, 255, 255, 0)',
-      borderColor: 'current-color',
-      border: 'primary',
-    })}
+      props.outline &&
+      css({
+        backgroundColor: 'rgba(255, 255, 255, 0)',
+        borderColor: 'current-color',
+        border: 'primary',
+      })}
+    :focus {
+    outline: none;
+  }
 `
-
-BasicButton.defaultProps = {
-  size: 'normal',
-  outline: false,
-  type: 'primary',
-}
-
-export default BasicButton
