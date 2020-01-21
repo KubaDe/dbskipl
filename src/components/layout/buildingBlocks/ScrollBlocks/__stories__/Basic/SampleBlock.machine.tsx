@@ -25,7 +25,6 @@ const checkThreshold = (
 ): boolean => {
   if (options && options.cond.threshold) {
     const threshold = options.cond.threshold
-    console.log(event.threshold, threshold)
     return event.threshold >= threshold
   }
   return false

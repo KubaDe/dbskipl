@@ -1,4 +1,4 @@
-import React, { ElementType } from 'react'
+import React, { ElementType, ReactNode } from 'react'
 import styled from 'styled-components'
 
 import {
@@ -27,7 +27,7 @@ export type BaseBoxProps = SpaceProps &
   BackgroundProps &
   BoxShadowProps &
   BorderProps &
-  SizeProps & { as?: ElementType }
+  SizeProps & { as?: ElementType, children?: ReactNode }
 
 const Box: React.FC<BaseBoxProps> = styled.div<BaseBoxProps>`
   ${space}
