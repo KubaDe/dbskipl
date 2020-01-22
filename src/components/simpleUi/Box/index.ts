@@ -17,7 +17,9 @@ import {
   border,
   BorderProps,
   size,
-  SizeProps
+  SizeProps,
+  position,
+  PositionProps,
 } from 'styled-system'
 
 export type BaseBoxProps = SpaceProps &
@@ -27,6 +29,7 @@ export type BaseBoxProps = SpaceProps &
   BackgroundProps &
   BoxShadowProps &
   BorderProps &
+  PositionProps &
   SizeProps & { as?: ElementType, children?: ReactNode }
 
 const Box: React.FC<BaseBoxProps> = styled.div<BaseBoxProps>`
@@ -38,6 +41,7 @@ const Box: React.FC<BaseBoxProps> = styled.div<BaseBoxProps>`
   ${boxShadow}
   ${border}
   ${size}
+  ${position}
 `
 
 export default Box

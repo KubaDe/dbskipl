@@ -24,36 +24,28 @@ const circleVariants: Variants = {
   },
 }
 
-export const IconButton: React.FC<IconButtonProps> = (
-  props: IconButtonProps,
-) => {
+const IconButton: React.FC<IconButtonProps> = (props: IconButtonProps) => {
   const { icon: Icon, type } = props
   return (
-    <MotionBasicButton
-      size={SIZE}
-      sizeVariant="none"
-      alignItems="center"
-      justifyContent="center"
-      {...props}
-    >
-      <motion.svg
-        width={`calc(${SIZE} - 2px)`}
-        height={`calc(${SIZE} - 3px)`}
-        animate={type}
-      >
-        <motion.circle
-          variants={circleVariants}
-          strokeWidth="2"
-          stroke="#000000"
-          fill="rgba(0, 0, 0, 0)"
-          cx="50%"
-          cy="50%"
-          r="42%"
-        />
-      </motion.svg>
+    <MotionBasicButton size={SIZE} sizeVariant="none" position="relative" {...props}>
       <IconWrapper>
+        <motion.svg
+          animate={type}
+        >
+          <motion.circle
+            variants={circleVariants}
+            strokeWidth="2"
+            stroke="#000000"
+            fill="rgba(0, 0, 0, 0)"
+            cx="50%"
+            cy="50%"
+            r="42%"
+          />
+        </motion.svg>
         <Icon />
       </IconWrapper>
     </MotionBasicButton>
   )
 }
+
+export default IconButton

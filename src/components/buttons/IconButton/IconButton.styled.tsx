@@ -11,7 +11,12 @@ export const IconWrapper = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
+  svg:first-child {
+    width: 100%;
+    height: 100%;
+  }
   svg {
+    position: absolute;
     width: 20px;
     height: 20px;
   }

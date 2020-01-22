@@ -1,13 +1,13 @@
 import React from 'react'
 import { motion, AnimationProps, Variants, MotionProps } from 'framer-motion'
 
-import theme from 'config/theme'
-
 import {
   SidebarWrapper,
   SidebarWrapperProps,
   MenuItem,
   MenuItemProps,
+  ButtonWrapper,
+  ButtonWrapperProps,
 } from './SidebarMenu.styled'
 
 interface SidebarRelatedProps {
@@ -28,7 +28,7 @@ const MotionSidebarWrapper: React.FC<MotionSidebarWrapperProps> = motion.custom(
 
 const sidebarVariants: Variants = {
   open: {
-    width: theme.sizes['3xl'],
+    width: '246px',
     backgroundColor: 'rgba(255, 255, 255, 1)',
     transition: {
       delayChildren: 0.4,
@@ -36,7 +36,7 @@ const sidebarVariants: Variants = {
     },
   },
   closed: {
-    width: theme.sizes.xl,
+    width: '88px',
     backgroundColor: 'rgba(255, 255, 255, 0)',
     transition: {
       when: 'afterChildren',
@@ -71,4 +71,23 @@ export const SidebarMenuItem: React.FC<SidebarMenuItemProps> = (
   props: SidebarMenuItemProps,
 ) => {
   return <MotionMenuItem variants={sidebarMenuItemsVariants} {...props} />
+}
+
+const sidebarButtonWrapperVariants: Variants = {
+  open: { right: '100px' },
+  closed: { right: '-25px' },
+}
+
+type SidebarButtonWrapperProps = AnimationProps & ButtonWrapperProps
+
+const MotionButtonWrapper: React.FC<SidebarButtonWrapperProps> = motion.custom(
+  ButtonWrapper,
+)
+
+export const SidebarButtonWrapper: React.FC<SidebarButtonWrapperProps> = (
+  props: SidebarButtonWrapperProps,
+) => {
+  return (
+    <MotionButtonWrapper variants={sidebarButtonWrapperVariants} {...props} />
+  )
 }

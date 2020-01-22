@@ -9,7 +9,7 @@ import {
   FiChevronUp,
 } from 'react-icons/fi'
 
-import { IconButton } from '../index'
+import IconButton from '../index'
 import { Type } from 'components/buttons/BasicButton'
 import Flex from 'components/simpleUi/Flex'
 import { H2 } from 'components/typography/Heading'

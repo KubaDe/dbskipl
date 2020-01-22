@@ -12,8 +12,7 @@ export interface Type {
 export type MotionBasicButtonProps = AnimationProps &
   MotionProps &
   BasicButtonProps &
-  Type &
-  {onClick?: (e: MouseEvent) => void}
+  Type & { onClick?: (e: MouseEvent) => void }
 
 const MotionBasicButtonComponent: React.FC<MotionBasicButtonProps> = motion.custom(
   BasicButton,
@@ -30,8 +29,7 @@ const variants: Variants = {
     border: borders.primary,
     color: colors.inverted,
   },
-  none: {
-  },
+  none: {},
 }
 
 export const MotionBasicButton: React.FC<MotionBasicButtonProps> = props => {

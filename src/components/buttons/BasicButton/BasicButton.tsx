@@ -45,10 +45,10 @@ export type BasicButtonProps = BaseFlexProps &
   ButtonRelatedProps &
   SizeVariantsProps
 
-export const BasicButton: React.FC<BasicButtonProps> = styled(Flex).attrs({
+export const BasicButton: React.FC<BasicButtonProps> = styled(Flex).attrs((props) => ({
   as: 'button',
   flexWrap: 'nowrap',
-})<BasicButtonProps>`
+}))<BasicButtonProps>`
   ${sizeVariant};
   ${css({
     fontFamily: 'primary',
@@ -59,7 +59,6 @@ export const BasicButton: React.FC<BasicButtonProps> = styled(Flex).attrs({
   cursor: pointer;
   white-space: nowrap;
   box-sizing: border-box;
-  position: relative;
   ${props =>
       props.outline &&
       css({

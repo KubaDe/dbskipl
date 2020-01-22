@@ -13,10 +13,9 @@ import Box, { BaseBoxProps } from 'components/simpleUi/Box'
 
 export type BaseFlexProps = BaseBoxProps & FlexboxProps
 
-const Flex: React.FC<BaseFlexProps> = styled(Box).attrs({
-  display: 'flex',
-})<BaseFlexProps>`
-  ${flexbox}
+const Flex: React.FC<BaseFlexProps> = styled(Box)<BaseFlexProps>`
+  ${flexbox};
+  display: flex;
 `
 
 export type BaseFlexItemProps = BaseBoxProps &
