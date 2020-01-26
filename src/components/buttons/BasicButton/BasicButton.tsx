@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { SizeProps } from 'styled-system'
 import { variant } from 'styled-system'
 import css from '@styled-system/css'
 
@@ -13,6 +12,12 @@ interface ButtonRelatedProps {
 const sizeVariant = variant({
   prop: 'sizeVariant',
   variants: {
+    xsmall: {
+      fontSize: 'buttonXSmall',
+      fontWeight: '700',
+      height: 'xs',
+      px: 'sm',
+    },
     small: {
       fontSize: 'buttonSmall',
       fontWeight: '700',
@@ -32,23 +37,27 @@ const sizeVariant = variant({
       px: 'xl',
     },
     none: {
-      p: 'none'
-    }
+      p: 'none',
+    },
   },
 })
 
+export type SizeVariant = 'xsmall' | 'small' | 'normal' | 'large' | 'none'
+
 interface SizeVariantsProps {
-  sizeVariant?: 'small' | 'normal' | 'large' | 'none'
+  sizeVariant?: SizeVariant
 }
 
 export type BasicButtonProps = BaseFlexProps &
   ButtonRelatedProps &
   SizeVariantsProps
 
-export const BasicButton: React.FC<BasicButtonProps> = styled(Flex).attrs((props) => ({
-  as: 'button',
-  flexWrap: 'nowrap',
-}))<BasicButtonProps>`
+export const BasicButton: React.FC<BasicButtonProps> = styled(Flex).attrs(
+  props => ({
+    as: 'button',
+    flexWrap: 'nowrap',
+  }),
+)<BasicButtonProps>`
   ${sizeVariant};
   ${css({
     fontFamily: 'primary',

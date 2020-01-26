@@ -28,20 +28,20 @@ export const Icon = () => {
   const props: Props = {
     m: 'lg',
     onClick: () => setState(!state),
-    type: state ? 'primary' : 'secondary',
+    type: state ? 'primary' : 'inverted',
   }
 
   return (
     <>
       <H2>Icon button with state</H2>
       <Flex alignItems="center">
-        <IconButton {...props} icon={FiMenu} />
-        <IconButton {...props} icon={FiThumbsUp} />
-        <IconButton {...props} icon={FiSpeaker} />
-        <IconButton {...props} icon={FiImage} />
-        <IconButton {...props} icon={FiX} />
-        <IconButton {...props} icon={FiChevronDown} />
-        <IconButton {...props} icon={FiChevronUp} />
+        <IconButton {...props} icon={<FiMenu />} />
+        <IconButton {...props} icon={<FiThumbsUp />} />
+        <IconButton {...props} icon={<FiSpeaker />} />
+        <IconButton {...props} icon={<FiImage />} />
+        <IconButton {...props} icon={<FiX />} />
+        <IconButton {...props} icon={<FiChevronDown />} />
+        <IconButton {...props} icon={<FiChevronUp />} />
       </Flex>
     </>
   )

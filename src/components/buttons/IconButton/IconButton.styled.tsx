@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 
 export const IconWrapper = styled.span`
@@ -11,7 +10,7 @@ export const IconWrapper = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
-  svg:first-child {
+  & > svg:first-child {
     width: 100%;
     height: 100%;
   }
@@ -19,5 +18,15 @@ export const IconWrapper = styled.span`
     position: absolute;
     width: 20px;
     height: 20px;
+  }
+  span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `

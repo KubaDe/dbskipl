@@ -13,7 +13,6 @@ const props = {
   backgroundColor: 'primaries.200',
 }
 
-
 export const ShadowAlias = () => (
   <>
     <H4>Primary</H4>
