@@ -5,7 +5,6 @@ export default {
   title: 'Theme|Spacing',
 }
 
-
 const options = [
   'none',
   '3xs',

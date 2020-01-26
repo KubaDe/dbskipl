@@ -1,6 +1,6 @@
-import { MotionBasicButton } from './MotionBasicButton'
+import { BasicButtonMotion } from './BasicButton.motion'
 
 export * from './BasicButton'
-export * from './MotionBasicButton'
+export * from './BasicButton.motion'
 
-export default MotionBasicButton
+export default BasicButtonMotion

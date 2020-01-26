@@ -17,10 +17,10 @@ const props = {
 export const BorderWidthAlias = () => (
   <>
     <H4>Primary</H4>
-      {Object.keys(borderWidths).map(key =>
-          <Box {...props} border='primary' borderWidth={key} key={key}>
-            {key}
-          </Box>
-      )}
+    {Object.keys(borderWidths).map(key => (
+      <Box {...props} border="primary" borderWidth={key} key={key}>
+        {key}
+      </Box>
+    ))}
   </>
 )

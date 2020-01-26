@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Button, { MotionBasicButton } from '../index'
+import Button, { BasicButtonMotion } from '../index'
 import Flex from 'components/simpleUi/Flex'
 import { H2 } from 'components/typography/Heading'
 
@@ -17,13 +17,13 @@ export const Basic = () => {
     <>
       <H2>Motion state button</H2>
       <Flex>
-        <MotionBasicButton
+        <BasicButtonMotion
           {...props}
           onClick={() => setState(!state)}
           type={state ? 'primary' : 'secondary'}
         >
           Motion button
-        </MotionBasicButton>
+        </BasicButtonMotion>
       </Flex>
       <H2>Button sizes</H2>
       <Flex>

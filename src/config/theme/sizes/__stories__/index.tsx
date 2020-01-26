@@ -5,7 +5,6 @@ export default {
   title: 'Theme|Sizes',
 }
 
-
 const options = [
   'none',
   '3xs',
@@ -28,8 +27,7 @@ export const SpacingAlias = () => (
         height={option}
         mt="xs"
         key={option}
-      >
-      </Box>
+      ></Box>
     ))}
   </>
 )

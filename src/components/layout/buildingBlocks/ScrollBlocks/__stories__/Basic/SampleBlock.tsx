@@ -2,11 +2,11 @@ import React from 'react'
 import { useMachine } from '@xstate/react'
 
 import { ScrollBlockProps } from '../../'
-import SampleBlockMachine, { ThresholdEvent, thresholds } from './SampleBlock.machine'
-import {
-  StyledScrollBlock,
-} from './SampleBlock.styled'
-
+import SampleBlockMachine, {
+  ThresholdEvent,
+  thresholds,
+} from './SampleBlock.machine'
+import { StyledScrollBlock } from './SampleBlock.styled'
 
 const thresholdEventFactory = (intersectionRatio: number): ThresholdEvent => ({
   type: 'THRESHOLD',

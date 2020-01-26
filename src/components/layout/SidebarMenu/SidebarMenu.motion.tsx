@@ -1,17 +1,12 @@
-import React from 'react'
+import React, { useRef, RefAttributes } from 'react'
 import { motion, AnimationProps, Variants, MotionProps } from 'framer-motion'
 
-import {
-  SidebarWrapper,
-  SidebarWrapperProps,
-  MenuItem,
-  MenuItemProps,
-  ButtonWrapper,
-  ButtonWrapperProps,
-} from './SidebarMenu.styled'
+import useOutsideClick from 'hooks/useOutsideClick'
+import { SidebarWrapper, SidebarWrapperProps } from './SidebarMenu.styled'
 
 interface SidebarRelatedProps {
   isOpen: boolean
+  isInverted: boolean
   setIsOpen: (isOpen: boolean) => void
 }
 
@@ -20,74 +15,63 @@ type SidebarProps = AnimationProps &
   SidebarWrapperProps &
   SidebarRelatedProps
 
-type MotionSidebarWrapperProps = SidebarProps
+type MotionSidebarWrapperProps = SidebarProps & RefAttributes<Element>
 
 const MotionSidebarWrapper: React.FC<MotionSidebarWrapperProps> = motion.custom(
   SidebarWrapper,
 )
 
-const sidebarVariants: Variants = {
-  open: {
-    width: '246px',
-    backgroundColor: 'rgba(255, 255, 255, 1)',
-    transition: {
-      delayChildren: 0.4,
-      staggerChildren: 0.05,
-    },
+const openBase = {
+  width: '246px',
+
+  transition: {
+    delayChildren: 0.4,
+    staggerChildren: 0.05,
   },
-  closed: {
-    width: '88px',
+}
+const closeBase = {
+  width: '88px',
+  transition: {
+    when: 'afterChildren',
+    staggerChildren: 0.05,
+  },
+}
+
+const sidebarVariants: Variants = {
+  open_basic: {
+    ...openBase,
+    backgroundColor: 'rgba(255, 255, 255, 1)',
+  },
+  closed_basic: {
+    ...closeBase,
     backgroundColor: 'rgba(255, 255, 255, 0)',
-    transition: {
-      when: 'afterChildren',
-    },
+  },
+  open_inverted: {
+    ...openBase,
+    backgroundColor: 'rgba(0, 0, 0, 1)',
+  },
+  closed_inverted: {
+    ...closeBase,
+    backgroundColor: 'rgba(255, 255, 255, 0)',
   },
 }
 
 export const Sidebar: React.FC<SidebarProps> = (props: SidebarProps) => {
-  const { isOpen } = props
+  const { isOpen, isInverted, setIsOpen } = props
+  const ref = useRef(null)
+  useOutsideClick(ref, () => {
+    isOpen && setIsOpen(false)
+  })
+  const variant = `${isOpen ? 'open' : 'closed'}_${
+    isInverted ? 'inverted' : 'basic'
+  }`
   return (
     <MotionSidebarWrapper
-      animate={isOpen ? 'open' : 'closed'}
-      initial="closed"
+      ref={ref}
+      animate={variant}
+      initial={variant}
       variants={sidebarVariants}
       {...props}
     />
-  )
-}
-
-const sidebarMenuItemsVariants: Variants = {
-  open: { opacity: 1, y: 10 },
-  closed: { opacity: 0, y: 0 },
-}
-
-interface SidebarMenuItemRelatedProps {}
-
-type SidebarMenuItemProps = AnimationProps & SidebarMenuItemRelatedProps
-
-const MotionMenuItem: React.FC<SidebarMenuItemProps> = motion.custom(MenuItem)
-
-export const SidebarMenuItem: React.FC<SidebarMenuItemProps> = (
-  props: SidebarMenuItemProps,
-) => {
-  return <MotionMenuItem variants={sidebarMenuItemsVariants} {...props} />
-}
-
-const sidebarButtonWrapperVariants: Variants = {
-  open: { right: '100px' },
-  closed: { right: '-25px' },
-}
-
-type SidebarButtonWrapperProps = AnimationProps & ButtonWrapperProps
-
-const MotionButtonWrapper: React.FC<SidebarButtonWrapperProps> = motion.custom(
-  ButtonWrapper,
-)
-
-export const SidebarButtonWrapper: React.FC<SidebarButtonWrapperProps> = (
-  props: SidebarButtonWrapperProps,
-) => {
-  return (
-    <MotionButtonWrapper variants={sidebarButtonWrapperVariants} {...props} />
   )
 }
