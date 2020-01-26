@@ -9,10 +9,10 @@ export default {
 }
 
 export const Basic = () => {
-    const [isOpen, setIsOpen] = useState(false)
-    return (
-        <Box height="200vh" backgroundColor="secondaries.200">
-            <SidebarMenu isOpen={isOpen} setIsOpen={setIsOpen}/>
-        </Box>
-    );
+  const [isOpen, setIsOpen] = useState(false)
+  return (
+    <Box height="200vh" backgroundColor="secondaries.200">
+      <SidebarMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+    </Box>
+  )
 }

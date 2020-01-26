@@ -2,7 +2,7 @@ import React from 'react'
 import { motion, Variants } from 'framer-motion'
 
 import {
-  MotionBasicButton,
+  BasicButtonMotion,
   MotionBasicButtonProps,
 } from 'components/buttons/BasicButton'
 
@@ -10,7 +10,7 @@ import { IconWrapper } from './IconButton.styled'
 const SIZE = '50px'
 
 interface IconButtonRelatedProps {
-  icon: React.FC
+  icon: React.ReactElement
 }
 
 export type IconButtonProps = MotionBasicButtonProps & IconButtonRelatedProps
@@ -19,19 +19,22 @@ const circleVariants: Variants = {
   primary: {
     stroke: '#000000',
   },
-  secondary: {
+  inverted: {
     stroke: '#FFFFFF',
   },
 }
 
 const IconButton: React.FC<IconButtonProps> = (props: IconButtonProps) => {
-  const { icon: Icon, type } = props
+  const { icon, type } = props
   return (
-    <MotionBasicButton size={SIZE} sizeVariant="none" position="relative" {...props}>
+    <BasicButtonMotion
+      size={SIZE}
+      sizeVariant="none"
+      position="relative"
+      {...props}
+    >
       <IconWrapper>
-        <motion.svg
-          animate={type}
-        >
+        <motion.svg animate={type}>
           <motion.circle
             variants={circleVariants}
             strokeWidth="2"
@@ -42,9 +45,9 @@ const IconButton: React.FC<IconButtonProps> = (props: IconButtonProps) => {
             r="42%"
           />
         </motion.svg>
-        <Icon />
+        {icon}
       </IconWrapper>
-    </MotionBasicButton>
+    </BasicButtonMotion>
   )
 }
 

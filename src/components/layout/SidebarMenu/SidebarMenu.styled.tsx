@@ -33,7 +33,14 @@ export const SidebarContent: React.FC<BaseBoxProps> = styled(Box)<BaseBoxProps>`
 
 export type MenuItemProps = BaseBoxProps
 
-export const MenuItem: React.FC<MenuItemProps> = styled(Box)<MenuItemProps>``
+export const MenuItem: React.FC<MenuItemProps> = styled(Box)<MenuItemProps>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ${css({
+    my: 'sm',
+  })}
+`
 
 export type ButtonWrapperProps = BaseBoxProps
 

@@ -16,7 +16,7 @@ export const fonts: Index = {
 }
 
 export const fontsImportCss = css`
-  @import url("https://use.typekit.net/dkj6xeq.css");
+  @import url('https://use.typekit.net/dkj6xeq.css');
   body {
     font-family: ${fonts.primary};
   }

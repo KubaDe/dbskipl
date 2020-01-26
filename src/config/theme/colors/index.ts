@@ -56,7 +56,9 @@ export interface Colors {
   secondary: string
   secondaries: Palette
   black: string
+  transparentBlack: string
   white: string
+  transparentWhite: string
   inverted: string
   gray: string
   grayScale: Palette
@@ -67,7 +69,9 @@ const primaryColors = {
   primary: '#AA6232',
   secondary: '#D3DBCB',
   black: '#000000',
+  transparentBlack: 'rgba(0, 0, 0, 0)',
   white: '#FFFFFF',
+  transparentWhite: 'rgba(255, 255, 255, 0)',
   inverted: '#FFFFFE',
   gray: '#7f7f7f',
 }

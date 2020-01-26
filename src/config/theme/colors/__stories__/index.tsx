@@ -34,8 +34,8 @@ export const Colors = () => (
         />
       ))}
     </Flex>
-      <H4>Gray</H4>
-      <Box backgroundColor="black" width="100%" height="100px" />
+    <H4>Gray</H4>
+    <Box backgroundColor="black" width="100%" height="100px" />
     <Flex>
       {range(100, 1000, 100).map(shade => (
         <FlexItem

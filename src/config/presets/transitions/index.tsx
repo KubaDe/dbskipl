@@ -1,4 +1,3 @@
-
 const transitionTimes = {
   '3xs': '.05s',
   '2xs': '.1s',
