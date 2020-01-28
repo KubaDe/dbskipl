@@ -10,11 +10,19 @@ import {
 } from './SubText.styled'
 
 const motionSubTextMaskVariants: Variants = {
-  horizontal: {
+  long_horizontal: {
     width: 'auto',
     opacity: 1,
   },
-  vertical: {
+  long_vertical: {
+    width: 0,
+    opacity: 0,
+  },
+  short_vertical: {
+    width: 0,
+    opacity: 0,
+  },
+  short_horizontal: {
     width: 0,
     opacity: 0,
   },
@@ -42,19 +50,41 @@ const motionSubTextRectVariants: Variants = {
     color: colors.inverted,
     borderColor: colors.inverted,
   },
-  horizontal: ({ baseSize }) => ({
+  long_horizontal: ({ baseSize }) => ({
     width: `${baseSize * 2.5}px`,
     height: `${baseSize * 0.5}px`,
     fontSize: `${baseSize * 0.35}px`,
+    opacity: 1,
     transition: {
       when: 'beforeChildren',
       type: 'tween',
     },
   }),
-  vertical: ({ baseSize }) => ({
+  long_vertical: ({ baseSize }) => ({
     width: `${baseSize}px`,
     height: `${baseSize}px`,
-    fontSize: `${baseSize * 0.66}px`,
+    fontSize: `${baseSize * 0.6}px`,
+    opacity: 1,
+    transition: {
+      when: 'afterChildren',
+      type: 'tween',
+    },
+  }),
+  short_horizontal: ({ baseSize }) => ({
+    width: `${baseSize}px`,
+    height: 0,
+    fontSize: `${baseSize * 0.6}px`,
+    opacity: 0,
+    transition: {
+      when: 'beforeChildren',
+      type: 'tween',
+    },
+  }),
+  short_vertical: ({ baseSize }) => ({
+    width: `${baseSize}px`,
+    height: `${baseSize}px`,
+    fontSize: `${baseSize * 0.6}px`,
+    opacity: 1,
     transition: {
       when: 'afterChildren',
       type: 'tween',

@@ -19,6 +19,7 @@ export const SubTextRect = styled(Box)<SubTextRectRelatedProps>`
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  overflow: hidden;
 `
 
 export type SubTextMaskProps = BaseBoxProps

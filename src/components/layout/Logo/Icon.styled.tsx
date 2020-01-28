@@ -16,7 +16,6 @@ export const Icon = styled(Box)<IconProps>`
   mask-repeat: no-repeat;
   mask-position: center center;
   mask-size: 85% 85%;
-  
   box-sizing: border-box;
 `
 
@@ -30,5 +29,6 @@ export type IconRectProps = BaseBoxProps & IconRectRelatedProps
 export const IconRect = styled(Box)<IconRectProps>`
   height: ${props => props.baseSize}px;
   width: ${props => props.baseSize}px;
+  min-width: ${props => props.baseSize}px;
   box-sizing: border-box;
 `

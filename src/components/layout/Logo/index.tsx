@@ -10,6 +10,7 @@ interface LogoRelatedProps {
   isInverted?: boolean
   isPhoto?: boolean
   isVertical?: boolean
+  isShort?: boolean
 }
 
 type LogoProps = LogoRelatedProps
@@ -20,38 +21,32 @@ const Logo: React.FC<LogoProps> = (props: LogoProps) => {
     isInverted = false,
     isPhoto = false,
     isVertical = false,
+    isShort = false,
   } = props
+
+  const animate = [
+    isInverted ? 'inverted' : 'primary',
+    isVertical ? 'vertical' : 'horizontal',
+    isShort ? 'short' : 'long',
+    `${isShort ? 'short' : 'long'}_${isVertical ? 'vertical' : 'horizontal'}`,
+  ]
+
   return (
     <>
       <Wrapper
         baseSize={baseSize}
-        initial={[
-          isInverted ? 'inverted' : 'primary',
-          isVertical ? 'vertical' : 'horizontal',
-        ]}
-        animate={[
-          isInverted ? 'inverted' : 'primary',
-          isPhoto ? 'photo' : 'code',
-          isVertical ? 'vertical' : 'horizontal',
-        ]}
+        animate={[...animate, isPhoto ? 'photo' : 'code']}
+        initial={animate}
       >
         <IconRect baseSize={baseSize}>
           <Icon mode={isPhoto ? 'photo' : 'code'} />
         </IconRect>
-        <TextRect baseSize={baseSize} />
+        <TextRect baseSize={baseSize} isShort={isShort} />
       </Wrapper>
       <Wrapper
         baseSize={baseSize}
-        initial={[
-          isInverted ? 'inverted' : 'primary',
-          isPhoto ? 'photo' : 'code',
-          isVertical ? 'vertical' : 'horizontal',
-        ]}
-        animate={[
-          isInverted ? 'inverted' : 'primary',
-          isPhoto ? 'photo' : 'code',
-          isVertical ? 'vertical' : 'horizontal',
-        ]}
+        animate={[...animate, isPhoto ? 'photo' : 'code']}
+        initial={animate}
       >
         <SubTextRect baseSize={baseSize} />
       </Wrapper>

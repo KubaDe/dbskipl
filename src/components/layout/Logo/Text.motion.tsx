@@ -18,33 +18,59 @@ const motionTextRectVariants: Variants = {
     color: colors.inverted,
     borderColor: colors.inverted,
   },
-  horizontal: ({ baseSize }) => ({
+  long_horizontal: ({ baseSize }) => ({
     width: `${baseSize * 3}px`,
     transition: {
       type: 'tween',
     },
   }),
-  vertical: () => ({
+  long_vertical: () => ({
     width: 0,
+    paddingLeft: 0,
+    color: colors.transparentBlack,
+    marginLeft: '-2px',
+    transition: {
+      type: 'tween',
+    },
+  }),
+  short_horizontal: ({ baseSize }) => ({
+    width: `${baseSize}px`,
+    paddingLeft: '4px',
+    transition: {
+      type: 'tween',
+    },
+  }),
+  short_vertical: () => ({
+    width: 0,
+    paddingLeft: 0,
+    color: colors.transparentBlack,
+    marginLeft: '-2px',
     transition: {
       type: 'tween',
     },
   }),
 }
 
-type MotionTextRectProps = AnimationProps & MotionProps & StyledTextRectProps
+interface MotionTextRectRelatedProps {
+  isShort: boolean
+}
+
+type MotionTextRectProps = AnimationProps &
+  MotionProps &
+  StyledTextRectProps &
+  MotionTextRectRelatedProps
 const MotionTextRect = motion.custom(StyledTextRect)
 export const TextRect: React.FC<MotionTextRectProps> = (
   props: MotionTextRectProps,
 ) => {
-  const { baseSize } = props
+  const { baseSize, isShort = false } = props
   return (
     <MotionTextRect
       custom={{ baseSize }}
       variants={motionTextRectVariants}
       {...props}
     >
-      DBSKI
+      {isShort ? ' JD' : 'DBSKI'}
     </MotionTextRect>
   )
 }
