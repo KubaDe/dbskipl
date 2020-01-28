@@ -9,18 +9,36 @@ import {
 const motionWrapperVariants: Variants = {
   primary: {},
   inverted: {},
-  horizontal: ({ baseSize }) => ({
-    maxWidth: `${baseSize * 4}px`,
+  short_horizontal: ({ baseSize }) => ({
+    maxWidth: `${baseSize * 2}px`,
     transition: {
       type: 'tween',
     },
   }),
-  vertical: ({ baseSize }) => ({
+  short_vertical: ({ baseSize }) => ({
     maxWidth: `${baseSize}px`,
     transition: {
       type: 'tween',
     },
   }),
+  long_horizontal: ({ baseSize }) => ({
+    maxWidth: `${baseSize * 4}px`,
+    transition: {
+      type: 'tween',
+    },
+  }),
+  long_vertical: ({ baseSize }) => ({
+    maxWidth: `${baseSize}px`,
+    transition: {
+      type: 'tween',
+    },
+  }),
+  // short: ({ baseSize }) => ({
+  //   maxWidth: `calc(${baseSize * 2}px + 4px)`,
+  //   transition: {
+  //     type: 'tween',
+  //   },
+  // }),
 }
 
 type MotionWrapperProps = AnimationProps & MotionProps & StyledWrapperProps

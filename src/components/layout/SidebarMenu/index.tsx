@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React from 'react'
 
 import Grid, { GridItem } from 'components/simpleUi/Grid'
 import IconButton from 'components/buttons/IconButton'
@@ -17,6 +17,9 @@ import { SidebarContent } from './SidebarMenu.styled'
 export interface SidebarMenuRelatedProps {
   isOpen: boolean
   setIsOpen: (isOpen: boolean) => void
+  isInverted: boolean
+  isPhoto: boolean
+  isShort: boolean
 }
 
 export type SidebarMenuProps = SidebarMenuRelatedProps
@@ -48,15 +51,17 @@ const gridMenuHeaderProps = {
   ml: 'md',
 }
 
-const SidebarMenu: React.FC<SidebarMenuProps> = ({ isOpen, setIsOpen }) => {
-  const [isInverted, setIsInverted] = useState(false)
-  const sidebarMenuButtonProps: MotionBasicButtonProps = useMemo(
-    () => ({
-      sizeVariant: 'xsmall',
-      type: isInverted ? 'inverted' : 'primary',
-    }),
-    [isInverted],
-  )
+const SidebarMenu: React.FC<SidebarMenuProps> = ({
+  isOpen,
+  setIsOpen,
+  isInverted,
+  isPhoto,
+  isShort,
+}) => {
+  const sidebarMenuButtonProps: MotionBasicButtonProps = {
+    sizeVariant: 'xsmall',
+    type: isInverted ? 'inverted' : 'primary',
+  }
 
   return (
     <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} isInverted={isInverted}>
@@ -66,15 +71,13 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({ isOpen, setIsOpen }) => {
             <Logo
               isInverted={isInverted}
               isVertical={!isOpen}
-              isPhoto={isInverted}
+              isPhoto={isPhoto}
+              isShort={isShort}
             />
           </GridItem>
           <GridItem {...gridMenuItemsProps}>
             <SidebarMenuItem>
-              <BasicButtonMotion
-                {...sidebarMenuButtonProps}
-                onClick={() => setIsInverted(!isInverted)}
-              >
+              <BasicButtonMotion {...sidebarMenuButtonProps}>
                 Software
               </BasicButtonMotion>
             </SidebarMenuItem>

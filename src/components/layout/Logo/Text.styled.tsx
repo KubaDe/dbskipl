@@ -16,7 +16,7 @@ export const TextRect = styled(Box)<TextRectProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: ${props => props.baseSize * 0.66}px;
+  font-size: ${props => props.baseSize * 0.6}px;
   letter-spacing: ${props => props.baseSize * 0.05}px;
   font-weight: 200;
   box-sizing: border-box;
