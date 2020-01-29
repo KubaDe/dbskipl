@@ -6,12 +6,13 @@ import {
   BasicButtonMotion,
   MotionBasicButtonProps,
 } from 'components/buttons/BasicButton'
+import { MenuToggleIcon } from 'components/buttons/MenuToggleButton/MenuToggleIcon.motion'
+import { SidebarButtonWrapper } from 'components/buttons/MenuToggleButton/MenuToggleButton.motion'
 import Logo from 'components/layout/Logo'
 
+import { BarMenuItem } from '../menu/MenuItems/MenuItems.motion'
+import menuItems from '../menu/items'
 import { Sidebar } from './SidebarMenu.motion'
-import { SidebarMenuItem } from './MenuItems.motion'
-import { SidebarButtonWrapper } from './MenuToggleButton.motion'
-import { MenuToggleIcon } from './MenuToggleIcon.motion'
 import { SidebarContent } from './SidebarMenu.styled'
 
 export interface SidebarMenuRelatedProps {
@@ -76,29 +77,25 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
             />
           </GridItem>
           <GridItem {...gridMenuItemsProps}>
-            <SidebarMenuItem>
-              <BasicButtonMotion {...sidebarMenuButtonProps}>
-                Software
-              </BasicButtonMotion>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <BasicButtonMotion {...sidebarMenuButtonProps}>
-                Photography
-              </BasicButtonMotion>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <BasicButtonMotion {...sidebarMenuButtonProps}>
-                About me
-              </BasicButtonMotion>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <BasicButtonMotion {...sidebarMenuButtonProps}>
-                Contact
-              </BasicButtonMotion>
-            </SidebarMenuItem>
+            {menuItems.map(item => (
+              <BarMenuItem key={item.label}>
+                <BasicButtonMotion {...sidebarMenuButtonProps}>
+                  {item.label}
+                </BasicButtonMotion>
+              </BarMenuItem>
+            ))}
           </GridItem>
         </Grid>
-        <SidebarButtonWrapper position="absolute" bottom="lg">
+        <SidebarButtonWrapper
+          position="absolute"
+          bottom="lg"
+          variants={{
+            open_basic: { right: '100px' },
+            closed_basic: { right: '-25px' },
+            open_inverted: { right: '100px' },
+            closed_inverted: { right: '-25px' },
+          }}
+        >
           <IconButton
             icon={<MenuToggleIcon isOpen={isOpen} />}
             onClick={() => setIsOpen(!isOpen)}

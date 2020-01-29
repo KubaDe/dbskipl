@@ -9,6 +9,8 @@ import { sizes } from './sizes'
 import { borderWidths, borders } from './borders'
 import { breakpoints } from './breakpoints'
 
+import resetCss from './resetCss'
+
 /**
  *
    Theme Key	    CSS Properties
@@ -42,9 +44,13 @@ const index = {
 }
 
 export const GlobalStyles = createGlobalStyle`
+  ${resetCss};
   ${fontsImportCss};
   body {
     margin: 0;
+  }
+  * {
+    box-sizing: border-box;
   }
 `
 

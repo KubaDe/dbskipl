@@ -4,31 +4,36 @@ import css from '@styled-system/css'
 
 import Box, { BaseBoxProps } from 'components/simpleUi/Box'
 
-export type SidebarWrapperProps = BaseBoxProps
+export type TopbarWrapperProps = BaseBoxProps
 
-export const SidebarWrapper: React.FC<SidebarWrapperProps> = styled(Box)<
-  SidebarWrapperProps
+export const TopbarWrapper: React.FC<TopbarWrapperProps> = styled(Box)<
+  TopbarWrapperProps
 >`
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
+  width: 100%;
   box-sizing: border-box;
   justify-content: stretch;
+  display: flex;
+  flex-direction: column;
   ${props =>
     css({
-      width: 'xl',
-      borderRight: 'primary',
-      borderRightWidth: 'normal',
+      borderBottom: 'primary',
+      borderBottomWidth: 'normal',
     })}
 `
 
-export const SidebarContent: React.FC<BaseBoxProps> = styled(Box)<BaseBoxProps>`
+export const TopbarContent: React.FC<BaseBoxProps> = styled(Box)<BaseBoxProps>`
   position: relative;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  flex-grow: 1;
+  margin-bottom: 98px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 export type MenuItemProps = BaseBoxProps
@@ -41,4 +46,3 @@ export const MenuItem: React.FC<MenuItemProps> = styled(Box)<MenuItemProps>`
     my: 'sm',
   })}
 `
-

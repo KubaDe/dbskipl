@@ -4,7 +4,7 @@ import { FiMenu, FiX } from 'react-icons/fi'
 
 const Wrapper = motion.span
 
-interface MenuToggleIconProps {
+export interface MenuToggleIconProps {
   isOpen: boolean
 }
 
