@@ -45,7 +45,6 @@ const BackgroundImage: React.FC<BackgroundImageProps> = (
   const value = useSpring(0)
   const transform = useTransform(value, (value: number): number => value * 0.3)
 
-  ref &&
     useDebouncedScrollEffect(
       ref,
       ({ y }) => {

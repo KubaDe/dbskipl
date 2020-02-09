@@ -7,14 +7,14 @@ export interface EffectArgs {
 }
 
 const useDebouncedScrollEffect = (
-  ref: RefObject<HTMLElement>,
+  ref: RefObject<HTMLElement> | null,
   effect: ({ x, y }: EffectArgs) => void,
   time: number,
 ): void => {
 
   useEffect(() => {
     const handler = () => {
-      if (ref.current) {
+      if (ref && ref.current) {
         effect({
           x: ref.current.scrollLeft,
           y: ref.current.scrollTop,
@@ -24,7 +24,7 @@ const useDebouncedScrollEffect = (
 
     const debouncedHandler = debounce(handler, time)
 
-    if (ref.current) {
+    if (ref && ref.current) {
       ref.current.addEventListener('scroll', debouncedHandler, {
         capture: false,
         passive: true,
@@ -32,7 +32,7 @@ const useDebouncedScrollEffect = (
     }
 
     return () => {
-      if (ref.current) {
+      if (ref && ref.current) {
         ref.current.removeEventListener('scroll', debouncedHandler)
       }
     }
