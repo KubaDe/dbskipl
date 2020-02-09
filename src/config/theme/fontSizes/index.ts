@@ -24,6 +24,8 @@ export const fontSizes = {
   h4: '21px',
   h5: '13px',
   h6: '15px',
+  hero1: '140px',
+  hero2: '84px',
   display1: '72px',
   display2: '66px',
   display3: '54px',

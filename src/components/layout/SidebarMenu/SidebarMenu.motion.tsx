@@ -1,4 +1,5 @@
 import React, { useRef, RefAttributes } from 'react'
+import get from 'lodash/get'
 import { motion, AnimationProps, Variants, MotionProps } from 'framer-motion'
 
 import useOutsideClick from 'hooks/useOutsideClick'
@@ -60,7 +61,7 @@ export const Sidebar: React.FC<SidebarProps> = (props: SidebarProps) => {
   const { isOpen, isInverted, setIsOpen } = props
   const ref = useRef(null)
   useOutsideClick(ref, () => {
-    isOpen && setIsOpen(false)
+    isOpen && get(ref, 'current.offsetWidth') && setIsOpen(false)
   })
   const variant = `${isOpen ? 'open' : 'closed'}_${
     isInverted ? 'inverted' : 'basic'

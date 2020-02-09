@@ -5,7 +5,7 @@ import { BasicButtonProps, BasicButton } from './BasicButton'
 import { variants } from './BasicButtonInteractions.motion'
 
 export interface Type {
-  type?: 'primary' | 'secondary' | 'none' | 'inverted'
+  type?: 'primary' | 'secondary' | 'none' | 'inverted' | 'black'
 }
 
 export type MotionBasicButtonProps = AnimationProps &

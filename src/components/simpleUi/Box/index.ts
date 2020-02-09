@@ -1,5 +1,7 @@
-import React, { ElementType, ReactNode } from 'react'
+import React, { ElementType, ReactNode, RefObject } from 'react'
 import styled from 'styled-components'
+
+import invisibility from 'config/mixins/invisibility'
 
 import {
   color,
@@ -30,7 +32,9 @@ export type BaseBoxProps = SpaceProps &
   BoxShadowProps &
   BorderProps &
   PositionProps &
-  SizeProps & { as?: ElementType; children?: ReactNode }
+  SizeProps & { as?: ElementType; children?: ReactNode; invisible?: string | string[], ref?: any }
+
+
 
 const Box: React.FC<BaseBoxProps> = styled.div<BaseBoxProps>`
   ${space}
@@ -42,6 +46,7 @@ const Box: React.FC<BaseBoxProps> = styled.div<BaseBoxProps>`
   ${border}
   ${size}
   ${position}
+  ${invisibility}
 `
 
 export default Box
