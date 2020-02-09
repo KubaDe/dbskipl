@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Grid, { GridItem } from 'components/simpleUi/Grid'
+import { BaseBoxProps } from 'components/simpleUi/Box'
 import IconButton from 'components/buttons/IconButton'
 import {
   BasicButtonMotion,
@@ -21,6 +22,7 @@ export interface SidebarMenuRelatedProps {
   isInverted: boolean
   isPhoto: boolean
   isShort: boolean
+  wrapperProps?: BaseBoxProps
 }
 
 export type SidebarMenuProps = SidebarMenuRelatedProps
@@ -58,6 +60,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
   isInverted,
   isPhoto,
   isShort,
+  wrapperProps={},
 }) => {
   const sidebarMenuButtonProps: MotionBasicButtonProps = {
     sizeVariant: 'xsmall',
@@ -65,7 +68,12 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
   }
 
   return (
-    <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} isInverted={isInverted}>
+    <Sidebar
+      isOpen={isOpen}
+      setIsOpen={setIsOpen}
+      isInverted={isInverted}
+      {...wrapperProps}
+    >
       <SidebarContent>
         <Grid {...gridProps}>
           <GridItem {...gridMenuHeaderProps}>
@@ -99,7 +107,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
           <IconButton
             icon={<MenuToggleIcon isOpen={isOpen} />}
             onClick={() => setIsOpen(!isOpen)}
-            type={isInverted ? 'inverted' : 'primary'}
+            type={(isInverted || isOpen) ? 'primary' : 'black'}
           />
         </SidebarButtonWrapper>
       </SidebarContent>

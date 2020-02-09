@@ -1,9 +1,20 @@
 import React from 'react'
 
 import { ScrollSpine } from 'components/layout/buildingBlocks/ScrollBlocks'
+import Layout from 'components/layout/Layout'
+
+import TopSection from './TopSection'
+import ExperiencesSection from './ExperiencesSection'
 
 const PageComposition: React.FC = () => {
-  return <ScrollSpine></ScrollSpine>
+  return (
+    <Layout>
+      <ScrollSpine>
+        <TopSection />
+        <ExperiencesSection />
+      </ScrollSpine>
+    </Layout>
+  )
 }
 
 export default PageComposition

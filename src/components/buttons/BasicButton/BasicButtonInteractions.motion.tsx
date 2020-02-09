@@ -73,5 +73,12 @@ export const variants: Variants = {
     color: 'inverted',
     shadowColorPalette: 'invertedPalette',
   }),
+  ...getVariant({
+    name: 'black',
+    bgColor: 'black',
+    border: 'black',
+    color: 'inverted',
+    shadowColorPalette: 'primaryPalette',
+  }),
   none: {},
 }

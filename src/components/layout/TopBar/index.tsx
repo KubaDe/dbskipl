@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Flex, { FlexItem } from 'components/simpleUi/Flex'
+import { BaseBoxProps } from 'components/simpleUi/Box'
 import IconButton from 'components/buttons/IconButton'
 import {
   BasicButtonMotion,
@@ -21,6 +22,7 @@ export interface SidebarMenuRelatedProps {
   isInverted: boolean
   isPhoto: boolean
   isShort: boolean
+  wrapperProps?: BaseBoxProps
 }
 
 export type SidebarMenuProps = SidebarMenuRelatedProps
@@ -30,6 +32,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
   setIsOpen,
   isInverted,
   isPhoto,
+  wrapperProps={},
 }) => {
   const topbarMenuButtonProps: MotionBasicButtonProps = {
     sizeVariant: 'xsmall',
@@ -37,8 +40,13 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
   }
 
   return (
-    <Topbar isOpen={isOpen} setIsOpen={setIsOpen} isInverted={isInverted}>
-      <Flex alignItems="flex-start" justifyContent="space-between" mx="sm" my="sm">
+    <Topbar isOpen={isOpen} setIsOpen={setIsOpen} isInverted={isInverted} {...wrapperProps}>
+      <Flex
+        alignItems="flex-start"
+        justifyContent="space-between"
+        mx="sm"
+        my="sm"
+      >
         <FlexItem>
           <Logo
             isInverted={isInverted}

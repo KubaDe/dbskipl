@@ -8,6 +8,8 @@ import {
   JustifySelfProps,
   AlignSelfProps,
   OrderProps,
+  flexGrow,
+  FlexGrowProps,
 } from 'styled-system'
 import Box, { BaseBoxProps } from 'components/simpleUi/Box'
 
@@ -20,6 +22,7 @@ const Flex: React.FC<BaseFlexProps> = styled(Box)<BaseFlexProps>`
 
 export type BaseFlexItemProps = BaseBoxProps &
   FlexProps &
+  FlexGrowProps &
   JustifySelfProps &
   AlignSelfProps &
   OrderProps
@@ -28,6 +31,7 @@ export const FlexItem: React.FC<BaseFlexItemProps> = styled(Box)<
   BaseFlexItemProps
 >`
   ${flexbox}
+  ${flexGrow}
 `
 
 export default Flex
