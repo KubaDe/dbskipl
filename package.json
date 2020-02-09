@@ -44,6 +44,7 @@
   "scripts": {
     "dev": "NODE_PATH=./src next",
     "build": "NODE_PATH=./src next build",
+    "export": "NODE_PATH=./src next export",
     "start": "NODE_PATH=./src next start",
     "eject": "react-scripts eject",
     "typecheck": "tsc --noEmit --skipLibCheck",
