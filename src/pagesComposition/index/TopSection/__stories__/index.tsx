@@ -5,6 +5,6 @@ export default {
   title: 'Pages|Index.TopSection',
 }
 
-export const heading = () => (
+export const section = () => (
   <TopSection />
 )

@@ -4,7 +4,7 @@ export const thresholds: number[] = [0.2, 0.5, 0.8]
 
 export interface ThresholdEvent {
   type: string
-  threshold: number
+  progress: number
 }
 
 type SampleBlockMachineEvent = ThresholdEvent
@@ -25,7 +25,7 @@ const checkThreshold = (
 ): boolean => {
   if (options && options.cond.threshold) {
     const threshold = options.cond.threshold
-    return event.threshold >= threshold
+    return event.progress >= threshold
   }
   return false
 }
