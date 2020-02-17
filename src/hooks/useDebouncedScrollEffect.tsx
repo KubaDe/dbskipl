@@ -1,5 +1,5 @@
 import { RefObject, useEffect, useState } from 'react'
-import debounce from 'lodash/debounce'
+import throttle from 'lodash/throttle'
 
 export interface EffectArgs {
   x: number
@@ -22,7 +22,7 @@ const useDebouncedScrollEffect = (
       }
     }
 
-    const debouncedHandler = debounce(handler, time)
+    const debouncedHandler = throttle(handler, time)
 
     if (ref && ref.current) {
       ref.current.addEventListener('scroll', debouncedHandler, {

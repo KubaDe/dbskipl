@@ -13,7 +13,7 @@ import headingPhotoSrc from './assets/_DSC6009.png'
 
 const Section: React.FC = () => {
   return (
-    <ScrollBlock
+    <Box
       minHeight="100vh"
       maxHeight="3000px"
       backgroundColor="inverted"
@@ -90,7 +90,7 @@ const Section: React.FC = () => {
         </FlexItem>
       </Flex>
       <Background />
-    </ScrollBlock>
+    </Box>
   )
 }
 
