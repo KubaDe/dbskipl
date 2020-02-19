@@ -4,14 +4,15 @@ import { motion, AnimationProps, MotionProps, Variants } from 'framer-motion'
 import Flex, { BaseFlexProps } from 'components/simpleUi/Flex'
 
 const variants: Variants = {
-  up: {
-    scale: 1.1,
+  empty: {
+    scale: .1,
     transition: {
-      duration: .1,
+      duration: 1,
+      type: 'spring',
       when: 'beforeChildren'
     },
   },
-  down: {
+  base: {
     scale: 1,
     transition: {
       duration: 1,
@@ -34,7 +35,7 @@ const BigBubble: React.FC<MotionBigBubbleProps> = (
   props: MotionBigBubbleProps,
 ) => {
   const {} = props
-  return <MotionBigBubble initial="down" variants={variants} {...props} />
+  return <MotionBigBubble initial="empty" variants={variants} {...props} />
 }
 
 export default BigBubble

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
-import {BaseBoxProps} from 'components/simpleUi/Box'
+import { BaseBoxProps } from 'components/simpleUi/Box'
 import Flex from 'components/simpleUi/Flex'
 import Heading from 'components/typography/Heading'
 
 import BubbleItem from './BubbleItem.motion'
 import BubbleItemWrapper from './BubbleItemWrapper.motion'
-import {BubbleWrapper, BubbleWrapperProps }from './Bubble.styled'
+import { BubbleWrapper, BubbleWrapperProps } from './Bubble.styled'
 
 import useMorphBubblePath from './useMorphBubblePath'
 
@@ -23,7 +23,7 @@ interface BubbleRelatedProps {
 const useInertOpen = (isOpen: boolean) => {
   const [inertOpen, setInertOpen] = useState(isOpen)
   useEffect(() => {
-    if(isOpen){
+    if (isOpen) {
       setInertOpen(true)
     } else {
       setTimeout(() => {
@@ -40,14 +40,18 @@ const Bubble: React.FC<BubbleProps> = (props: BubbleProps) => {
   const inertOpen = useInertOpen(isOpen)
   const path = useMorphBubblePath(inertOpen)
   return (
-    <BubbleWrapper width="184px" height="263px" position="relative" {...props} >
+    <BubbleWrapper width="184px" height="263px" position="relative" {...props}>
       <Flex
         width="167px"
         height="167px"
         alignItems="center"
         justifyContent="center"
       >
-        <Heading color="inverted" zIndex={1} fontSize="h4">
+        <Heading
+          color="inverted"
+          zIndex={1}
+          fontSize="h4"
+        >
           {title}
         </Heading>
       </Flex>

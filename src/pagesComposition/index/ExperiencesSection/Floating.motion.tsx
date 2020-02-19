@@ -15,7 +15,7 @@ const transition: Transition = {
 
 const variants: Variants = {
   before: {
-    y: 300,
+    y: '120vh',
     opacity: 0,
   },
   active: {
@@ -23,7 +23,7 @@ const variants: Variants = {
     opacity: 1,
   },
   after: {
-    y: -300,
+    y: '-120vh',
     opacity: 0,
   },
 }

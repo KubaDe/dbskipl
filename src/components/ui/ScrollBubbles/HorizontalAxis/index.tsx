@@ -2,7 +2,6 @@ import React, { useEffect, useLayoutEffect, useRef } from 'react'
 
 import Box, { BaseBoxProps } from 'components/simpleUi/Box'
 import Grid, { GridItem } from 'components/simpleUi/Grid'
-import useDebouncedScrollEffect from 'hooks/useDebouncedScrollEffect'
 
 interface HorizontalAxisRelatedProps {
   bubbles: React.ReactNode[]

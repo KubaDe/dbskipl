@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, {useCallback, useMemo, useState} from 'react'
 import { useMachine } from '@xstate/react'
+import debounce from 'lodash/debounce'
 
 import Box from 'components/simpleUi/Box'
 import { ScrollBlock } from 'components/layout/buildingBlocks/ScrollBlocks'
@@ -17,10 +18,6 @@ import Floating from './Floating.motion'
 import experiencesJson from './__data__/experiences.json'
 import { Experiences } from './__data__/Experiences'
 const experiences = experiencesJson as Experiences
-
-const bigBubblePlaceholder = {
-  title: 'Select company',
-}
 
 const bubbles = experiences.map(
   experience => (props: {
@@ -43,20 +40,34 @@ const eventFactory = (progress: number): ProgressEvent => ({
   progress,
 })
 
+const useDebouncedMouseHover = (): {
+  mouseOn: number
+  setMouseOn: (i: number) => void
+} => {
+  const [mouseOn, _setMouseOn] = useState(-1)
+  const setMouseOn = useMemo(() => debounce((i: number) => {
+    _setMouseOn(i)
+  }, 500), [_setMouseOn])
+  return {
+    mouseOn,
+    setMouseOn,
+  }
+}
+
 const Section: React.FC = () => {
   const [current, send] = useMachine(ExperienceSectionMachine)
-  const [mouseOn, setMouseOn] = useState(-1)
+
   const state: string[] = current.toStrings()
 
   const onProgressChange = (progress: number): void => {
     !current.done && send(eventFactory(progress))
   }
 
+  const {mouseOn, setMouseOn} = useDebouncedMouseHover()
   const openBubbleI = mouseOn !== -1 ? mouseOn : Number(state[1]?.split('.')[1])
-  const bigBubbleText =
-    openBubbleI && !isNaN(openBubbleI) && openBubbleI !== -1
+  const bigBubbleText = !isNaN(openBubbleI) && openBubbleI !== -1
       ? experiences[openBubbleI]
-      : bigBubblePlaceholder
+      : {}
   return (
     <ScrollBlock
       onProgressChange={onProgressChange}

@@ -103,7 +103,7 @@ const getActiveSubStates = (bubblesN: number) => {
               target: `${i - 1}`,
               cond: {
                 type: 'checkThresholdDown',
-                threshold: subThresholds[i - 1] || thresholds[0],
+                threshold: subThresholds[i] || thresholds[0],
               },
             },
           ],
