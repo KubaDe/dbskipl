@@ -18,7 +18,6 @@ const Section: React.FC = () => {
       maxHeight="3000px"
       backgroundColor="inverted"
       position="relative"
-      overflow="hidden"
     >
       <Flex
         alignContent="center"

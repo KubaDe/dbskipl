@@ -1,7 +1,6 @@
 import React from 'react'
 
 import Img from 'components/simpleUi/Img'
-import Box from 'components/simpleUi/Box'
 
 import BackgroundImage, { BackgroundImageProps } from './BackgroundImage.motion'
 

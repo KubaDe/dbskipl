@@ -16,17 +16,19 @@ const MotionBubbleItemVariants: Variants = {
     y: 0,
     x: 0,
     opacity: 1,
+    scale: 1,
     transition: {
       duration: 1,
-    }
+    },
   },
   closed: {
-    y: -40,
+    y: -80,
     x: -30,
     opacity: 0,
+    scale: 0.9,
     transition: {
       duration: 1,
-    }
+    },
   },
 }
 

@@ -33,7 +33,7 @@ const Wrapper: React.FC<MotionWrapperProps> = (props: MotionWrapperProps) => {
       variants={variants}
       alignItems="center"
       justifyContent="center"
-      height="300vh"
+      height="350vh"
       {...props}
     />
   )

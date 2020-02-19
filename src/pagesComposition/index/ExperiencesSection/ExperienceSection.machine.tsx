@@ -2,7 +2,7 @@ import { Machine } from 'xstate';
 import range from 'lodash/range';
 import fromPairs from 'lodash/fromPairs';
 
-export const thresholds: number[] = [0.3, 1]
+export const thresholds: number[] = [0.4, 1]
 
 export interface ProgressEvent {
   type: string

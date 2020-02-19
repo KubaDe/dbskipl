@@ -32,9 +32,15 @@ export type BaseBoxProps = SpaceProps &
   BoxShadowProps &
   BorderProps &
   PositionProps &
-  SizeProps & { as?: ElementType; children?: ReactNode; invisible?: string | string[], ref?: any, style?: object }
-
-
+  SizeProps & {
+    as?: ElementType
+    children?: ReactNode
+    invisible?: string | string[]
+    ref?: any
+    style?: object
+    onMouseEnter?: () => void
+    onMouseLeave?: () => void
+  }
 
 const Box: React.FC<BaseBoxProps> = styled.div<BaseBoxProps>`
   ${space}

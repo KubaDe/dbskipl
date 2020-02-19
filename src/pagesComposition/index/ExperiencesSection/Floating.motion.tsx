@@ -1,11 +1,16 @@
 import React from 'react'
-import { motion, AnimationProps, MotionProps, Variants, Transition } from 'framer-motion'
+import {
+  motion,
+  AnimationProps,
+  MotionProps,
+  Variants,
+  Transition,
+} from 'framer-motion'
 
 import Flex, { BaseFlexProps } from 'components/simpleUi/Flex'
 
-
 const transition: Transition = {
-  duration: .5
+  duration: 0.5,
 }
 
 const variants: Variants = {
@@ -49,7 +54,8 @@ const Floating: React.FC<MotionFloatingProps> = (
       width={{ _: '100%', md: 'calc(100% - 86px)' }}
       height="100vh"
       style={{ pointerEvents: 'none' }}
-      alignItems="center"
+      flexDirection="row"
+      alignItems="flex-end"
       justifyContent="center"
       {...props}
     />

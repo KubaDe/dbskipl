@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import { motion, useSpring, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 
-import Box, { BaseBoxProps } from 'components/simpleUi/Box'
+import {BaseBoxProps} from 'components/simpleUi/Box'
 import Flex from 'components/simpleUi/Flex'
 import Heading from 'components/typography/Heading'
 
 import BubbleItem from './BubbleItem.motion'
 import BubbleItemWrapper from './BubbleItemWrapper.motion'
+import {BubbleWrapper, BubbleWrapperProps }from './Bubble.styled'
 
 import useMorphBubblePath from './useMorphBubblePath'
 
 type BubbleSvgProps = BaseBoxProps & { viewBox: string }
-const BubbleSvg = Box as React.FC<BubbleSvgProps>
+const BubbleSvg = BubbleWrapper as React.FC<BubbleSvgProps>
 
 interface BubbleRelatedProps {
   isOpen: boolean
@@ -33,13 +34,13 @@ const useInertOpen = (isOpen: boolean) => {
   return inertOpen
 }
 
-export type BubbleProps = BaseBoxProps & BubbleRelatedProps
+export type BubbleProps = BubbleWrapperProps & BubbleRelatedProps
 const Bubble: React.FC<BubbleProps> = (props: BubbleProps) => {
   const { isOpen, title, items } = props
   const inertOpen = useInertOpen(isOpen)
   const path = useMorphBubblePath(inertOpen)
   return (
-    <Box {...props} width="184px" height="263px" position="relative">
+    <BubbleWrapper width="184px" height="263px" position="relative" {...props} >
       <Flex
         width="167px"
         height="167px"
@@ -66,7 +67,7 @@ const Bubble: React.FC<BubbleProps> = (props: BubbleProps) => {
       >
         <motion.path d={path} />
       </BubbleSvg>
-    </Box>
+    </BubbleWrapper>
   )
 }
 

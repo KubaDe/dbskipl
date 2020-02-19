@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useMachine } from '@xstate/react'
 
+import Box from 'components/simpleUi/Box'
 import { ScrollBlock } from 'components/layout/buildingBlocks/ScrollBlocks'
 import HorizontalAxis from 'components/ui/ScrollBubbles/HorizontalAxis'
 import Bubble from 'components/ui/ScrollBubbles/Bubble'
+import BigBubble from 'components/ui/BigBubble'
 
 import {
   ProgressEvent,
@@ -12,36 +14,27 @@ import {
 import Wrapper from './Wrapper.motion'
 import Floating from './Floating.motion'
 
-const bubbles = [
-  (isOpen: boolean) => (
+import experiencesJson from './__data__/experiences.json'
+import { Experiences } from './__data__/Experiences'
+const experiences = experiencesJson as Experiences
+
+const bigBubblePlaceholder = {
+  title: 'Select company',
+}
+
+const bubbles = experiences.map(
+  experience => (props: {
+    isOpen: boolean
+    onMouseEnter: () => void
+    onMouseLeave: () => void
+  }) => (
     <Bubble
-      isOpen={isOpen}
-      title="Acme Inc"
-      items={['February 2018', 'May 2019']}
+      {...props}
+      title={experience.title}
+      items={[experience.start, experience.end]}
     />
   ),
-  (isOpen: boolean) => (
-    <Bubble
-      isOpen={isOpen}
-      title="Acme Inc"
-      items={['February 2018', 'May 2019']}
-    />
-  ),
-  (isOpen: boolean) => (
-    <Bubble
-      isOpen={isOpen}
-      title="Acme Inc"
-      items={['February 2018', 'May 2019']}
-    />
-  ),
-  (isOpen: boolean) => (
-    <Bubble
-      isOpen={isOpen}
-      title="Acme Inc"
-      items={['February 2018', 'May 2019']}
-    />
-  ),
-]
+)
 
 const ExperienceSectionMachine = getExperienceSectionMachine(bubbles.length)
 
@@ -52,13 +45,18 @@ const eventFactory = (progress: number): ProgressEvent => ({
 
 const Section: React.FC = () => {
   const [current, send] = useMachine(ExperienceSectionMachine)
+  const [mouseOn, setMouseOn] = useState(-1)
   const state: string[] = current.toStrings()
 
   const onProgressChange = (progress: number): void => {
     !current.done && send(eventFactory(progress))
   }
 
-  const openBubbleI = state[1]?.split('.')[1]
+  const openBubbleI = mouseOn !== -1 ? mouseOn : Number(state[1]?.split('.')[1])
+  const bigBubbleText =
+    openBubbleI && !isNaN(openBubbleI) && openBubbleI !== -1
+      ? experiences[openBubbleI]
+      : bigBubblePlaceholder
   return (
     <ScrollBlock
       onProgressChange={onProgressChange}
@@ -68,11 +66,23 @@ const Section: React.FC = () => {
     >
       <Wrapper animate={state[0] || ''}>
         <Floating>
-          <HorizontalAxis
-            bubbles={bubbles.map((bubble, i) =>
-              bubble(i === Number(openBubbleI)),
-            )}
+          <BigBubble
+            {...bigBubbleText}
+            position="absolute"
+            top="3xl"
+            left="3xl"
           />
+          <Box position="absolute" bottom="150px" width="100%">
+            <HorizontalAxis
+              bubbles={bubbles.map((bubble, i) =>
+                bubble({
+                  isOpen: i === openBubbleI,
+                  onMouseEnter: () => setMouseOn(i),
+                  onMouseLeave: () => setMouseOn(-1),
+                }),
+              )}
+            />
+          </Box>
         </Floating>
       </Wrapper>
     </ScrollBlock>
