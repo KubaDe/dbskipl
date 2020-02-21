@@ -13,7 +13,7 @@ export const SidebarWrapper: React.FC<SidebarWrapperProps> = styled(Box)<
   z-index: 100;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 100%;
   box-sizing: border-box;
   justify-content: stretch;
   ${props =>

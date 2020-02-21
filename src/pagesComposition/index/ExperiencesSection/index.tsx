@@ -89,7 +89,16 @@ const Section: React.FC = () => {
             right="0"
             mx="auto"
           />
-          <BgText position="absolute" top="3xl" left="3xl" m="md" padSize="md">
+          <BgText
+            position="absolute"
+            top="3xl"
+            left="3xl"
+            m="md"
+            padSize="md"
+            as="h1"
+            fontSize={{ _: 'display4', xl: 'display2' }}
+            fontFamily="secondary"
+          >
             Professional <br />
             experience
           </BgText>

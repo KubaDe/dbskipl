@@ -14,11 +14,6 @@ export type BgTextProps = BaseTextProps & BgTextRelatedProps
 
 const BgTextPropsComponent: React.FC<BgTextProps> = styled(Text)`
   box-decoration-break: clone;
-  ${css({
-    as: 'h1',
-    fontSize: 'display2',
-    fontFamily: 'secondary',
-  })}
 `
 
 const Highlight = styled(Box).attrs({ as: 'span' })<BgTextProps>`

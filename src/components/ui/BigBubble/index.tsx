@@ -5,6 +5,7 @@ import { BaseFlexProps } from 'components/simpleUi/Flex'
 import Description from './Description.motion'
 import Title from './Title.motion'
 import BigBubbleMotion from './BigBubble.motion'
+import BgText from '../../typography/BgText';
 
 interface BubbleRelatedProps {
   title?: string
@@ -17,8 +18,8 @@ const Bubble: React.FC<BigBubbleProps> = (props: BigBubbleProps) => {
   return (
     <BigBubbleMotion
       animate={!title && !description ? 'empty' : 'base'}
-      width="370px"
-      height="370px"
+      width={{ _: '300px', xl: '340px' }}
+      height={{ _: '300px', xl: '340px' }}
       borderRadius="50%"
       background="black"
       alignItems="center"
@@ -27,7 +28,7 @@ const Bubble: React.FC<BigBubbleProps> = (props: BigBubbleProps) => {
       p="2xl"
       {...props}
     >
-      <Title color="inverted" as="h1" fontSize="h2" key={title}>
+      <Title color="inverted" as="h1" fontSize={{ _: 'h3', xl: 'h2' }} key={title}>
         {title}
       </Title>
 
@@ -38,7 +39,7 @@ const Bubble: React.FC<BigBubbleProps> = (props: BigBubbleProps) => {
           color="inverted"
           fontSize="paragraph"
           lineHeight="1.5em"
-          mt="lg"
+          mt={{ _: 'md', xl: 'lg' }}
           textAlign="center"
         >
           {description}
