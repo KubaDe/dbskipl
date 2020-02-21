@@ -10,7 +10,6 @@ import {
 } from 'framer-motion'
 
 import Img, { BaseImgProps } from 'components/simpleUi/Img'
-import { useSpineRef } from 'components/layout/buildingBlocks/ScrollBlocks/Spine'
 import useDebouncedScrollEffect from 'hooks/useDebouncedScrollEffect'
 
 const BackgroundImageVariants: Variants = {
@@ -41,12 +40,10 @@ const BackgroundImage: React.FC<BackgroundImageProps> = (
   props: BackgroundImageProps,
 ) => {
   const { delayTime = 0 } = props
-  const ref = useSpineRef()
   const value = useSpring(0)
   const transform = useTransform(value, (value: number): number => value * 0.3)
 
   useDebouncedScrollEffect(
-    ref,
     ({ y }) => {
       delay(() => value.set(y), delayTime)
     },

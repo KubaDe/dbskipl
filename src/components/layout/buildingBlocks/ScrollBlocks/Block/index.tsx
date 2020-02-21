@@ -1,9 +1,10 @@
-import React, { useCallback, useRef, useState, MutableRefObject, useEffect } from 'react';
+import React, { useCallback, useRef, useState } from 'react'
 import get from 'lodash/get'
 import Observer from '@researchgate/react-intersection-observer'
 import Box, { BaseBoxProps } from 'components/simpleUi/Box'
-import { useSpineRef } from '../Spine'
-import useDebouncedScrollEffect from 'hooks/useDebouncedScrollEffect'
+import useDebouncedScrollEffect, {
+  EffectArgs,
+} from 'hooks/useDebouncedScrollEffect'
 
 interface BlockRelatedProps {
   onProgressChange?: (percent: number) => void
@@ -16,16 +17,12 @@ const Block: React.FC<BlockProps> = ({
   onProgressChange = () => {},
   ...props
 }) => {
-  const spineRef = useSpineRef()
   const sectionRef = useRef(null)
   const [isIntersecting, setIsIntersecting] = useState(false)
-  useEffect(() => {
 
-  }, [isIntersecting])
-  useDebouncedScrollEffect(
-    isIntersecting ? spineRef : null,
-    e => {
-      if (spineRef && sectionRef) {
+  const countProgress = useCallback(
+    (e: EffectArgs) => {
+      if (isIntersecting && sectionRef) {
         const viewportBottomPosition = e.y + window.innerHeight
         const topOfComponent = get(sectionRef, 'current.offsetTop', 0)
         const bottomOfComponent =
@@ -36,8 +33,10 @@ const Block: React.FC<BlockProps> = ({
         onProgressChange(progress)
       }
     },
-    10,
+    [isIntersecting, sectionRef],
   )
+
+  useDebouncedScrollEffect(countProgress, 10)
 
   const observerChange = useCallback((e: IntersectionObserverEntry) => {
     setIsIntersecting(e.isIntersecting)

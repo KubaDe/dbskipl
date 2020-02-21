@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useState } from 'react'
+import { RefObject, useEffect, useState, DependencyList } from 'react'
 import throttle from 'lodash/throttle'
 
 export interface EffectArgs {
@@ -6,37 +6,35 @@ export interface EffectArgs {
   y: number
 }
 
+// Todo: refactor to singleton
 const useDebouncedScrollEffect = (
-  ref: RefObject<HTMLElement> | null,
   effect: ({ x, y }: EffectArgs) => void,
   time: number,
 ): void => {
 
   useEffect(() => {
     const handler = () => {
-      if (ref && ref.current) {
-        effect({
-          x: ref.current.scrollLeft,
-          y: ref.current.scrollTop,
-        })
-      }
+      effect({
+        x: window.scrollX,
+        y: window.scrollY,
+      })
     }
 
     const debouncedHandler = throttle(handler, time)
 
-    if (ref && ref.current) {
-      ref.current.addEventListener('scroll', debouncedHandler, {
+    if (typeof window === 'object') {
+      document.addEventListener('scroll', debouncedHandler, {
         capture: false,
         passive: true,
       })
     }
 
     return () => {
-      if (ref && ref.current) {
-        ref.current.removeEventListener('scroll', debouncedHandler)
+      if (typeof window === 'object') {
+        document.removeEventListener('scroll', debouncedHandler)
       }
     }
-  }, [ref])
+  }, [effect])
 }
 
 export default useDebouncedScrollEffect
