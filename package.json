@@ -54,7 +54,8 @@
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
     "lint:fix": "eslint --fix --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -c .storybook -o .out"
+    "build-storybook": "build-storybook -c .storybook -o .out",
+    "commit": "npx git-cz"
   },
   "eslintConfig": {
     "extends": [
@@ -95,10 +96,16 @@
     "@types/styled-components": "^4.4.2",
     "@types/styled-system": "^5.1.4",
     "@will-stone/prettier-config": "^2.0.1",
+    "cz-conventional-changelog": "3.1.0",
     "eslint-config-prettier": "^6.9.0",
     "eslint-config-react-app": "^5.1.0",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-simple-import-sort": "^5.0.0",
     "prettier": "^1.19.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

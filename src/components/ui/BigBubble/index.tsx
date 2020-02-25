@@ -5,7 +5,6 @@ import { BaseFlexProps } from 'components/simpleUi/Flex'
 import Description from './Description.motion'
 import Title from './Title.motion'
 import BigBubbleMotion from './BigBubble.motion'
-import BgText from '../../typography/BgText';
 
 interface BubbleRelatedProps {
   title?: string
