@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, memo } from 'react'
 import { motion } from 'framer-motion'
 
 import { BaseBoxProps } from 'components/simpleUi/Box'
@@ -75,4 +75,4 @@ const Bubble: React.FC<BubbleProps> = (props: BubbleProps) => {
   )
 }
 
-export default Bubble
+export default memo(Bubble)

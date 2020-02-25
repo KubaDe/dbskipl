@@ -1,10 +1,9 @@
 import React from 'react'
 
-import { BaseFlexProps } from 'components/simpleUi/Flex'
+import Flex, { BaseFlexProps } from 'components/simpleUi/Flex'
 
 import Description from './Description.motion'
 import Title from './Title.motion'
-import BigBubbleMotion from './BigBubble.motion'
 
 interface BubbleRelatedProps {
   title?: string
@@ -15,8 +14,7 @@ export type BigBubbleProps = BaseFlexProps & BubbleRelatedProps
 const Bubble: React.FC<BigBubbleProps> = (props: BigBubbleProps) => {
   const { title, description } = props
   return (
-    <BigBubbleMotion
-      animate={!title && !description ? 'empty' : 'base'}
+    <Flex
       width={{ _: '300px', xl: '340px' }}
       height={{ _: '300px', xl: '340px' }}
       borderRadius="50%"
@@ -44,7 +42,7 @@ const Bubble: React.FC<BigBubbleProps> = (props: BigBubbleProps) => {
           {description}
         </Description>
       )}
-    </BigBubbleMotion>
+    </Flex>
   )
 }
 

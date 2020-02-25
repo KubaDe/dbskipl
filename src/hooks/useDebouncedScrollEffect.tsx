@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useState, DependencyList } from 'react'
+import { useEffect } from 'react'
 import throttle from 'lodash/throttle'
 
 export interface EffectArgs {

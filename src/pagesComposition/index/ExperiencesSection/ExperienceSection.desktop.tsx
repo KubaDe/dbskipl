@@ -65,6 +65,11 @@ const Section: React.FC<SectionProps> = ({ experiences }: SectionProps) => {
   const bigBubbleText =
     !isNaN(openBubbleI) && openBubbleI !== -1 ? experiences[openBubbleI] : {}
 
+  const mouseHoverActions = useMemo(() => experiences.map((experience, i) => ({
+    onMouseEnter: () => setMouseOn(i),
+    onMouseLeave: () => setMouseOn(-1),
+  })), [experiences])
+
   return (
     <ScrollBlock
       onProgressChange={onProgressChange}
@@ -104,8 +109,7 @@ const Section: React.FC<SectionProps> = ({ experiences }: SectionProps) => {
                   title={experience.title}
                   items={[experience.start, experience.end]}
                   isOpen={i === openBubbleI}
-                  onMouseEnter={() => setMouseOn(i)}
-                  onMouseLeave={() => setMouseOn(-1)}
+                  {...mouseHoverActions[i]}
                 />
               ))}
             />

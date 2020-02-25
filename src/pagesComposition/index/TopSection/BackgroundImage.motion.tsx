@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useCallback } from 'react'
 import delay from 'lodash/delay'
 import {
   motion,
@@ -43,11 +43,13 @@ const BackgroundImage: React.FC<BackgroundImageProps> = (
   const value = useSpring(0)
   const transform = useTransform(value, (value: number): number => value * 0.3)
 
+  const scrollEffect = useCallback(({ y }) => {
+    delay(() => value.set(y), delayTime)
+  },[])
+
   useDebouncedScrollEffect(
-    ({ y }) => {
-      delay(() => value.set(y), delayTime)
-    },
-    3,
+    scrollEffect,
+    10,
   )
 
   return (
