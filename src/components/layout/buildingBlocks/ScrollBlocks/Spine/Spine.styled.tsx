@@ -6,7 +6,6 @@ import Box, { BaseBoxProps } from 'components/simpleUi/Box'
 export type StyledBoxProps = BaseBoxProps
 
 export const StyledBox: React.FC<StyledBoxProps> = styled(Box)`
-  scroll-snap-type: y proximity;
   overflow-x: hidden;
   overflow-y: scroll;
 `

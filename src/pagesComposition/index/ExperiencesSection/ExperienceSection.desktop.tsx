@@ -69,7 +69,6 @@ const Section: React.FC<SectionProps> = ({ experiences }: SectionProps) => {
     onMouseEnter: () => setMouseOn(i),
     onMouseLeave: () => setMouseOn(-1),
   })), [experiences])
-
   return (
     <ScrollBlock
       onProgressChange={onProgressChange}

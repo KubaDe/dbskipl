@@ -15,16 +15,13 @@ const transition: Transition = {
 
 const variants: Variants = {
   before: {
-    y: '120vh',
-    opacity: 0,
+    y: '100vh',
   },
   active: {
     y: 0,
-    opacity: 1,
   },
   after: {
-    y: '-120vh',
-    opacity: 0,
+    y: '-100vh',
   },
 }
 
@@ -53,7 +50,6 @@ const Floating: React.FC<MotionFloatingProps> = (
       ml={{ _: 0, md: '86px' }}
       width={{ _: '100%', md: 'calc(100% - 86px)' }}
       height="100vh"
-      style={{ pointerEvents: 'none' }}
       flexDirection="row"
       alignItems="flex-end"
       justifyContent="center"
