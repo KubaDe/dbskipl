@@ -1,4 +1,5 @@
 import React from 'react'
+import { useLockBodyScroll } from 'react-use'
 
 import Flex, { FlexItem } from 'components/simpleUi/Flex'
 import { BaseBoxProps } from 'components/simpleUi/Box'
@@ -39,6 +40,8 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
     px: '2xl',
     type: isInverted ? 'inverted' : 'primary',
   }
+
+  useLockBodyScroll(isOpen)
 
   return (
     <Topbar
