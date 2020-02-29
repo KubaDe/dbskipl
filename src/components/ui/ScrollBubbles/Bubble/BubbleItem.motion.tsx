@@ -1,13 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
-import {
-  motion,
-  AnimationProps,
-  MotionProps,
-  Variants,
-  useSpring,
-  useTransform,
-} from 'framer-motion'
+import { motion, AnimationProps, MotionProps, Variants } from 'framer-motion'
 
 import Heading, { HeadingProps } from 'components/typography/Heading'
 

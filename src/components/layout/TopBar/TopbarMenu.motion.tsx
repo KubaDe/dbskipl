@@ -1,4 +1,4 @@
-import React, { useRef, RefAttributes } from 'react'
+import React, { RefAttributes } from 'react'
 import { motion, AnimationProps, Variants, MotionProps } from 'framer-motion'
 
 import { TopbarWrapper, TopbarWrapperProps } from './TopbarMenu.styled'

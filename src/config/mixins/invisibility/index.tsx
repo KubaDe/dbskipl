@@ -1,7 +1,7 @@
-import { css, FlattenSimpleInterpolation } from 'styled-components';
-import { math } from 'polished';
-import { styleFn } from 'styled-system';
-import { breakpoints } from 'config/theme/breakpoints';
+import { css, FlattenSimpleInterpolation } from 'styled-components'
+import { math } from 'polished'
+import { styleFn } from 'styled-system'
+import { breakpoints } from 'config/theme/breakpoints'
 
 // TODO: Write tests
 
@@ -11,7 +11,7 @@ const getInvisibleStyle = (
   const scopeSign =
     invisibleVal[0] === '>' || invisibleVal[0] === '<' ? invisibleVal[0] : null
   const rawVal: string = scopeSign ? invisibleVal.substring(1) : invisibleVal
-  if (!Object(breakpoints).hasOwnProperty(rawVal)) {
+  if (!Object.prototype.hasOwnProperty.call(breakpoints, rawVal)) {
     console.warn(`Can not find breakpoint for ${rawVal}`)
     return null
   }
@@ -53,6 +53,7 @@ const getInvisibleStyles = (invisibleArrOrVal: string[] | string) => {
   }
 }
 
-const invisibility: styleFn = (props: {invisible: string | string[]}) => getInvisibleStyles(props.invisible)
+const invisibility: styleFn = (props: { invisible: string | string[] }) =>
+  getInvisibleStyles(props.invisible)
 
 export default invisibility

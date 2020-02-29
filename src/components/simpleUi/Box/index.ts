@@ -1,4 +1,4 @@
-import React, { ElementType, ReactNode, RefObject } from 'react'
+import React, { ElementType, ReactNode } from 'react'
 import styled from 'styled-components'
 
 import invisibility from 'config/mixins/invisibility'
@@ -24,6 +24,18 @@ import {
   PositionProps,
 } from 'styled-system'
 
+interface ComponentProps {
+  as?: ElementType
+  children?: ReactNode
+  invisible?: string | string[]
+  ref?: any
+  style?: object
+  onMouseEnter?: () => void
+  onMouseLeave?: () => void
+  className?: string
+  id?: string
+}
+
 export type BaseBoxProps = SpaceProps &
   LayoutProps &
   TypographyProps &
@@ -32,15 +44,8 @@ export type BaseBoxProps = SpaceProps &
   BoxShadowProps &
   BorderProps &
   PositionProps &
-  SizeProps & {
-    as?: ElementType
-    children?: ReactNode
-    invisible?: string | string[]
-    ref?: any
-    style?: object
-    onMouseEnter?: () => void
-    onMouseLeave?: () => void
-  }
+  SizeProps &
+  ComponentProps
 
 const Box: React.FC<BaseBoxProps> = styled.div<BaseBoxProps>`
   ${space}

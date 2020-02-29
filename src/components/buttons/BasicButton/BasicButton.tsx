@@ -16,29 +16,23 @@ const sizeVariant = variant({
       fontSize: 'buttonXSmall',
       fontWeight: '700',
       height: 'xs',
-      px: 'sm',
     },
     small: {
       fontSize: 'buttonSmall',
       fontWeight: '700',
       height: 'md',
-      px: 'md',
     },
     normal: {
       fontSize: 'buttonNormal',
       fontWeight: '700',
       height: 'lg',
-      px: 'lg',
     },
     large: {
       fontSize: 'buttonLarge',
       fontWeight: '700',
       height: 'xl',
-      px: 'xl',
     },
-    none: {
-      p: 'none',
-    },
+    none: {},
   },
 })
 

@@ -42,4 +42,3 @@ export const MenuItem: React.FC<MenuItemProps> = styled(Box)<MenuItemProps>`
     my: 'sm',
   })}
 `
-

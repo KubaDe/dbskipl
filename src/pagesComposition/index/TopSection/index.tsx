@@ -1,11 +1,8 @@
-import React, { useRef } from 'react'
-import { useScroll } from 'react-use'
+import React from 'react'
 
 import Flex, { FlexItem } from 'components/simpleUi/Flex'
 import Img from 'components/simpleUi/Img'
 import Box from 'components/simpleUi/Box'
-
-import { ScrollBlock } from 'components/layout/buildingBlocks/ScrollBlocks'
 
 import Background from './Background'
 import Heading from './Heading.motion'

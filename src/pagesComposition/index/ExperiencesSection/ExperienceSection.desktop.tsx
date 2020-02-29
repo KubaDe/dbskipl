@@ -47,7 +47,6 @@ interface SectionRelatedProps {
 
 type SectionProps = SectionRelatedProps
 const Section: React.FC<SectionProps> = ({ experiences }: SectionProps) => {
-
   const ExperienceSectionMachine = useMemo(
     () => getExperienceSectionMachine(experiences.length),
     [experiences],
@@ -65,10 +64,14 @@ const Section: React.FC<SectionProps> = ({ experiences }: SectionProps) => {
   const bigBubbleText =
     !isNaN(openBubbleI) && openBubbleI !== -1 ? experiences[openBubbleI] : {}
 
-  const mouseHoverActions = useMemo(() => experiences.map((experience, i) => ({
-    onMouseEnter: () => setMouseOn(i),
-    onMouseLeave: () => setMouseOn(-1),
-  })), [experiences])
+  const mouseHoverActions = useMemo(
+    () =>
+      experiences.map((experience, i) => ({
+        onMouseEnter: () => setMouseOn(i),
+        onMouseLeave: () => setMouseOn(-1),
+      })),
+    [experiences, setMouseOn],
+  )
   return (
     <ScrollBlock
       onProgressChange={onProgressChange}

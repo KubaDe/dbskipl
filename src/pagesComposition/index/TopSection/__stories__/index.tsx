@@ -5,6 +5,4 @@ export default {
   title: 'Pages|Index.TopSection',
 }
 
-export const section = () => (
-  <TopSection />
-)
+export const section = () => <TopSection />

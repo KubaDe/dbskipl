@@ -60,10 +60,11 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
   isInverted,
   isPhoto,
   isShort,
-  wrapperProps={},
+  wrapperProps = {},
 }) => {
   const sidebarMenuButtonProps: MotionBasicButtonProps = {
     sizeVariant: 'xsmall',
+    px: 'sm',
     type: isInverted ? 'inverted' : 'primary',
   }
 
@@ -107,7 +108,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
           <IconButton
             icon={<MenuToggleIcon isOpen={isOpen} />}
             onClick={() => setIsOpen(!isOpen)}
-            type={(isInverted || isOpen) ? 'primary' : 'black'}
+            type={isInverted || isOpen ? 'primary' : 'black'}
           />
         </SidebarButtonWrapper>
       </SidebarContent>

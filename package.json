@@ -69,7 +69,8 @@
     "rules": {
       "prettier/prettier": "error",
       "simple-import-sort/sort": "off",
-      "import/no-unresolved": "off"
+      "import/no-unresolved": "off",
+      "no-empty-pattern": "off"
     }
   },
   "browserslist": {
