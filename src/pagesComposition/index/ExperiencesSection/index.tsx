@@ -2,6 +2,7 @@ import React from 'react'
 
 import Box from 'components/simpleUi/Box'
 
+import ExperienceSectionMobile from './ExperienceSection.mobile'
 import ExperienceSectionDesktop from './ExperienceSection.desktop'
 
 import experiencesJson from './__data__/experiences.json'
@@ -11,8 +12,11 @@ const experiences = experiencesJson as Experiences
 const Section: React.FC = () => {
   return (
     <>
-      <Box>
-        <ExperienceSectionDesktop experiences={experiences}/>
+      <Box invisible="<md">
+        <ExperienceSectionDesktop experiences={experiences} />
+      </Box>
+      <Box invisible=">md">
+        <ExperienceSectionMobile experiences={experiences} />
       </Box>
     </>
   )

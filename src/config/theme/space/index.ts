@@ -9,6 +9,8 @@ export interface Index {
   xl?: string
   '2xl'?: string
   '3xl'?: string
+  tbar?: string
+  sbar?: string
   [index: number]: number
 }
 
@@ -24,3 +26,6 @@ space['lg'] = space[6] + 'px'
 space['xl'] = space[7] + 'px'
 space['2xl'] = space[8] + 'px'
 space['3xl'] = space[9] + 'px'
+space['3xl'] = space[9] + 'px'
+space['tbar'] = '76px'
+space['sbar'] = '86px'

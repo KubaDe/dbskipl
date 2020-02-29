@@ -32,15 +32,21 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
   setIsOpen,
   isInverted,
   isPhoto,
-  wrapperProps={},
+  wrapperProps = {},
 }) => {
   const topbarMenuButtonProps: MotionBasicButtonProps = {
-    sizeVariant: 'xsmall',
+    sizeVariant: 'small',
+    px: '2xl',
     type: isInverted ? 'inverted' : 'primary',
   }
 
   return (
-    <Topbar isOpen={isOpen} setIsOpen={setIsOpen} isInverted={isInverted} {...wrapperProps}>
+    <Topbar
+      isOpen={isOpen}
+      setIsOpen={setIsOpen}
+      isInverted={isInverted}
+      {...wrapperProps}
+    >
       <Flex
         alignItems="flex-start"
         justifyContent="space-between"
@@ -67,7 +73,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
           <IconButton
             icon={<MenuToggleIcon isOpen={isOpen} />}
             onClick={() => setIsOpen(!isOpen)}
-            type={isInverted ? 'inverted' : 'primary'}
+            type={isInverted || isOpen ? 'primary' : 'black'}
           />
         </SidebarButtonWrapper>
       </Flex>

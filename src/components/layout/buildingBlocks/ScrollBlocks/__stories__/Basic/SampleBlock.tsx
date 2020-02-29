@@ -2,9 +2,7 @@ import React from 'react'
 import { useMachine } from '@xstate/react'
 
 import { ScrollBlockProps } from '../../'
-import SampleBlockMachine, {
-  ThresholdEvent,
-} from './SampleBlock.machine'
+import SampleBlockMachine, { ThresholdEvent } from './SampleBlock.machine'
 import { StyledScrollBlock } from './SampleBlock.styled'
 
 const thresholdEventFactory = (progress: number): ThresholdEvent => ({

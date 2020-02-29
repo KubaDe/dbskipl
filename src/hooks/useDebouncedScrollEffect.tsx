@@ -11,7 +11,6 @@ const useDebouncedScrollEffect = (
   effect: ({ x, y }: EffectArgs) => void,
   time: number,
 ): void => {
-
   useEffect(() => {
     const handler = () => {
       effect({
@@ -34,7 +33,7 @@ const useDebouncedScrollEffect = (
         document.removeEventListener('scroll', debouncedHandler)
       }
     }
-  }, [effect])
+  }, [effect, time])
 }
 
 export default useDebouncedScrollEffect

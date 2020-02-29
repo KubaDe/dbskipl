@@ -1,8 +1,8 @@
-import { Machine } from 'xstate';
-import range from 'lodash/range';
-import fromPairs from 'lodash/fromPairs';
+import { Machine } from 'xstate'
+import range from 'lodash/range'
+import fromPairs from 'lodash/fromPairs'
 
-export const thresholds: number[] = [0.4, 1]
+export const thresholds: number[] = [0.25, 1]
 
 export interface ProgressEvent {
   type: string
@@ -49,9 +49,7 @@ const checkThresholdDown = (
 
 const getSubThresholds = (bubblesN: number): number[] => {
   const step = (thresholds[1] - thresholds[0]) / bubblesN
-  return range(bubblesN).map(
-    bubbleNo => thresholds[0] + (bubbleNo + 1) * step,
-  )
+  return range(bubblesN).map(bubbleNo => thresholds[0] + (bubbleNo + 1) * step)
 }
 
 const getActiveSubStates = (bubblesN: number) => {

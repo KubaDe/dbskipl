@@ -24,7 +24,7 @@ const circleVariants: Variants = {
   },
   black: {
     stroke: '#FFFFFF',
-  }
+  },
 }
 
 const IconButton: React.FC<IconButtonProps> = (props: IconButtonProps) => {

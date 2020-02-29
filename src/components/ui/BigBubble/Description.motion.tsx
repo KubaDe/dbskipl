@@ -1,5 +1,5 @@
 import React from 'react'
-import { motion, AnimationProps, MotionProps, Variants } from 'framer-motion'
+import { motion, AnimationProps, MotionProps } from 'framer-motion'
 
 import Text, { BaseTextProps } from 'components/simpleUi/Text'
 

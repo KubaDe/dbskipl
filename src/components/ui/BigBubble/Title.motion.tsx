@@ -15,11 +15,7 @@ const MotionTitle: React.FC<MotionTitleProps> = motion.custom(Heading)
 const Title: React.FC<MotionTitleProps> = (props: MotionTitleProps) => {
   const {} = props
   return (
-    <MotionTitle
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      {...props}
-    />
+    <MotionTitle initial={{ opacity: 0 }} animate={{ opacity: 1 }} {...props} />
   )
 }
 

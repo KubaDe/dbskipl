@@ -7,6 +7,7 @@ import Heading from 'components/typography/Heading'
 
 import BubbleItem from './BubbleItem.motion'
 import BubbleItemWrapper from './BubbleItemWrapper.motion'
+import BubbleItemWrapperMotion from './BubbleWrapper.motion'
 import { BubbleWrapper, BubbleWrapperProps } from './Bubble.styled'
 
 import useMorphBubblePath from './useMorphBubblePath'
@@ -16,6 +17,7 @@ const BubbleSvg = BubbleWrapper as React.FC<BubbleSvgProps>
 
 interface BubbleRelatedProps {
   isOpen: boolean
+  isScalable?: boolean
   title: string
   items: string[]
 }
@@ -36,22 +38,24 @@ const useInertOpen = (isOpen: boolean) => {
 
 export type BubbleProps = BubbleWrapperProps & BubbleRelatedProps
 const Bubble: React.FC<BubbleProps> = (props: BubbleProps) => {
-  const { isOpen, title, items } = props
+  const { isOpen, title, items, isScalable = false } = props
   const inertOpen = useInertOpen(isOpen)
   const path = useMorphBubblePath(inertOpen)
   return (
-    <BubbleWrapper width="184px" height="263px" position="relative" {...props}>
+    <BubbleItemWrapperMotion
+      width="184px"
+      height="263px"
+      position="relative"
+      animate={isScalable && isOpen ? 'zoom' : 'normal'}
+      {...props}
+    >
       <Flex
         width="167px"
         height="167px"
         alignItems="center"
         justifyContent="center"
       >
-        <Heading
-          color="inverted"
-          zIndex={1}
-          fontSize="h4"
-        >
+        <Heading color="inverted" zIndex={1} fontSize="h4">
           {title}
         </Heading>
       </Flex>
@@ -71,7 +75,7 @@ const Bubble: React.FC<BubbleProps> = (props: BubbleProps) => {
       >
         <motion.path d={path} />
       </BubbleSvg>
-    </BubbleWrapper>
+    </BubbleItemWrapperMotion>
   )
 }
 

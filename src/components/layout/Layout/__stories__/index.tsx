@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { withKnobs, boolean } from '@storybook/addon-knobs'
+import React from 'react'
+import { withKnobs } from '@storybook/addon-knobs'
 
 import Box from 'components/simpleUi/Box'
 
@@ -13,7 +13,7 @@ export default {
 export const Basic = () => {
   return (
     <Box height="200vh" backgroundColor="secondaries.200">
-      <Layout/>
+      <Layout />
     </Box>
   )
 }
