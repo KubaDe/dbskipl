@@ -29,7 +29,9 @@ const FullPageModal: React.FC<FullPageModalProps> = (
     contentAnimation,
     modalAnimation,
     introAnimation,
-  } = useModalAnimations(isOpen)
+  } = useModalAnimations(isOpen, {
+    onOpenEnd: fullPageModalController.openEnd
+  })
   useLockBodyScroll(isOpen)
   return (
     <AnimatePresence>
@@ -44,6 +46,7 @@ const FullPageModal: React.FC<FullPageModalProps> = (
           left={0}
           height="100%"
           width="100%"
+          zIndex={{ md: 99, _: 101 }}
         >
           <IntroMotion
             key="modal-intro"

@@ -2,6 +2,7 @@ import React, { RefAttributes } from 'react'
 import { motion, AnimationProps, Variants, MotionProps } from 'framer-motion'
 
 import { TopbarWrapper, TopbarWrapperProps } from './TopbarMenu.styled'
+import { colors } from '../../../config/theme/colors'
 
 interface TopbarRelatedProps {
   isOpen: boolean
@@ -41,18 +42,22 @@ const sidebarVariants: Variants = {
   open_basic: {
     ...openBase,
     backgroundColor: 'rgba(255, 255, 255, 1)',
+    borderBottomColor: colors.black,
   },
   closed_basic: {
     ...closeBase,
     backgroundColor: 'rgba(255, 255, 255, 0)',
+    borderBottomColor: colors.black,
   },
   open_inverted: {
     ...openBase,
     backgroundColor: 'rgba(0, 0, 0, 1)',
+    borderBottomColor: colors.inverted,
   },
   closed_inverted: {
     ...closeBase,
     backgroundColor: 'rgba(255, 255, 255, 0)',
+    borderBottomColor: colors.inverted,
   },
 }
 

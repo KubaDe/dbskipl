@@ -1,4 +1,4 @@
-import React, { ElementType, ReactNode } from 'react'
+import React, { ChangeEvent, ElementType, ReactNode } from 'react';
 import styled from 'styled-components'
 
 import invisibility from 'config/mixins/invisibility'
@@ -32,7 +32,9 @@ interface ComponentProps {
   style?: object
   onMouseEnter?: () => void
   onMouseLeave?: () => void
+  onClick?: (e: any) => void // TODO: Find better solution
   className?: string
+  name?: string
   id?: string
 }
 

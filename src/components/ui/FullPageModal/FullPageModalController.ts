@@ -1,26 +1,32 @@
 import { TriggerPoint } from './useFullPageModalLogic'
 export interface OpenEvent {
   triggerPoint: TriggerPoint
-  value: boolean
 }
 
 export type OpenObserver = { (e: OpenEvent): void }
 export type CloseObserver = { (): void }
-type Observer = OpenObserver | CloseObserver
+export type OpenEndObserver = { (): void }
+export type CloseEndObserver = { (): void }
 
-type Event = 'open' | 'close'
+type Observer = OpenObserver | CloseObserver | OpenEndObserver | CloseEndObserver
+
+type Event = 'open' | 'close' | 'openEnd' | 'closeEnd'
 
 class FullPageModalController {
   constructor() {
     this.observers = {
       open: [],
       close: [],
+      openEnd: [],
+      closeEnd: [],
     }
   }
 
   private readonly observers: {
     open: { (e: OpenEvent): void }[]
     close: { (): void }[]
+    openEnd: { (): void }[]
+    closeEnd: { (): void }[]
   }
 
   public subscribe<T extends Observer>(event: Event, f: T) {
@@ -40,9 +46,19 @@ class FullPageModalController {
     this.observers.open.forEach(observer => observer(openEvent))
   }
 
+  public openEnd = () => {
+    this.observers.openEnd.forEach(observer => observer())
+  }
+
   public close = () => {
     this.observers.close.forEach(observer => observer())
   }
+
+  public closeEnd = () => {
+    this.observers.closeEnd.forEach(observer => observer())
+  }
+
+
 }
 
 export default FullPageModalController

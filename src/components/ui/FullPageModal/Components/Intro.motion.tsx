@@ -21,12 +21,12 @@ const variants: Variants = {
     },
   }),
   active: {
-    x: 'min(-50vw, -50vh)',
-    y: 'min(-50vw, -50vh)',
-    width: 'max(200vw, 200vh)',
-    height: 'max(200vw, 200vh)',
+    x: 'min(-25vw, -25vh)',
+    y: 'min(-25vw, -25vh)',
+    width: 'max(150vw, 150vh)',
+    height: 'max(150vw, 150vh)',
     transition: {
-      duration: 1.5,
+      duration: 1,
     },
   },
 }

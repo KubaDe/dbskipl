@@ -6,14 +6,14 @@ import Flex from 'components/simpleUi/Flex'
 import Heading from 'components/typography/Heading'
 
 import BubbleItem from './BubbleItem.motion'
-import BubbleItemWrapper from './BubbleItemWrapper.motion'
+import BubbleItemWrapper, { MotionBubbleItemWrapperProps} from './BubbleItemWrapper.motion'
 import BubbleItemWrapperMotion from './BubbleWrapper.motion'
-import { BubbleWrapper, BubbleWrapperProps } from './Bubble.styled'
+import { BubbleSVGWrapper } from './Bubble.styled'
 
 import useMorphBubblePath from './useMorphBubblePath'
 
 type BubbleSvgProps = BaseBoxProps & { viewBox: string }
-const BubbleSvg = BubbleWrapper as React.FC<BubbleSvgProps>
+const BubbleSvg = BubbleSVGWrapper as React.FC<BubbleSvgProps>
 
 interface BubbleRelatedProps {
   isOpen: boolean
@@ -36,7 +36,7 @@ const useInertOpen = (isOpen: boolean) => {
   return inertOpen
 }
 
-export type BubbleProps = BubbleWrapperProps & BubbleRelatedProps
+export type BubbleProps = MotionBubbleItemWrapperProps & BubbleRelatedProps
 const Bubble: React.FC<BubbleProps> = (props: BubbleProps) => {
   const { isOpen, title, items, isScalable = false } = props
   const inertOpen = useInertOpen(isOpen)

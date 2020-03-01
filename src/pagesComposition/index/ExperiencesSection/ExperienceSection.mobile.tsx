@@ -1,4 +1,5 @@
-import React, { useCallback, useState } from 'react'
+import React, { ChangeEvent, useCallback, useState } from 'react';
+import Link from 'next/link'
 
 import BgText from 'components/typography/BgText'
 import { ScrollBlock } from 'components/layout/buildingBlocks/ScrollBlocks'
@@ -12,10 +13,14 @@ import { Experiences } from './__data__/Experiences'
 
 interface SectionRelatedProps {
   experiences: Experiences
+  onBubbleClick: (e: ChangeEvent<HTMLAnchorElement> & MouseEvent) => void
 }
 
 type SectionProps = SectionRelatedProps
-const Section: React.FC<SectionProps> = ({ experiences }: SectionProps) => {
+const Section: React.FC<SectionProps> = ({
+  experiences,
+  onBubbleClick,
+}: SectionProps) => {
   const [isVisible, setIsVisible] = useState(false)
 
   const onProgressChange = useCallback((progress: number) => {
@@ -61,6 +66,9 @@ const Section: React.FC<SectionProps> = ({ experiences }: SectionProps) => {
                   items={[experience.start, experience.end]}
                   isOpen={isOpen}
                   isScalable
+                  as="a"
+                  name={experience.slug}
+                  onClick={onBubbleClick}
                 />
               )}
             </BubbleWrapper>

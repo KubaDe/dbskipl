@@ -7,13 +7,21 @@ interface ModalAnimations {
   introAnimation: AnimationControls
 }
 
-const useModalAnimations = (isOpen: boolean): ModalAnimations => {
+interface AnimationEvents {
+  onOpenEnd: () => void
+}
+
+const useModalAnimations = (
+  isOpen: boolean,
+  animationEvents: AnimationEvents,
+): ModalAnimations => {
   const modalAnimation = useAnimation()
   const contentAnimation = useAnimation()
   const introAnimation = useAnimation()
   useEffect(() => {
     const flowOpen = async () => {
       await introAnimation.start('active')
+      animationEvents.onOpenEnd()
       await modalAnimation.start('active')
       await contentAnimation.start('active')
       await introAnimation.start('initial')
@@ -21,7 +29,13 @@ const useModalAnimations = (isOpen: boolean): ModalAnimations => {
     if (isOpen) {
       flowOpen()
     }
-  }, [contentAnimation, introAnimation, isOpen, modalAnimation])
+  }, [
+    contentAnimation,
+    introAnimation,
+    isOpen,
+    modalAnimation,
+    animationEvents.onOpenEnd,
+  ])
   return {
     modalAnimation,
     contentAnimation,

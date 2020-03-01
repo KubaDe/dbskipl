@@ -1,6 +1,7 @@
-import React, { useMemo, useState } from 'react'
+import React, { ChangeEvent, useMemo, useState } from 'react'
 import { useMachine } from '@xstate/react'
 import debounce from 'lodash/debounce'
+import ShallowLink from 'components/helpers/ShallowLink'
 
 import Box from 'components/simpleUi/Box'
 import BgText from 'components/typography/BgText'
@@ -43,27 +44,27 @@ const useDebouncedMouseHover = (): {
 
 interface SectionRelatedProps {
   experiences: Experiences
+  onBubbleClick: (e: ChangeEvent<HTMLAnchorElement> & MouseEvent) => void
 }
 
 type SectionProps = SectionRelatedProps
-const Section: React.FC<SectionProps> = ({ experiences }: SectionProps) => {
+const Section: React.FC<SectionProps> = ({
+  experiences,
+  onBubbleClick,
+}: SectionProps) => {
   const ExperienceSectionMachine = useMemo(
     () => getExperienceSectionMachine(experiences.length),
     [experiences],
   )
-
   const [current, send] = useMachine(ExperienceSectionMachine)
   const state: string[] = current.toStrings()
-
   const onProgressChange = (progress: number): void => {
     !current.done && send(eventFactory(progress))
   }
-
   const { mouseOn, setMouseOn } = useDebouncedMouseHover()
   const openBubbleI = mouseOn !== -1 ? mouseOn : Number(state[1]?.split('.')[1])
   const bigBubbleText =
     !isNaN(openBubbleI) && openBubbleI !== -1 ? experiences[openBubbleI] : {}
-
   const mouseHoverActions = useMemo(
     () =>
       experiences.map((experience, i) => ({
@@ -106,13 +107,18 @@ const Section: React.FC<SectionProps> = ({ experiences }: SectionProps) => {
           <Box position="absolute" bottom="150px" width="100%">
             <HorizontalAxis
               bubbles={experiences.map((experience, i) => (
-                <Bubble
-                  key={i}
-                  title={experience.title}
-                  items={[experience.start, experience.end]}
-                  isOpen={i === openBubbleI}
-                  {...mouseHoverActions[i]}
-                />
+                <ShallowLink href={`/?company=${experience.slug}`}>
+                  <Bubble
+                    key={i}
+                    title={experience.title}
+                    items={[experience.start, experience.end]}
+                    isOpen={i === openBubbleI}
+                    {...mouseHoverActions[i]}
+                    name={experience.slug}
+                    onClick={onBubbleClick}
+                    as="a"
+                  />
+                </ShallowLink>
               ))}
             />
           </Box>

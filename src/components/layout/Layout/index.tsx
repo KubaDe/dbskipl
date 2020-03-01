@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import SidebarMenu from 'components/layout/SidebarMenu'
 import TopBar from 'components/layout/TopBar'
 
+import { useMenuBarControllerLogic, MenuBarControllerContext } from './menuBarController'
+
 interface LayoutRelatedProps {
   children?: React.ReactNode
 }
@@ -11,12 +13,14 @@ type LayoutProps = LayoutRelatedProps
 
 const Layout: React.FC<LayoutProps> = (props: LayoutProps) => {
   const { children } = props
-  const [isOpen, setIsOpen] = useState(false)
+  const menuBarController  = useMenuBarControllerLogic()
+  const { isInverted, isOpen, setIsOpen } = menuBarController
+
   return (
-    <>
+    <MenuBarControllerContext.Provider value={menuBarController}>
       <SidebarMenu
         isPhoto={false}
-        isInverted={false}
+        isInverted={isInverted}
         isShort={false}
         isOpen={isOpen}
         setIsOpen={setIsOpen}
@@ -26,7 +30,7 @@ const Layout: React.FC<LayoutProps> = (props: LayoutProps) => {
       />
       <TopBar
         isPhoto={false}
-        isInverted={false}
+        isInverted={isInverted}
         isShort={true}
         isOpen={isOpen}
         setIsOpen={setIsOpen}
@@ -35,7 +39,7 @@ const Layout: React.FC<LayoutProps> = (props: LayoutProps) => {
         }}
       />
       {children}
-    </>
+    </MenuBarControllerContext.Provider>
   )
 }
 

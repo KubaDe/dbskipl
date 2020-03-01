@@ -5,6 +5,8 @@ import { motion, AnimationProps, Variants, MotionProps } from 'framer-motion'
 import useOutsideClick from 'hooks/useOutsideClick'
 import { SidebarWrapper, SidebarWrapperProps } from './SidebarMenu.styled'
 
+import {colors} from 'config/theme/colors'
+
 interface SidebarRelatedProps {
   isOpen: boolean
   isInverted: boolean
@@ -42,18 +44,22 @@ const sidebarVariants: Variants = {
   open_basic: {
     ...openBase,
     backgroundColor: 'rgba(255, 255, 255, 1)',
+    borderRightColor: colors.black,
   },
   closed_basic: {
     ...closeBase,
     backgroundColor: 'rgba(255, 255, 255, 0)',
+    borderRightColor: colors.black,
   },
   open_inverted: {
     ...openBase,
     backgroundColor: 'rgba(0, 0, 0, 1)',
+    borderRightColor: colors.inverted,
   },
   closed_inverted: {
     ...closeBase,
     backgroundColor: 'rgba(255, 255, 255, 0)',
+    borderRightColor: colors.inverted,
   },
 }
 

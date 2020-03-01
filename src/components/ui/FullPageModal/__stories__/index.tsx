@@ -17,9 +17,8 @@ const Story = () => {
       <Button
         width="300px"
         height="300px"
-        onClick={e =>
+        onClick={(e: MouseEvent) =>
           fullPageModalController.open({
-            value: true,
             triggerPoint: {
               x: e.clientX,
               y: e.clientY,

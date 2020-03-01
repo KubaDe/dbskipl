@@ -7,7 +7,7 @@ import {
   Transition,
 } from 'framer-motion'
 
-import Box, { BaseBoxProps } from 'components/simpleUi/Box'
+import { StyledBubbleWrapper, StyledBubbleWrapperProps } from './Bubble.styled'
 
 const transition: Transition = {
   when: 'beforeChildren',
@@ -33,11 +33,11 @@ interface BubbleWrapperRelatedProps {}
 
 export type MotionBubbleWrapperProps = AnimationProps &
   BubbleWrapperRelatedProps &
-  BaseBoxProps &
+  StyledBubbleWrapperProps &
   MotionProps
 
 const MotionBubbleWrapper: React.FC<MotionBubbleWrapperProps> = motion.custom(
-  Box,
+  StyledBubbleWrapper,
 )
 
 const BubbleWrapper: React.FC<MotionBubbleWrapperProps> = (
