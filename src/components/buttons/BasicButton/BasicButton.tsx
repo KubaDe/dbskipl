@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { variant } from 'styled-system'
 import css from '@styled-system/css'
 
 import Flex, { BaseFlexProps } from 'components/simpleUi/Flex'
@@ -9,32 +8,33 @@ interface ButtonRelatedProps {
   outline?: boolean
 }
 
-const sizeVariant = variant({
-  prop: 'sizeVariant',
-  variants: {
-    xsmall: {
-      fontSize: 'buttonXSmall',
-      fontWeight: '700',
-      height: 'xs',
-    },
-    small: {
-      fontSize: 'buttonSmall',
-      fontWeight: '700',
-      height: 'md',
-    },
-    normal: {
-      fontSize: 'buttonNormal',
-      fontWeight: '700',
-      height: 'lg',
-    },
-    large: {
-      fontSize: 'buttonLarge',
-      fontWeight: '700',
-      height: 'xl',
-    },
-    none: {},
+const sizeVariants = {
+  xsmall: {
+    fontSize: 'buttonXSmall',
+    fontWeight: '700',
+    height: 'xs',
+    px: 'xs',
   },
-})
+  small: {
+    fontSize: 'buttonSmall',
+    fontWeight: '700',
+    height: 'md',
+    px: 'md',
+  },
+  normal: {
+    fontSize: 'buttonNormal',
+    fontWeight: '700',
+    height: 'lg',
+    px: 'lg',
+  },
+  large: {
+    fontSize: 'buttonLarge',
+    fontWeight: '700',
+    height: 'xl',
+    px: 'xl',
+  },
+  none: {},
+}
 
 export type SizeVariant = 'xsmall' | 'small' | 'normal' | 'large' | 'none'
 
@@ -47,12 +47,15 @@ export type BasicButtonProps = BaseFlexProps &
   SizeVariantsProps
 
 export const BasicButton: React.FC<BasicButtonProps> = styled(Flex).attrs(
-  props => ({
+  (props: BasicButtonProps) => ({
     as: 'button',
     flexWrap: 'nowrap',
+    ...(props.sizeVariant && sizeVariants[props.sizeVariant]
+      ? sizeVariants[props.sizeVariant]
+      : {}),
+    ...props,
   }),
 )<BasicButtonProps>`
-  ${sizeVariant};
   ${css({
     fontFamily: 'primary',
     boxShadow: 'primaries.500',
