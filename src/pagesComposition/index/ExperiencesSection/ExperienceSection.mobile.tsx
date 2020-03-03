@@ -1,5 +1,4 @@
-import React, { ChangeEvent, useCallback, useState } from 'react';
-import Link from 'next/link'
+import React, { ChangeEvent, useCallback, useState } from 'react'
 
 import BgText from 'components/typography/BgText'
 import { ScrollBlock } from 'components/layout/buildingBlocks/ScrollBlocks'

@@ -8,7 +8,11 @@ export type CloseObserver = { (): void }
 export type OpenEndObserver = { (): void }
 export type CloseEndObserver = { (): void }
 
-type Observer = OpenObserver | CloseObserver | OpenEndObserver | CloseEndObserver
+type Observer =
+  | OpenObserver
+  | CloseObserver
+  | OpenEndObserver
+  | CloseEndObserver
 
 type Event = 'open' | 'close' | 'openEnd' | 'closeEnd'
 
@@ -57,8 +61,6 @@ class FullPageModalController {
   public closeEnd = () => {
     this.observers.closeEnd.forEach(observer => observer())
   }
-
-
 }
 
 export default FullPageModalController

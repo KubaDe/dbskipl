@@ -35,6 +35,7 @@ const useModalAnimations = (
     isOpen,
     modalAnimation,
     animationEvents.onOpenEnd,
+    animationEvents,
   ])
   return {
     modalAnimation,

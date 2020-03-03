@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import SidebarMenu from 'components/layout/SidebarMenu'
 import TopBar from 'components/layout/TopBar'
 
-import { useMenuBarControllerLogic, MenuBarControllerContext } from './menuBarController'
+import {
+  useMenuBarControllerLogic,
+  MenuBarControllerContext,
+} from './menuBarController'
 
 interface LayoutRelatedProps {
   children?: React.ReactNode
@@ -13,7 +16,7 @@ type LayoutProps = LayoutRelatedProps
 
 const Layout: React.FC<LayoutProps> = (props: LayoutProps) => {
   const { children } = props
-  const menuBarController  = useMenuBarControllerLogic()
+  const menuBarController = useMenuBarControllerLogic()
   const { isInverted, isOpen, setIsOpen } = menuBarController
 
   return (
