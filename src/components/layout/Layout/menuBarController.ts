@@ -3,6 +3,8 @@ import { useState, createContext, useContext } from 'react'
 interface MenuBarController {
   isInverted: boolean
   setIsInverted: (value: boolean) => void
+  setIsInvertedTrue: () => void
+  setIsInvertedFalse: () => void
   isOpen: boolean
   setIsOpen: (value: boolean) => void
 }
@@ -10,6 +12,8 @@ interface MenuBarController {
 export const MenuBarControllerContext = createContext<MenuBarController>({
   isInverted: false,
   setIsInverted: () => {},
+  setIsInvertedTrue: () => {},
+  setIsInvertedFalse: () => {},
   isOpen: false,
   setIsOpen: () => {},
 })
@@ -23,6 +27,8 @@ export const useMenuBarControllerLogic = (): MenuBarController => {
   return {
     isInverted,
     setIsInverted,
+    setIsInvertedTrue: () => setIsInverted(true),
+    setIsInvertedFalse: () => setIsInverted(false),
     isOpen,
     setIsOpen,
   }
