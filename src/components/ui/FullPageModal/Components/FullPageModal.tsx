@@ -30,7 +30,7 @@ const FullPageModal: React.FC<FullPageModalProps> = (
     modalAnimation,
     introAnimation,
   } = useModalAnimations(isOpen, {
-    onOpenEnd: fullPageModalController.openEnd
+    onOpenEnd: fullPageModalController.openEnd,
   })
   useLockBodyScroll(isOpen)
   return (

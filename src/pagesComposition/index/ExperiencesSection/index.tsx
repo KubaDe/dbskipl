@@ -1,4 +1,4 @@
-import React, { useCallback, ChangeEvent, useEffect } from 'react';
+import React, { useCallback, ChangeEvent, useEffect } from 'react'
 
 import Box from 'components/simpleUi/Box'
 
@@ -6,7 +6,8 @@ import {
   FullPageModal,
   useFullPageModalController,
 } from 'components/ui/FullPageModal'
-import {useMenuBarController} from 'components/layout/Layout/menuBarController'
+import { useMenuBarController } from 'components/layout/Layout/menuBarController'
+import FullPageModalController from 'components/ui/FullPageModal/FullPageModalController';
 
 import ExperienceSectionMobile from './ExperienceSection.mobile'
 import ExperienceSectionDesktop from './ExperienceSection.desktop'
@@ -16,8 +17,27 @@ import experiencesJson from './__data__/experiences.json'
 import { Experiences } from './__data__/Experiences'
 const experiences = experiencesJson as Experiences
 
+
+interface useMenuBarModalEffectsProps {
+  fullPageModalController: FullPageModalController
+}
+const useMenuBarModalEffects = (props: useMenuBarModalEffectsProps) => {
+  const {fullPageModalController} = props
+  const { setIsInvertedFalse, setIsInvertedTrue } = useMenuBarController()
+  useEffect(() => {
+    fullPageModalController.subscribe('openEnd', setIsInvertedTrue)
+    fullPageModalController.subscribe('close', setIsInvertedFalse)
+    return () => {
+      fullPageModalController.unsubscribe('openEnd', setIsInvertedTrue)
+      fullPageModalController.unsubscribe('close', setIsInvertedFalse)
+    }
+  }, [fullPageModalController, setIsInvertedFalse, setIsInvertedTrue])
+}
+
 const Section: React.FC = () => {
   const fullPageModalController = useFullPageModalController()
+  useMenuBarModalEffects({fullPageModalController})
+
   const onBubbleClick = useCallback(
     (e: ChangeEvent<HTMLAnchorElement> & MouseEvent) => {
       fullPageModalController.open({
@@ -27,15 +47,8 @@ const Section: React.FC = () => {
         },
       })
     },
-    [],
+    [fullPageModalController],
   )
-
-  const { setIsInverted } = useMenuBarController()
-
-  useEffect(() => {
-    fullPageModalController.subscribe('openEnd', () => setIsInverted(true))
-    fullPageModalController.subscribe('close', () => setIsInverted(false))
-  },[])
 
   return (
     <>
@@ -52,9 +65,7 @@ const Section: React.FC = () => {
         />
       </Box>
       <FullPageModal fullPageModalController={fullPageModalController}>
-        <CompanyModalContent
-          close={fullPageModalController.close}
-        />
+        <CompanyModalContent close={fullPageModalController.close} />
       </FullPageModal>
     </>
   )

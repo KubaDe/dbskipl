@@ -1,4 +1,4 @@
-import React, { ChangeEvent, ElementType, ReactNode } from 'react';
+import React, { ElementType, ReactNode } from 'react'
 import styled from 'styled-components'
 
 import invisibility from 'config/mixins/invisibility'

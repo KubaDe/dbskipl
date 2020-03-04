@@ -6,7 +6,9 @@ import Flex from 'components/simpleUi/Flex'
 import Heading from 'components/typography/Heading'
 
 import BubbleItem from './BubbleItem.motion'
-import BubbleItemWrapper, { MotionBubbleItemWrapperProps} from './BubbleItemWrapper.motion'
+import BubbleItemWrapper, {
+  MotionBubbleItemWrapperProps,
+} from './BubbleItemWrapper.motion'
 import BubbleItemWrapperMotion from './BubbleWrapper.motion'
 import { BubbleSVGWrapper } from './Bubble.styled'
 

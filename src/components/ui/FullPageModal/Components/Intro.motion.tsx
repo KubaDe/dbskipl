@@ -1,10 +1,5 @@
 import React from 'react'
-import {
-  motion,
-  AnimationProps,
-  MotionProps,
-  Variants,
-} from 'framer-motion'
+import { motion, AnimationProps, MotionProps, Variants } from 'framer-motion'
 
 import Box, { BaseBoxProps } from 'components/simpleUi/Box'
 
