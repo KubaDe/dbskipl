@@ -1,30 +1,34 @@
 import React from 'react'
-import { FiX } from 'react-icons/fi'
 
-import IconButton from 'components/buttons/IconButton'
+import { H1 } from 'components/typography/Heading'
+import BgText from 'components/typography/BgText'
+
+import CompanyModalContentWrapper from './CompanyModalContentWrapper'
+import InformationSection from './InformationSection'
+import ProjectsSection from './ProjectsSection'
 
 interface CompanyModalContentRelatedProps {
   close: () => void
 }
-
 type CompanyModalContentProps = CompanyModalContentRelatedProps
-
 const CompanyModalContent: React.FC<CompanyModalContentProps> = (
   props: CompanyModalContentProps,
 ) => {
   const { close } = props
   return (
-    <>
-      <IconButton
-        icon={<FiX />}
-        onClick={close}
-        position="absolute"
-        top={{ md: 'lg', _: 'md' }}
-        // bottom={{ md: 'auto', _: 'md' }}
-        right={{ md: 'lg', _: 'md' }}
-        type="primary"
-      />
-    </>
+    <CompanyModalContentWrapper close={close}>
+      <H1 fontSize={{ _: 'h2', md: 'h1' }}>Ideamotive</H1>
+      <InformationSection />
+      <H1 fontSize={{ _: 'h3', md: 'h2' }}>
+        <BgText as="span" padSize="sm" mx="sm" inverted>
+          Projects
+        </BgText>
+      </H1>
+      <ProjectsSection />
+      <ProjectsSection />
+      <ProjectsSection />
+      <ProjectsSection />
+    </CompanyModalContentWrapper>
   )
 }
 

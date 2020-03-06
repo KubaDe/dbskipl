@@ -8,6 +8,7 @@ import Box from 'components/simpleUi/Box'
 
 interface BgTextRelatedProps {
   padSize?: string
+  inverted?: boolean
 }
 
 export type BgTextProps = BaseTextProps & BgTextRelatedProps
@@ -17,25 +18,30 @@ const BgTextPropsComponent: React.FC<BgTextProps> = styled(Text)`
 `
 
 const Highlight = styled(Box).attrs({ as: 'span' })<BgTextProps>`
-  ${css({
-    backgroundColor: 'black',
-    color: 'inverted',
-    display: 'inline',
-  })};
+  ${props =>
+    css({
+      backgroundColor: props.inverted ? 'inverted' : 'black',
+      color: props.inverted ? 'black' : 'inverted',
+      display: props.inverted ? 'black' : 'inline',
+    })};
   line-height: 1.4em;
   box-decoration-break: clone;
   box-shadow: ${props => themeGet(`space.${props.padSize}`, '0')} 0 0
-      ${themeGet('colors.black', '#000')},
-    -${props => themeGet(`space.${props.padSize}`, '0')} 0 0 ${themeGet('colors.black', '#000')};
+      ${props =>
+        themeGet(props.inverted ? 'colors.inverted' : 'colors.black', '#000')},
+    -${props => themeGet(`space.${props.padSize}`, '0')} 0 0 ${props => themeGet(props.inverted ? 'colors.inverted' : 'colors.black', '#000')};
 `
 
 const BgTextProps: React.FC<BgTextProps> = ({
   children,
-  padSize,
+  padSize = 'md',
+  inverted = false,
   ...props
 }: BgTextProps) => (
   <BgTextPropsComponent {...props}>
-    <Highlight padSize={padSize || 'md'}>{children}</Highlight>
+    <Highlight padSize={padSize} inverted={inverted}>
+      {children}
+    </Highlight>
   </BgTextPropsComponent>
 )
 

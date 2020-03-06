@@ -11,9 +11,6 @@ import { useMenuBarController } from 'components/layout/Layout/menuBarController
 import CompanyModalContent from '../CompanyModalContent'
 import ExperienceSection from '../'
 
-import experiencesJson from '../__data__/experiences.json'
-import { Experiences } from '../__data__/Experiences'
-
 export default {
   title: 'Pages|Index.ExperienceSection',
 }
@@ -38,7 +35,7 @@ const Modal = () => {
         y: 100,
       },
     })
-  }, [])
+  }, [fullPageModalController, setIsInvertedTrue])
 
   return (
     <FullPageModal fullPageModalController={fullPageModalController}>
