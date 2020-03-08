@@ -65,6 +65,9 @@ export const BasicButton: React.FC<BasicButtonProps> = styled(Flex).attrs(
   cursor: pointer;
   white-space: nowrap;
   box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
   ${props =>
       props.outline &&
       css({
