@@ -1,0 +1,34 @@
+[
+  [
+    { "label": "JavaScript" },
+    { "label": "TypeScript" },
+    { "label": "MongoDB" },
+    { "label": "Node.js" },
+    { "label": "Next.js" },
+    { "label": "Lodash" }
+  ],
+  [
+    { "label": "React" },
+    { "label": "Redux" },
+    { "label": "Redux Saga" },
+    { "label": "Recompose" },
+    { "label": "GraphQL" },
+    { "label": "Apollo" }
+  ],
+  [
+    { "label": "Styled Components" },
+    { "label": "Material-ui" },
+    { "label": "Bootstrap" },
+    { "label": "HTML5" },
+    { "label": "CSS3" },
+    { "label": "jQuery" }
+  ],
+  [
+    { "label": "Websockets" },
+    { "label": "Heroku" },
+    { "label": "Storybook" },
+    { "label": "Git" },
+    { "label": "Ghost" },
+    { "label": "Contentful" }
+  ]
+]

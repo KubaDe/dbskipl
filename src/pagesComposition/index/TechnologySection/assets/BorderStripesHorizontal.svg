@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>BorderStripesVertical</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="BorderStripesHorizontal" stroke="#000000">
+            <g id="BorderStripesVertical" transform="translate(5.500000, 6.000000) rotate(-270.000000) translate(-5.500000, -6.000000) translate(-0.000000, 1.000000)">
+                <g id="Group-3">
+                    <line x1="0.5" y1="0.00994035785" x2="0.5" y2="9.99005964" id="Line"></line>
+                    <line x1="5.5" y1="0.00994035785" x2="5.5" y2="9.99005964" id="Line-Copy"></line>
+                    <line x1="10.5" y1="0.00994035785" x2="10.5" y2="9.99005964" id="Line-Copy-2"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

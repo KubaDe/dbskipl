@@ -11,18 +11,13 @@ import Bubble from 'components/ui/ScrollBubbles/Bubble'
 import BigBubble from 'components/ui/BigBubble'
 
 import {
-  ProgressEvent,
   getExperienceSectionMachine,
+  eventFactory,
 } from './ExperienceSection.machine'
 import Wrapper from './Wrapper.motion'
 import Floating from './Floating.motion'
 
 import { Experiences } from './__data__/Experiences'
-
-const eventFactory = (progress: number): ProgressEvent => ({
-  type: 'THRESHOLD',
-  progress,
-})
 
 const useDebouncedMouseHover = (): {
   mouseOn: number

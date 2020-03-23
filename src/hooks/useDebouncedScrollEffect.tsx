@@ -23,10 +23,12 @@ const useDebouncedScrollEffect = (
 
     if (typeof window === 'object') {
       document.addEventListener('scroll', debouncedHandler, {
-        capture: false,
+        capture: true,
         passive: true,
       })
     }
+
+    debouncedHandler()
 
     return () => {
       if (typeof window === 'object') {

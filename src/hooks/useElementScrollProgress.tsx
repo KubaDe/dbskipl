@@ -32,7 +32,7 @@ const useElementScrollProgress = (props: {
     },
     [isIntersecting, onProgressChange],
   )
-  useDebouncedScrollEffect(countProgress, 10)
+  useDebouncedScrollEffect(countProgress, 100)
 
   const observerChange = useCallback((e: IntersectionObserverEntry) => {
     setIsIntersecting(e.isIntersecting)

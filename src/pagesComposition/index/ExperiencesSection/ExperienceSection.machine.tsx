@@ -2,6 +2,13 @@ import { Machine } from 'xstate'
 import range from 'lodash/range'
 import fromPairs from 'lodash/fromPairs'
 
+import {
+  checkThresholdDown,
+  checkThresholdUp,
+  eventFactory as blockEventFactory,
+} from 'components/layout/buildingBlocks/ScrollBlocks/ThreeStateBlock.machine'
+
+export const eventFactory = blockEventFactory
 export const thresholds: number[] = [0.25, 1]
 
 export interface ProgressEvent {
@@ -21,30 +28,6 @@ interface ExperienceSectionMachineStateSchema {
     }
     after: {}
   }
-}
-
-const checkThresholdUp = (
-  ctx: {},
-  event: ProgressEvent,
-  options: any,
-): boolean => {
-  if (options && options.cond.threshold) {
-    const threshold = options.cond.threshold
-    return event.progress >= threshold
-  }
-  return false
-}
-
-const checkThresholdDown = (
-  ctx: {},
-  event: ProgressEvent,
-  options: any,
-): boolean => {
-  if (options && options.cond.threshold) {
-    const threshold = options.cond.threshold
-    return event.progress < threshold
-  }
-  return false
 }
 
 const getSubThresholds = (bubblesN: number): number[] => {
