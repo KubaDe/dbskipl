@@ -7,6 +7,7 @@ import TopSection from './TopSection'
 import ExperiencesSection from './ExperiencesSection'
 import FreelanceSection from './FreelanceSection'
 import TechnologySection from './TechnologySection'
+import EducationSection from './EducationSection'
 
 const PageComposition: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const PageComposition: React.FC = () => {
         <ExperiencesSection />
         <FreelanceSection />
         <TechnologySection />
+        <EducationSection />
         <FreelanceSection />
       </ScrollSpine>
     </Layout>
