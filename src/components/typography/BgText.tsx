@@ -30,6 +30,13 @@ const Highlight = styled(Box).attrs({ as: 'span' })<BgTextProps>`
       ${props =>
         themeGet(props.inverted ? 'colors.inverted' : 'colors.black', '#000')},
     -${props => themeGet(`space.${props.padSize}`, '0')} 0 0 ${props => themeGet(props.inverted ? 'colors.inverted' : 'colors.black', '#000')};
+  a {
+    text-decoration: none;
+    ${props =>
+      css({
+        color: props.inverted ? 'black' : 'inverted',
+      })};
+  }
 `
 
 const BgTextProps: React.FC<BgTextProps> = ({

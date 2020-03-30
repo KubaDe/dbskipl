@@ -70,7 +70,8 @@
       "prettier/prettier": "error",
       "simple-import-sort/sort": "off",
       "import/no-unresolved": "off",
-      "no-empty-pattern": "off"
+      "no-empty-pattern": "off",
+      "jsx-a11y/anchor-is-valid": "off"
     }
   },
   "browserslist": {

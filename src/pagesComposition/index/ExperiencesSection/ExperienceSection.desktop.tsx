@@ -71,7 +71,6 @@ const Section: React.FC<SectionProps> = ({
   return (
     <ScrollBlock
       onProgressChange={onProgressChange}
-      maxHeight="10000px"
       backgroundColor="primary"
       overflow="hidden"
     >
@@ -92,14 +91,18 @@ const Section: React.FC<SectionProps> = ({
             m="md"
             padSize="md"
             as="h1"
-            fontSize={{ _: 'display4', xl: 'display2' }}
+            fontSize={{ _: 'display4', xl: 'display2', '2xl': 'display1' }}
             fontFamily="secondary"
           >
             Professional <br />
             experience
           </BgText>
 
-          <Box position="absolute" bottom="150px" width="100%">
+          <Box
+            position="absolute"
+            bottom={{ _: '20%', '2xl': '20%' }}
+            width={{ _: '100%', '2xl': '80%' }}
+          >
             <HorizontalAxis
               bubbles={experiences.map((experience, i) => (
                 <ShallowLink href={`/?company=${experience.slug}`}>

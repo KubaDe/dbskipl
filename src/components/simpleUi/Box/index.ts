@@ -36,6 +36,10 @@ interface ComponentProps {
   className?: string
   name?: string
   id?: string
+  rel?: string
+  target?: string
+  href?: string
+  title?: string
 }
 
 export type BaseBoxProps = SpaceProps &

@@ -40,15 +40,11 @@ const Section: React.FC = () => {
       <Box
         pl={{ _: '0', md: '40px' }}
         pt={{ _: '0', md: '100px' }}
-        mb={{ _: '-30%', md: 0 }}
+        mx={{ _: 0, '2xl': '20%' }}
       >
         {bubbles[0]}
       </Box>
-      <Box
-        pr={{ _: '0', md: '40px' }}
-        pt={{ _: '0', md: '20px' }}
-        mb={{ _: '-30%', md: 0 }}
-      >
+      <Box pr={{ _: '0', md: '40px' }} pt={{ _: '0', md: '20px' }}>
         {bubbles[1]}
       </Box>
     </Wrapper>

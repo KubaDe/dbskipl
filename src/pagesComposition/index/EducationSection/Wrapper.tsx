@@ -3,7 +3,8 @@ import inject from 'hoc/inject'
 import Box, { BaseBoxProps } from 'components/simpleUi/Box'
 
 const SectionLayout = inject(Box, {
-  minHeight: '130vh',
+  borderTop: 'primary',
+  minHeight: { _: 'unset', md: '140vh', '2xl': '100vh' },
   backgroundColor: 'inverted',
   position: 'relative',
 })

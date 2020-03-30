@@ -2,6 +2,7 @@ import React from 'react'
 
 import SidebarMenu from 'components/layout/SidebarMenu'
 import TopBar from 'components/layout/TopBar'
+import Footer from 'components/layout/Footer'
 
 import {
   useMenuBarControllerLogic,
@@ -42,6 +43,7 @@ const Layout: React.FC<LayoutProps> = (props: LayoutProps) => {
         }}
       />
       {children}
+      <Footer />
     </MenuBarControllerContext.Provider>
   )
 }

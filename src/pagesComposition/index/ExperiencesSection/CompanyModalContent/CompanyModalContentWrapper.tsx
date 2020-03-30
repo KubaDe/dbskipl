@@ -19,7 +19,7 @@ const ContentWrapper = inject(Box, {
 })
 
 const Content = inject(Box, {
-  px: { _: 'lg', md: 'xl' },
+  px: { _: 'lg', md: 'xl', '2xl': '20%' },
   py: { _: 'lg', md: '0' },
 })
 

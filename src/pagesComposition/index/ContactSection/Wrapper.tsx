@@ -1,24 +1,24 @@
 import React from 'react'
 import inject from 'hoc/inject'
 import Flex from 'components/simpleUi/Flex'
-import Box, { BaseBoxProps } from 'components/simpleUi/Box'
+import { BaseBoxProps } from 'components/simpleUi/Box'
 
-const SectionLayout = inject(Box, {
-  backgroundColor: 'inverted',
+const SectionLayout = inject(Flex, {
+  minHeight: { _: '400px', md: '700px' },
+  backgroundColor: 'primary',
   position: 'relative',
+  borderTop: 'primary',
+  flexDirection: 'row',
 })
 
 const SectionGrid = inject(Flex, {
+  width: '100%',
   alignContent: 'center',
   justifyContent: 'center',
   flexDirection: { _: 'column', md: 'row' },
-  height: { _: 'calc(100vh - 76px)', md: '100vh' },
-  maxHeight: '900px',
   flexWrap: 'nowrap',
-  mt: { _: '76px', md: 0 },
-  px: { _: 'md', md: '3xl' },
+  px: { _: 'md', md: '3xl', '2xl': '20%' },
   ml: { _: 0, md: '86px' },
-  mx: { _: 0, '2xl': '15%' },
 })
 
 interface WrapperRelatedProps {

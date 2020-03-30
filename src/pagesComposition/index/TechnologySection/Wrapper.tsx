@@ -9,13 +9,12 @@ import Flex from 'components/simpleUi/Flex'
 import { colors } from 'config/theme/colors'
 
 const SectionLayout = inject(Box, {
-  minHeight: '100vh',
-  maxHeight: '3000px',
   position: 'relative',
 })
 
 const SectionGrid = inject(Flex, {
-  minHeight: { _: 'calc(100vh - 76px)', md: '100vh' },
+  height: { _: 'calc(100vh - 76px)', md: '100vh' },
+  maxHeight: '900px',
   mt: { _: '76px', md: 0 },
   px: { _: 'md', md: '3xl' },
   ml: { _: 0, md: '86px' },

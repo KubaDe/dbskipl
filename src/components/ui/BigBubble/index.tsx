@@ -15,8 +15,8 @@ const Bubble: React.FC<BigBubbleProps> = (props: BigBubbleProps) => {
   const { title, description } = props
   return (
     <Flex
-      width={{ _: '300px', xl: '340px' }}
-      height={{ _: '300px', xl: '340px' }}
+      width={{ _: '300px', xl: '340px', '2xl': '600px' }}
+      height={{ _: '300px', xl: '340px', '2xl': '600px' }}
       borderRadius="50%"
       background="black"
       alignItems="center"
@@ -28,7 +28,7 @@ const Bubble: React.FC<BigBubbleProps> = (props: BigBubbleProps) => {
       <Title
         color="inverted"
         as="h1"
-        fontSize={{ _: 'h3', xl: 'h2' }}
+        fontSize={{ _: 'h3', xl: 'h2', '2xl': 'display1' }}
         key={title}
       >
         {title}
@@ -39,7 +39,7 @@ const Bubble: React.FC<BigBubbleProps> = (props: BigBubbleProps) => {
           key={description}
           as="p"
           color="inverted"
-          fontSize="paragraph"
+          fontSize={{ _: 'paragraph', '2xl': 'h3' }}
           lineHeight="1.5em"
           mt={{ _: 'md', xl: 'lg' }}
           textAlign="center"

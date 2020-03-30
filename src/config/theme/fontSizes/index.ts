@@ -12,6 +12,8 @@ export interface Index {
   blockquote: string
   lead: string
   paragraph: string
+  paragraphSmall: string
+  paragraphXSmall: string
   buttonSmall: string
   buttonNormal: string
   buttonLarge: string
@@ -33,6 +35,8 @@ export const fontSizes = {
   blockquote: '20px',
   lead: '20px',
   paragraph: '16px',
+  paragraphSmall: '14px',
+  paragraphXSmall: '12px',
   buttonXSmall: '12px',
   buttonSmall: '14px',
   buttonNormal: '16px',

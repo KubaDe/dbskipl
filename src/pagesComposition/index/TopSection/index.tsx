@@ -10,20 +10,17 @@ import headingPhotoSrc from './assets/_DSC6009.png'
 
 const Section: React.FC = () => {
   return (
-    <Box
-      minHeight="100vh"
-      maxHeight="3000px"
-      backgroundColor="inverted"
-      position="relative"
-    >
+    <Box backgroundColor="inverted" position="relative">
       <Flex
         alignContent="center"
         justifyContent="center"
         flexDirection={{ _: 'column', md: 'row' }}
-        minHeight={{ _: 'calc(100vh - 76px)', md: '100vh' }}
+        height={{ _: 'calc(100vh - 76px)', md: '100vh' }}
+        maxHeight="900px"
         flexWrap="nowrap"
         mt={{ _: '76px', md: 0 }}
         ml={{ _: 0, md: '86px' }}
+        px={{ _: 0, '2xl': '18%' }}
       >
         <FlexItem
           width={{ lg: '40%', xl: '50%', _: '100%' }}
