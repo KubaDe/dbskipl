@@ -4,32 +4,35 @@ import debounce from 'lodash/debounce'
 import ShallowLink from 'components/helpers/ShallowLink'
 
 import Box from 'components/simpleUi/Box'
+import Flex from 'components/simpleUi/Flex'
 import BgText from 'components/typography/BgText'
-import { ScrollBlock } from 'components/layout/buildingBlocks/ScrollBlocks'
+import {
+  eventFactory,
+  getSectionMachine,
+  ScrollBlock,
+} from 'components/layout/buildingBlocks/ScrollBlocks'
 import HorizontalAxis from 'components/ui/ScrollBubbles/HorizontalAxis'
 import Bubble from 'components/ui/ScrollBubbles/Bubble'
 import BigBubble from 'components/ui/BigBubble'
-
-import {
-  getExperienceSectionMachine,
-  eventFactory,
-} from './ExperienceSection.machine'
-import Wrapper from './Wrapper.motion'
-import Floating from './Floating.motion'
+import { SectionContent } from 'components/layout/buildingBlocks/SectionContent'
 
 import { Experiences } from './__data__/Experiences'
+import SectionLayout from './SectionLayout.desktop.motion'
 
-const useDebouncedMouseHover = (): {
+const useDebouncedMouseHover = (
+  time: number = 500,
+  init: number = 0,
+): {
   mouseOn: number
   setMouseOn: (i: number) => void
 } => {
-  const [mouseOn, _setMouseOn] = useState(-1)
+  const [mouseOn, _setMouseOn] = useState(init)
   const setMouseOn = useMemo(
     () =>
       debounce((i: number) => {
         _setMouseOn(i)
-      }, 500),
-    [_setMouseOn],
+      }, time),
+    [time],
   )
   return {
     mouseOn,
@@ -42,86 +45,92 @@ interface SectionRelatedProps {
   onBubbleClick: (e: ChangeEvent<HTMLAnchorElement> & MouseEvent) => void
 }
 
+const experienceSectionMachine = getSectionMachine({
+  id: 'experience-machine',
+})
+
 type SectionProps = SectionRelatedProps
 const Section: React.FC<SectionProps> = ({
   experiences,
   onBubbleClick,
 }: SectionProps) => {
-  const ExperienceSectionMachine = useMemo(
-    () => getExperienceSectionMachine(experiences.length),
-    [experiences],
-  )
-  const [current, send] = useMachine(ExperienceSectionMachine)
+  const [current, send] = useMachine(experienceSectionMachine)
   const state: string[] = current.toStrings()
   const onProgressChange = (progress: number): void => {
     !current.done && send(eventFactory(progress))
   }
-  const { mouseOn, setMouseOn } = useDebouncedMouseHover()
-  const openBubbleI = mouseOn !== -1 ? mouseOn : Number(state[1]?.split('.')[1])
+  const { mouseOn, setMouseOn } = useDebouncedMouseHover(
+    10,
+    experiences.length - 1,
+  )
   const bigBubbleText =
-    !isNaN(openBubbleI) && openBubbleI !== -1 ? experiences[openBubbleI] : {}
+    !isNaN(mouseOn) && mouseOn !== -1 ? experiences[mouseOn] : {}
   const mouseHoverActions = useMemo(
     () =>
       experiences.map((experience, i) => ({
         onMouseEnter: () => setMouseOn(i),
-        onMouseLeave: () => setMouseOn(-1),
+        onMouseLeave: () => setMouseOn(experiences.length - 1),
       })),
     [experiences, setMouseOn],
   )
   return (
-    <ScrollBlock
-      onProgressChange={onProgressChange}
-      backgroundColor="primary"
-      overflow="hidden"
-    >
-      <Wrapper animate={state[0] || ''}>
-        <Floating>
-          <BigBubble
-            {...bigBubbleText}
-            position="absolute"
-            top="3xl"
-            left="0"
-            right="0"
-            mx="auto"
-          />
-          <BgText
-            position="absolute"
-            top="3xl"
-            left="3xl"
-            m="md"
-            padSize="md"
-            as="h1"
-            fontSize={{ _: 'display4', xl: 'display2', '2xl': 'display1' }}
-            fontFamily="secondary"
+    <ScrollBlock onProgressChange={onProgressChange} overflow="hidden">
+      <SectionLayout animate={state}>
+        <SectionContent px="xs">
+          <Flex
+            position="relative"
+            width="100%"
+            height="100%"
+            alignItems="center"
+            justifyContent="center"
           >
-            Professional <br />
-            experience
-          </BgText>
-
-          <Box
-            position="absolute"
-            bottom={{ _: '20%', '2xl': '20%' }}
-            width={{ _: '100%', '2xl': '80%' }}
-          >
-            <HorizontalAxis
-              bubbles={experiences.map((experience, i) => (
-                <ShallowLink href={`/?company=${experience.slug}`}>
-                  <Bubble
-                    key={i}
-                    title={experience.title}
-                    items={[experience.start, experience.end]}
-                    isOpen={i === openBubbleI}
-                    {...mouseHoverActions[i]}
-                    name={experience.slug}
-                    onClick={onBubbleClick}
-                    as="a"
-                  />
-                </ShallowLink>
-              ))}
+            <BigBubble
+              {...bigBubbleText}
+              position="absolute"
+              top="10%"
+              left="0"
+              right="0"
+              mx="auto"
             />
-          </Box>
-        </Floating>
-      </Wrapper>
+            <BgText
+              position="absolute"
+              top="10%"
+              left="3xl"
+              m="md"
+              padSize="md"
+              as="h1"
+              fontSize={{ _: 'display4', xl: 'display2', '2xl': 'display1' }}
+              fontFamily="secondary"
+            >
+              Professional <br />
+              experience
+            </BgText>
+
+            <Box
+              position="absolute"
+              bottom="15%"
+              width={{ _: '100%', '2xl': '80%' }}
+            >
+              <HorizontalAxis
+                bubbles={experiences.map((experience, i) => (
+                  <ShallowLink href={`/?company=${experience.slug}`}>
+                    <Bubble
+                      key={i}
+                      title={experience.title}
+                      items={[experience.start, experience.end]}
+                      isOpen={i === mouseOn}
+                      {...mouseHoverActions[i]}
+                      name={experience.slug}
+                      onClick={onBubbleClick}
+                      as="a"
+                    />
+                  </ShallowLink>
+                ))}
+              />
+            </Box>
+          </Flex>
+        </SectionContent>
+      </SectionLayout>
     </ScrollBlock>
   )
 }

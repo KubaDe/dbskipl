@@ -9,6 +9,7 @@ import useDebouncedScrollEffect, {
 interface ElementScrollProgress {
   observerChange: (e: IntersectionObserverEntry) => void
   scrollElementRef: RefObject<HTMLElement> | null
+  isIntersecting: boolean
 }
 
 const useElementScrollProgress = (props: {
@@ -41,6 +42,7 @@ const useElementScrollProgress = (props: {
   return {
     observerChange,
     scrollElementRef,
+    isIntersecting,
   }
 }
 

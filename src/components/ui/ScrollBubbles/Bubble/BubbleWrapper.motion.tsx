@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import {
   motion,
   AnimationProps,
@@ -40,11 +40,18 @@ const MotionBubbleWrapper: React.FC<MotionBubbleWrapperProps> = motion.custom(
   StyledBubbleWrapper,
 )
 
-const BubbleWrapper: React.FC<MotionBubbleWrapperProps> = (
-  props: MotionBubbleWrapperProps,
-) => {
-  const {} = props
-  return <MotionBubbleWrapper initial="normal" variants={variants} {...props} />
-}
+const BubbleWrapper: React.FC<MotionBubbleWrapperProps> = forwardRef(
+  (props: MotionBubbleWrapperProps, ref) => {
+    const {} = props
+    return (
+      <MotionBubbleWrapper
+        ref={ref}
+        initial="normal"
+        variants={variants}
+        {...props}
+      />
+    )
+  },
+)
 
 export default BubbleWrapper

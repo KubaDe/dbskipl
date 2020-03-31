@@ -2,7 +2,7 @@ import inject from 'hoc/inject'
 import Flex from 'components/simpleUi/Flex'
 
 export const SectionLayout = inject(Flex, {
-  minHeight: '400px',
+  height: '400px',
   maxHeight: '3000px',
   backgroundColor: 'primary',
   position: 'relative',

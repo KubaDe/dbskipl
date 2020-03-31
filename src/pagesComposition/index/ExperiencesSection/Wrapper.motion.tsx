@@ -57,8 +57,6 @@ const Wrapper: React.FC<MotionWrapperProps> = (props: MotionWrapperProps) => {
       variants={variants}
       alignItems={{ md: 'center', _: 'start' }}
       justifyContent="center"
-      height="450vh"
-      maxHeight="4000px"
       mt={{ md: 0, _: 'tbar' }}
       flexWrap={{ md: 'nowrap', _: 'wrap' }}
       {...props}

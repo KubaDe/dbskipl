@@ -50,9 +50,7 @@ interface GetExperienceSectionMachineProps {
   id: string
 }
 
-export const getExperienceSectionMachine = ({
-  id,
-}: GetExperienceSectionMachineProps) => {
+export const getSectionMachine = ({ id }: GetExperienceSectionMachineProps) => {
   return Machine<
     {},
     ExperienceSectionMachineStateSchema,

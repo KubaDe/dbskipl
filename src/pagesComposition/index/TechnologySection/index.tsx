@@ -3,7 +3,7 @@ import { useMachine } from '@xstate/react'
 
 import {
   ScrollBlock,
-  getExperienceSectionMachine,
+  getSectionMachine,
   eventFactory,
 } from 'components/layout/buildingBlocks/ScrollBlocks'
 import Flex, { FlexItem } from 'components/simpleUi/Flex'
@@ -22,7 +22,7 @@ import technologiesJson from './__data__/technologies.json'
 import { Technologies } from './__data__/Technologies'
 const technologies = technologiesJson as Technologies
 
-const technologySectionMachine = getExperienceSectionMachine({
+const technologySectionMachine = getSectionMachine({
   id: 'technology-machine',
 })
 

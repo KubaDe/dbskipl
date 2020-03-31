@@ -5,6 +5,8 @@ import { BaseBoxProps } from 'components/simpleUi/Box'
 import Flex from 'components/simpleUi/Flex'
 import Heading from 'components/typography/Heading'
 
+import useColumnMouseHover from 'hooks/useColumnMouseHover'
+
 import BubbleItem from './BubbleItem.motion'
 import BubbleItemWrapper, {
   MotionBubbleItemWrapperProps,
@@ -40,15 +42,19 @@ const useInertOpen = (isOpen: boolean) => {
 
 export type BubbleProps = MotionBubbleItemWrapperProps & BubbleRelatedProps
 const Bubble: React.FC<BubbleProps> = (props: BubbleProps) => {
-  const { isOpen, title, items, isScalable = false } = props
+  const { isOpen, title, items, isScalable = false, onMouseEnter } = props
+
   const inertOpen = useInertOpen(isOpen)
   const path = useMorphBubblePath(inertOpen)
+  const ref = React.useRef(null)
+  useColumnMouseHover({ ref, onHover: onMouseEnter })
   return (
     <BubbleItemWrapperMotion
       width="184px"
       height="263px"
       position="relative"
       animate={isScalable && isOpen ? 'zoom' : 'normal'}
+      ref={ref}
       {...props}
     >
       <Flex
