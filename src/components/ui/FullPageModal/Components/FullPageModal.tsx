@@ -1,6 +1,6 @@
 import React from 'react'
 import { AnimatePresence } from 'framer-motion'
-import { useLockBodyScroll } from 'react-use'
+import useLockBodyScrollWithCache from 'hooks/useLockBodyScrollWithCache'
 
 import { BaseBoxProps } from 'components/simpleUi/Box'
 
@@ -32,7 +32,7 @@ const FullPageModal: React.FC<FullPageModalProps> = (
   } = useModalAnimations(isOpen, {
     onOpenEnd: fullPageModalController.openEnd,
   })
-  useLockBodyScroll(isOpen)
+  useLockBodyScrollWithCache(isOpen)
   return (
     <AnimatePresence>
       {isOpen && (

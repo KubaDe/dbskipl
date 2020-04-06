@@ -1,6 +1,6 @@
 import { Machine } from 'xstate'
 
-export const thresholds: number[] = [0.3, 1.55]
+export const thresholds: number[] = [0.2, 1.55]
 
 export const eventFactory = (progress: number): ProgressEvent => ({
   type: 'THRESHOLD',

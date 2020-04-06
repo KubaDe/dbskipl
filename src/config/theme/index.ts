@@ -49,6 +49,14 @@ export const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
   }
+  
+  body.locked {
+    overflow: hidden;
+    position:fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
   * {
     box-sizing: border-box;
   }

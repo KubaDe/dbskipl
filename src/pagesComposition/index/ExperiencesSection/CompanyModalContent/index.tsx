@@ -19,11 +19,12 @@ const CompanyModalContent: React.FC<CompanyModalContentProps> = (
     <CompanyModalContentWrapper close={close}>
       <H1 fontSize={{ _: 'h2', md: 'h1' }}>Ideamotive</H1>
       <InformationSection />
-      <H1 fontSize={{ _: 'h3', md: 'h2' }}>
+      <H1 fontSize={{ _: 'h2', md: 'h2' }} textAlign={{_: 'center', md: 'left'}} pb='lg'>
         <BgText as="span" padSize="sm" mx="sm" inverted>
           Projects
         </BgText>
       </H1>
+      <hr/>
       <ProjectsSection />
       <ProjectsSection />
       <ProjectsSection />

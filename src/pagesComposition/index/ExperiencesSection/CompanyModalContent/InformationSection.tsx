@@ -26,7 +26,6 @@ const InformationSection: React.FC<InformationSectionProps> = (
           </ExplainerTitle>
           <ExplainerText>
             Developing web applications for small and medium companies from
-            <br />
             Poland, Germany, UK and Singapore <br />
             Working mainly on React + Redux + […] technology stack
           </ExplainerText>

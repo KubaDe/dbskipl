@@ -12,13 +12,12 @@ const SectionGrid = inject(Flex, {
   alignContent: 'center',
   justifyContent: 'center',
   flexDirection: { _: 'column', md: 'row' },
-  height: { _: 'calc(100vh - 76px)', md: '100vh' },
-  maxHeight: '900px',
+  height: { _: 'unset', md: '100vh' },
+  maxHeight: { _: 'unset', md: '900px' },
   flexWrap: 'nowrap',
-  mt: { _: '76px', md: 0 },
   px: { _: 'md', md: '3xl' },
   ml: { _: 0, md: '86px' },
-  mx: { _: 0, '2xl': '15%' },
+  mx: { _: 'xl', '2xl': '15%' },
 })
 
 interface WrapperRelatedProps {

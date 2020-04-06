@@ -1,22 +1,35 @@
 import React from 'react'
-import { motion, AnimationProps, MotionProps, Variants } from 'framer-motion'
+import {
+  motion,
+  AnimationProps,
+  MotionProps,
+  Variants,
+  Transition,
+} from 'framer-motion'
 
 import Flex, { BaseFlexProps } from 'components/simpleUi/Flex'
 
 import { colors } from 'config/theme/colors'
 
+const transition: Transition = {
+  duration: 1.5,
+}
+
 const variants: Variants = {
   before: {
     backgroundColor: colors.inverted,
     opacity: 0,
+    transition,
   },
   active: {
     backgroundColor: colors.primary,
     opacity: 1,
+    transition,
   },
   after: {
     backgroundColor: colors.inverted,
     opacity: 0,
+    transition,
   },
 }
 
@@ -42,7 +55,6 @@ const SectionLayout: React.FC<MotionSectionLayoutProps> = (
       height="120vh"
       maxHeight="3000px"
       position="relative"
-      borderTop="primary"
       flexDirection="row"
       {...props}
     />
