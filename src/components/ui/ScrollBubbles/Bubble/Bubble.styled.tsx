@@ -15,4 +15,5 @@ export const StyledBubbleWrapper = styled(Box)`
   &:focus {
     outline: none;
   }
+  -webkit-tap-highlight-color: transparent;
 `
