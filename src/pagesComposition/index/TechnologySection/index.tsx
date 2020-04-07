@@ -39,20 +39,20 @@ const Section: React.FC = () => {
   return (
     <ScrollBlock onProgressChange={onProgressChange}>
       <Wrapper animate={state}>
-        <FlexItem pt={{ _: '3xl', md: '2xl' }}>
+        <FlexItem pt={{ _: '3xl', lg: '2xl' }}>
           <Title>Technologies</Title>
         </FlexItem>
         <Flex
           flexGrow={1}
           alignItems="center"
           justifyContent="center"
-          pt={{ _: '3xl', md: '0' }}
+          pt={{ _: '3xl', lg: '0' }}
           minHeight="620px"
         >
           <Table>
-            <HorizontalLine x={x1} invisible="<md" />
+            <HorizontalLine x={x1} invisible="<lg" />
             <Column>
-              <HorizontalLineMobile invisible=">md" />
+              <HorizontalLineMobile invisible=">lg" />
               {technologies[0] &&
                 technologies[0].map(technology => (
                   <TechBadge key={technology.label}>
@@ -61,7 +61,7 @@ const Section: React.FC = () => {
                 ))}
             </Column>
             <Column>
-              <HorizontalLineMobile invisible=">md" />
+              <HorizontalLineMobile invisible=">lg" />
               {technologies[1] &&
                 technologies[1].map(technology => (
                   <TechBadge key={technology.label}>
@@ -70,7 +70,7 @@ const Section: React.FC = () => {
                 ))}
             </Column>
             <Column>
-              <HorizontalLineMobile invisible=">md" />
+              <HorizontalLineMobile invisible=">lg" />
               {technologies[2] &&
                 technologies[2].map(technology => (
                   <TechBadge key={technology.label}>
@@ -79,16 +79,16 @@ const Section: React.FC = () => {
                 ))}
             </Column>
             <Column>
-              <HorizontalLineMobile invisible=">md" />
+              <HorizontalLineMobile invisible=">lg" />
               {technologies[3] &&
                 technologies[3].map(technology => (
                   <TechBadge key={technology.label}>
                     {technology.label}
                   </TechBadge>
                 ))}{' '}
-              <HorizontalLineMobile invisible=">md" bottomBorder />
+              <HorizontalLineMobile invisible=">lg" bottomBorder />
             </Column>
-            <HorizontalLine x={x2} bottomBorder invisible="<md" />
+            <HorizontalLine x={x2} bottomBorder invisible="<lg" />
           </Table>
         </Flex>
       </Wrapper>

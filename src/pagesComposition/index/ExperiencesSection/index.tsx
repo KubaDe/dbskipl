@@ -51,13 +51,13 @@ const Section: React.FC = () => {
 
   return (
     <>
-      <Box invisible="<md">
+      <Box invisible="<lg">
         <ExperienceSectionDesktop
           experiences={experiences}
           onBubbleClick={onBubbleClick}
         />
       </Box>
-      <Box invisible=">md">
+      <Box invisible=">lg">
         <ExperienceSectionMobile
           experiences={experiences}
           onBubbleClick={onBubbleClick}

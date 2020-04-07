@@ -12,11 +12,11 @@ const Column = inject(Flex, {
   justifyContent: 'center',
   flexDirection: 'column',
   position: 'relative',
-  py: { _: 'lg', md: 0 },
+  py: { _: 'lg', lg: 0 },
 })
 
 const ColumnStyled = styled(Column)`
-  @media (max-width: ${breakpoints.md}) {
+  @media (max-width: ${breakpoints.lg}) {
   :after, :before {
       content: "";
       position: absolute;
@@ -32,7 +32,7 @@ const ColumnStyled = styled(Column)`
       right: auto;
     }    
   }
-  @media (min-width: ${math(`${breakpoints.md} + 1px`)}) {
+  @media (min-width: ${math(`${breakpoints.lg} + 1px`)}) {
     :after, &:first-child:before {
       content: "";
       position: absolute;

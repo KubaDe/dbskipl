@@ -55,10 +55,10 @@ const Wrapper: React.FC<MotionWrapperProps> = (props: MotionWrapperProps) => {
     <MotionWrapper
       initial="before"
       variants={variants}
-      alignItems={{ md: 'center', _: 'start' }}
+      alignItems={{ lg: 'center', _: 'start' }}
       justifyContent="center"
-      mt={{ md: 0, _: 'tbar' }}
-      flexWrap={{ md: 'nowrap', _: 'wrap' }}
+      mt={{ lg: 0, _: 'tbar' }}
+      flexWrap={{ lg: 'nowrap', _: 'wrap' }}
       {...props}
     />
   )

@@ -13,10 +13,10 @@ const SectionLayout = inject(Box, {
 })
 
 const SectionGrid = inject(Flex, {
-  height: { _: 'unset', md: '100vh' },
-  maxHeight: { _: 'unset', md: '900px' },
+  height: { _: 'unset', lg: '100vh' },
+  maxHeight: { _: 'unset', lg: '900px' },
   mt: { _: '76px', md: 0 },
-  px: { _: 'md', md: '3xl' },
+  px: { _: 'md', lg: '3xl' },
   ml: { _: 0, md: '86px' },
   flexDirection: 'column',
 })

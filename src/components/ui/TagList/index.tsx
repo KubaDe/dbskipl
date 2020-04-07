@@ -4,17 +4,17 @@ import Flex, { FlexItem } from 'components/simpleUi/Flex'
 import BgText from 'components/typography/BgText'
 
 const TagList = inject(Flex, {
-  flexDirection: { _: 'column', md: 'row' },
+  flexDirection: { _: 'column', lg: 'row' },
 })
 
 export const TagListLabel = inject(FlexItem, {
   width: '200px',
-  my: { _: 'md', md: '0' },
+  my: { _: 'md', lg: '0' },
 })
 
 export const TagListTags = inject(Flex, {
   flexWrap: 'wrap',
-  justifyContent: { _: 'center', md: 'flex-start' },
+  justifyContent: { _: 'center', lg: 'flex-start' },
 })
 
 export const TagListItem = inject(BgText, {

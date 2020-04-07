@@ -29,7 +29,7 @@ const PhotoColumn: React.FC<PhotoColumnProps> = (props: PhotoColumnProps) => {
           zIndex={2}
           src={SpaceSrc}
           title="Jakub Dębski"
-          width={{ _: '65%', md: '380px' }}
+          width={{ _: '65%', md: '300px', lg: '380px' }}
         />
       </Flex>
     </Wrapper>

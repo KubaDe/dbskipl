@@ -2,7 +2,7 @@ import React, { RefAttributes } from 'react'
 import { motion, AnimationProps, Variants, MotionProps } from 'framer-motion'
 
 import { TopbarWrapper, TopbarWrapperProps } from './TopbarMenu.styled'
-import { colors } from '../../../config/theme/colors'
+import { colors } from 'config/theme/colors'
 
 interface TopbarRelatedProps {
   isOpen: boolean
