@@ -4,6 +4,8 @@ import BgText from 'components/typography/BgText'
 import { ScrollBlock } from 'components/layout/buildingBlocks/ScrollBlocks'
 import VerticalAxis from 'components/ui/ScrollBubbles/VerticalAxis'
 import Bubble from 'components/ui/ScrollBubbles/Bubble'
+import ShallowLink from 'components/helpers/ShallowLink'
+
 
 import Wrapper from './Wrapper.motion'
 import BubbleWrapper from './BubbleWrapper.mobile'
@@ -59,16 +61,18 @@ const Section: React.FC<SectionProps> = ({
           bubbles={experiences.map((experience, i) => (
             <BubbleWrapper>
               {({ isOpen }) => (
-                <Bubble
-                  key={i}
-                  title={experience.title}
-                  items={[experience.start, experience.end]}
-                  isOpen={isOpen}
-                  isScalable
-                  as="a"
-                  name={experience.slug}
-                  onClick={onBubbleClick}
-                />
+                <ShallowLink href={`/?company=${experience.slug}`}>
+                  <Bubble
+                    key={i}
+                    title={experience.title}
+                    items={[experience.start, experience.end]}
+                    isOpen={isOpen}
+                    isScalable
+                    as="a"
+                    name={experience.slug}
+                    onClick={onBubbleClick}
+                  />
+                </ShallowLink>
               )}
             </BubbleWrapper>
           ))}

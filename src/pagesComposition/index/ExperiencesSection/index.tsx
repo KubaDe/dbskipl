@@ -1,5 +1,5 @@
-import React, { useCallback, ChangeEvent, useEffect } from 'react'
-
+import React, { useCallback, ChangeEvent, useEffect, useMemo } from 'react'
+import { useRouter } from 'next/router'
 import Box from 'components/simpleUi/Box'
 
 import {
@@ -14,7 +14,7 @@ import ExperienceSectionDesktop from './ExperienceSection.desktop'
 import CompanyModalContent from './CompanyModalContent'
 
 import experiencesJson from './__data__/experiences.json'
-import { Experiences } from './__data__/Experiences'
+import { Experiences, Experience } from './__data__/Experiences'
 const experiences = experiencesJson as Experiences
 
 interface useMenuBarModalEffectsProps {
@@ -33,9 +33,37 @@ const useMenuBarModalEffects = (props: useMenuBarModalEffectsProps) => {
   }, [fullPageModalController, setIsInvertedFalse, setIsInvertedTrue])
 }
 
+const useCurrentExperience = (): Experience | null => {
+  const router = useRouter()
+  const currentExperience: Experience | null = useMemo(() => {
+    if (router.query?.company) {
+      const experience = experiences.find(
+        experience => experience.slug === router.query.company,
+      )
+      return experience || null
+    } else {
+      return null
+    }
+  }, [router.query])
+  return currentExperience
+}
+
 const Section: React.FC = () => {
   const fullPageModalController = useFullPageModalController()
   useMenuBarModalEffects({ fullPageModalController })
+
+  const currentExperience = useCurrentExperience()
+
+  useEffect(() => {
+    if (currentExperience) {
+      fullPageModalController.open({
+        triggerPoint: {
+          x: 0,
+          y: 0,
+        },
+      })
+    }
+  }, [])
 
   const onBubbleClick = useCallback(
     (e: ChangeEvent<HTMLAnchorElement> & MouseEvent) => {
@@ -64,7 +92,12 @@ const Section: React.FC = () => {
         />
       </Box>
       <FullPageModal fullPageModalController={fullPageModalController}>
-        <CompanyModalContent close={fullPageModalController.close} />
+        {currentExperience && (
+          <CompanyModalContent
+            close={fullPageModalController.close}
+            experience={currentExperience}
+          />
+        )}
       </FullPageModal>
     </>
   )

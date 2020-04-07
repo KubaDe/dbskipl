@@ -9,16 +9,21 @@ import DoubleSideExplainer, {
   ExplainerText,
 } from 'components/ui/DoubleSideExplainer'
 
-interface InformationSectionRelatedProps {}
+import { Experience } from '../__data__/Experiences'
+
+interface InformationSectionRelatedProps {
+  experience: Experience
+}
 type InformationSectionProps = BaseBoxProps & InformationSectionRelatedProps
 const InformationSection: React.FC<InformationSectionProps> = (
   props: InformationSectionProps,
 ) => {
+  const { experience } = props
   return (
     <Box as="section" py="xl">
       <DoubleSideExplainer>
         <LeftExplainer>
-          <ExplainerDisplay>February 2018 – May 2019</ExplainerDisplay>
+          <ExplainerDisplay>{experience.start} – {experience.end}</ExplainerDisplay>
         </LeftExplainer>
         <RightExplainer>
           <ExplainerTitle mb="md">
