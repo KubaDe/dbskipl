@@ -5,6 +5,7 @@ import inject from 'hoc/inject'
 
 import IconButton from 'components/buttons/IconButton'
 import Box from 'components/simpleUi/Box'
+import ShallowLink from 'components/helpers/ShallowLink'
 
 const ContentWrapper = inject(Box, {
   width: '100%',
@@ -56,7 +57,9 @@ const CompanyModalContentWrapper: React.FC<CompanyModalContentWrapperProps> = (
         <Content>{children}</Content>
       </ContentWrapper>
       <ButtonBackground />
-      <CloseButton onClick={close} />
+      <ShallowLink href={`/`}>
+        <CloseButton onClick={close} />
+      </ShallowLink>
     </>
   )
 }
