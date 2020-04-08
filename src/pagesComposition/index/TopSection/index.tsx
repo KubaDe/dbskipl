@@ -3,6 +3,7 @@ import React from 'react'
 import Flex, { FlexItem } from 'components/simpleUi/Flex'
 import Img from 'components/simpleUi/Img'
 import Box from 'components/simpleUi/Box'
+import Decoration from 'components/typography/Decoration'
 
 import Background from './Background'
 import Heading from './Heading.motion'
@@ -54,9 +55,9 @@ const Section: React.FC = () => {
                 fontSize={{ _: 'display3', lg: 'hero1' }}
                 fontWeight={100}
                 delayTime={0}
-                zIndex={2}
+                zIndex={3}
               >
-                Software
+                <Decoration decorationColor="primary">Software</Decoration>
               </Heading>
               <Heading
                 fontFamily="secondary"
@@ -67,7 +68,7 @@ const Section: React.FC = () => {
                 delayTime={0.3}
                 zIndex={2}
               >
-                developer
+                <Decoration decorationColor="primary">developer</Decoration>
               </Heading>
               <Heading
                 textAlign={{ _: 'center', md: 'left' }}
