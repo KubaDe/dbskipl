@@ -9,6 +9,7 @@ import ShallowLink from 'components/helpers/ShallowLink'
 
 import Wrapper from './Wrapper.motion'
 import BubbleWrapper from './BubbleWrapper.mobile'
+import Dots from './Dots.motion'
 
 import { Experiences } from './__data__/Experiences'
 
@@ -40,10 +41,13 @@ const Section: React.FC<SectionProps> = ({
     >
       <Wrapper
         animate={isVisible ? 'mobileActive' : 'mobileNotActive'}
+        position='relative'
+        overflow={'hidden'}
         initial="mobileNotActive"
         minHeight="800px"
         pb="2xl"
       >
+        <Dots/>
         <BgText
           mx="md"
           my="tbar"

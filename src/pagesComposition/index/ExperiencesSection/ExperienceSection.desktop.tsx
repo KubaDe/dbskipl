@@ -18,6 +18,7 @@ import { SectionContent } from 'components/layout/buildingBlocks/SectionContent'
 
 import { Experiences } from './__data__/Experiences'
 import SectionLayout from './SectionLayout.desktop.motion'
+import Dots from './Dots.motion'
 
 const useDebouncedMouseHover = (
   time: number = 500,
@@ -77,6 +78,7 @@ const Section: React.FC<SectionProps> = ({
     <ScrollBlock onProgressChange={onProgressChange} overflow="hidden">
       <SectionLayout animate={state}>
         <SectionContent px="xs">
+          <Dots/>
           <Flex
             position="relative"
             width="100%"
