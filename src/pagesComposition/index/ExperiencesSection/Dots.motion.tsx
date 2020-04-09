@@ -48,9 +48,11 @@ const StyledBox: React.FC<MotionDotsProps> = styled(Box).attrs({
   width: 100vw;
   height: 100%;
   opacity: .5;
+  right: 0;
+  background: url("${dotsPatternSrc}");
+  background-repeat: no-repeat;
+  background-position: right;
   background-size: cover;
-  left: 0;
-  background: url("${dotsPatternSrc}") no-repeat left;
 `
 
 const MotionDots: React.FC<MotionDotsProps> = motion.custom(StyledBox)
