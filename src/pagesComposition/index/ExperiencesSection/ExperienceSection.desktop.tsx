@@ -93,6 +93,7 @@ const Section: React.FC<SectionProps> = ({
               left="0"
               right="0"
               mx="auto"
+              zIndex={1}
             />
             <BgText
               position="absolute"

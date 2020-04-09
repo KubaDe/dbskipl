@@ -52,7 +52,7 @@ const Section: React.FC = () => {
               <Heading
                 fontFamily="secondary"
                 textAlign={{ _: 'center', md: 'left' }}
-                fontSize={{ _: 'display3', lg: 'hero1' }}
+                fontSize={{ _: 'display2', lg: 'hero1' }}
                 fontWeight={100}
                 delayTime={0}
                 zIndex={3}
@@ -62,7 +62,7 @@ const Section: React.FC = () => {
               <Heading
                 fontFamily="secondary"
                 textAlign={{ _: 'center', md: 'left' }}
-                fontSize={{ _: 'display3', lg: 'hero2' }}
+                fontSize={{ _: 'display2', lg: 'hero2' }}
                 fontWeight={100}
                 mb={{ _: 'md', lg: '3xl' }}
                 delayTime={0.3}

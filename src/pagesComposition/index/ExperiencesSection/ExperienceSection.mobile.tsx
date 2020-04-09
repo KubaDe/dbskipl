@@ -56,6 +56,7 @@ const Section: React.FC<SectionProps> = ({
           fontSize={{ _: 'display3', xl: 'display2' }}
           fontFamily="secondary"
           textAlign="center"
+          zIndex={1}
         >
           Professional <br />
           experience
