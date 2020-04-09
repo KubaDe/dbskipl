@@ -68,6 +68,7 @@ export interface Colors {
 const primaryColors = {
   primary: '#AA6232',
   secondary: '#D3DBCB',
+  violet: '#232758',
   black: '#000000',
   transparentBlack: 'rgba(0, 0, 0, 0)',
   white: '#FFFFFF',

@@ -6,6 +6,7 @@ import Flex, { FlexItem, BaseFlexProps } from 'components/simpleUi/Flex'
 import Heading from 'components/typography/Heading'
 import Text from 'components/simpleUi/Text'
 import Button from 'components/buttons/BasicButton'
+import Decoration from 'components/typography/Decoration';
 
 const Wrapper = inject(FlexItem, {
   width: { lg: '50%', _: '100%' },
@@ -54,7 +55,7 @@ const TextColumn: React.FC<TextColumnProps> = (props: TextColumnProps) => {
   return (
     <Wrapper {...props}>
       <Center>
-        <Title>Freelance</Title>
+        <Title><Decoration decorationColor="violet">Freelance</Decoration></Title>
         <Description>
           Looking for freelancer to create your web platform or startup? Check
           out my previous projects, get in touch with me and let’s talk about

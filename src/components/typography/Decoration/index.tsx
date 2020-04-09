@@ -4,8 +4,11 @@ import systemCss from '@styled-system/css'
 
 import Box, { BaseBoxProps } from 'components/simpleUi/Box'
 
+import maskSrc from './assets/mask2.png'
+
 interface DecorationRelatedProps {
   decorationColor?: string
+  decorationOpacity?: number
 }
 
 export type DecorationProps = BaseBoxProps & DecorationRelatedProps
@@ -19,16 +22,18 @@ const Decoration: React.FC<DecorationProps> = styled(Box).attrs({ as: 'span' })<
     content: '';
     position: absolute;
     display: block;
-    width: 110%;
-    height: 24%;
-    top: 60%;
-    left: -5%;
+    width: 103%;
+    height: 30%;
+    top: 55%;
+    left: 0%;
     z-index: -1;
-    opacity: 0.35;
     transform: rotate(-1.5deg);
+    mask-image: url("${maskSrc}");
+    mask-size: 200px;
     ${props =>
       systemCss({
         backgroundColor: props.decorationColor || 'primary',
+        opacity: props.decorationOpacity || 0.8,
       })}
   }
 `
