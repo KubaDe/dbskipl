@@ -1,8 +1,20 @@
 import React from 'react'
+import { motion, AnimationProps, MotionProps, Variants } from 'framer-motion'
 
-import { motion, AnimationProps, MotionProps } from 'framer-motion'
+import Box, { BaseBoxProps } from 'components/simpleUi/Box'
 
-import Heading, { HeadingProps } from 'components/typography/Heading'
+const variants: Variants = {
+  active: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+  },
+  inactive: {
+    opacity: 0,
+    x: 130,
+    scale: 1.3,
+  },
+}
 
 interface HeadingRelatedProps {
   delayTime?: number
@@ -10,32 +22,25 @@ interface HeadingRelatedProps {
 
 export type MotionHeadingProps = AnimationProps &
   HeadingRelatedProps &
-  HeadingProps &
+  BaseBoxProps &
   MotionProps
 
-const MotionBackgroundImage: React.FC<MotionHeadingProps> = motion.custom(
-  Heading,
-)
+const MotionHeading: React.FC<MotionHeadingProps> = motion.custom(Box)
 
-const BackgroundImage: React.FC<MotionHeadingProps> = (
-  props: MotionHeadingProps,
-) => {
+const Heading: React.FC<MotionHeadingProps> = (props: MotionHeadingProps) => {
   const { delayTime } = props
   return (
-    <MotionBackgroundImage
-      initial={{ opacity: 0, x: 130, scale: 1.3 }}
-      animate={{
-        opacity: 1,
-        x: 0,
-        scale: 1,
-        transition: {
-          duration: 1,
-          delay: delayTime,
-        },
+    <MotionHeading
+      initial="inactive"
+      transition={{
+        delay: delayTime,
+        type: 'spring',
+        duration: 1.5,
       }}
+      variants={variants}
       {...props}
     />
   )
 }
 
-export default BackgroundImage
+export default Heading

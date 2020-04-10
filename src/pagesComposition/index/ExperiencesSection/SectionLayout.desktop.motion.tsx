@@ -53,7 +53,7 @@ const SectionLayout: React.FC<MotionSectionLayoutProps> = (
       initial="before"
       variants={variants}
       height="120vh"
-      maxHeight="3000px"
+      maxHeight="min(3000px, 90vw)"
       position="relative"
       flexDirection="row"
       {...props}

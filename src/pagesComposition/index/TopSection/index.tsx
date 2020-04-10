@@ -1,15 +1,23 @@
-import React from 'react'
+import React, { useRef } from 'react';
+import { useIntersection } from 'react-use';
 
 import Flex, { FlexItem } from 'components/simpleUi/Flex'
-import Img from 'components/simpleUi/Img'
 import Box from 'components/simpleUi/Box'
 import Decoration from 'components/typography/Decoration'
 
 import Background from './Background'
+import BigAvatar from './BigAvatar.motion';
 import Heading from './Heading.motion'
 import headingPhotoSrc from './assets/_DSC6009.png'
 
 const Section: React.FC = () => {
+  const ref = useRef(null);
+  const intersection = useIntersection(ref, {
+    rootMargin: '-200px 0px -100px 0px',
+    threshold: .2
+  });
+  const animationState = intersection?.isIntersecting ? 'active' : 'inactive'
+
   return (
     <Box backgroundColor="inverted" position="relative">
       <Flex
@@ -29,11 +37,12 @@ const Section: React.FC = () => {
           pt={{ _: 'xl', md: 0 }}
         >
           <Flex alignItems="center" justifyContent="center" height="100%">
-            <Img
+            <BigAvatar
               zIndex={2}
               src={headingPhotoSrc}
               title="Jakub Dębski"
               width={{ _: '65%', md: '380px' }}
+              animate={animationState}
             />
           </Flex>
         </FlexItem>
@@ -48,14 +57,15 @@ const Section: React.FC = () => {
             height="100%"
             flexDirection="column"
           >
-            <Box my={{ _: 'xl', md: 0 }}>
+            <Box my={{ _: 'xl', md: 0 }} ref={ref}>
               <Heading
                 fontFamily="secondary"
                 textAlign={{ _: 'center', md: 'left' }}
                 fontSize={{ _: 'display2', lg: 'hero1' }}
                 fontWeight={100}
-                delayTime={0}
+                delayTime={.2}
                 zIndex={3}
+                animate={animationState}
               >
                 <Decoration decorationColor="primary">Software</Decoration>
               </Heading>
@@ -65,8 +75,9 @@ const Section: React.FC = () => {
                 fontSize={{ _: 'display2', lg: 'hero2' }}
                 fontWeight={100}
                 mb={{ _: 'md', lg: '3xl' }}
-                delayTime={0.3}
+                delayTime={.4}
                 zIndex={2}
+                animate={animationState}
               >
                 <Decoration decorationColor="primary">developer</Decoration>
               </Heading>
@@ -74,8 +85,9 @@ const Section: React.FC = () => {
                 textAlign={{ _: 'center', md: 'left' }}
                 fontSize={{ _: 'display4', lg: 'display1' }}
                 fontWeight={100}
-                delayTime={0.6}
-                zIndex={2}
+                delayTime={.6}
+                zIndex={3}
+                animate={animationState}
               >
                 Jakub Debski
               </Heading>

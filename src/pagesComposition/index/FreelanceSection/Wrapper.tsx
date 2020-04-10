@@ -1,12 +1,7 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import inject from 'hoc/inject'
 import Flex from 'components/simpleUi/Flex'
 import Box, { BaseBoxProps } from 'components/simpleUi/Box'
-
-const SectionLayout = inject(Box, {
-  backgroundColor: 'inverted',
-  position: 'relative',
-})
 
 const SectionGrid = inject(Flex, {
   alignContent: 'center',
@@ -24,13 +19,15 @@ interface WrapperRelatedProps {
   children: React.ReactNode
 }
 type WrapperProps = BaseBoxProps & WrapperRelatedProps
-const Wrapper: React.FC<WrapperProps> = (props: WrapperProps) => {
-  const { children, ...rest } = props
-  return (
-    <SectionLayout {...rest}>
-      <SectionGrid>{children}</SectionGrid>
-    </SectionLayout>
-  )
-}
+const Wrapper: React.FC<WrapperProps> = forwardRef(
+  (props: WrapperProps, ref) => {
+    const { children, ...rest } = props
+    return (
+      <Box backgroundColor="inverted" position="relative" {...rest} ref={ref}>
+        <SectionGrid>{children}</SectionGrid>
+      </Box>
+    )
+  },
+)
 
 export default Wrapper
