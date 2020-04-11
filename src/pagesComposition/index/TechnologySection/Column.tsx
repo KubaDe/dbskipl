@@ -1,21 +1,13 @@
 import styled from 'styled-components'
 import { math } from 'polished'
 
-import Flex from 'components/simpleUi/Flex'
 import borderStripesVerticalSrc from './assets/BorderStripesVertical.svg'
 import { breakpoints } from 'config/theme/breakpoints'
 
-import inject from 'hoc/inject'
+import MotionColumn, { MotionColumnProps } from './Column.motion'
 
-const Column = inject(Flex, {
-  alignItems: 'center',
-  justifyContent: 'center',
-  flexDirection: 'column',
-  position: 'relative',
-  py: { _: 'lg', lg: 0 },
-})
 
-const ColumnStyled = styled(Column)`
+const ColumnStyled = styled(MotionColumn)<MotionColumnProps>`
   @media (max-width: ${breakpoints.lg}) {
   :after, :before {
       content: "";

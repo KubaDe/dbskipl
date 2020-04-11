@@ -12,7 +12,7 @@ import Wrapper from './Wrapper'
 import Title from './Title'
 import Table from './Table'
 import Column from './Column'
-import TechBadge from './TechBadge'
+import TechBadge from './TechBadge.motion'
 import HorizontalLine from './HorizontalLine'
 import HorizontalLineMobile from './HorizontalLine.mobile'
 

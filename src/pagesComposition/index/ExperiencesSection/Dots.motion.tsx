@@ -27,7 +27,7 @@ const variants: Variants = {
     rotate: 0,
     scale: 1,
     transition: {
-      delay: 1.5,
+      delay: .5,
       duration: 2,
     },
   },

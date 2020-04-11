@@ -13,7 +13,7 @@ import headingPhotoSrc from './assets/_DSC6009.png'
 const Section: React.FC = () => {
   const ref = useRef(null);
   const intersection = useIntersection(ref, {
-    rootMargin: '-200px 0px -100px 0px',
+    rootMargin: '-200px 0px 100px 0px',
     threshold: .2
   });
   const animationState = intersection?.isIntersecting ? 'active' : 'inactive'
