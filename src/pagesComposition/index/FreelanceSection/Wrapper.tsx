@@ -23,7 +23,13 @@ const Wrapper: React.FC<WrapperProps> = forwardRef(
   (props: WrapperProps, ref) => {
     const { children, ...rest } = props
     return (
-      <Box backgroundColor="inverted" position="relative" {...rest} ref={ref}>
+      <Box
+        backgroundColor="inverted"
+        position="relative"
+        overflow="hidden"
+        {...rest}
+        ref={ref}
+      >
         <SectionGrid>{children}</SectionGrid>
       </Box>
     )

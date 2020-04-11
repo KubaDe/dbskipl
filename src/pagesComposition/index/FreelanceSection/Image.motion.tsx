@@ -8,6 +8,10 @@ const variants: Variants = {
     y: -200,
     opacity: 0,
     rotate: '30deg',
+    transition: {
+      type: 'tween',
+      duration: 1,
+    },
   },
   active: {
     y: 0,
