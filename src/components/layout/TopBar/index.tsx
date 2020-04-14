@@ -16,6 +16,7 @@ import { BarMenuItem } from '../menu/MenuItems/MenuItems.motion'
 import menuItems from '../menu/items'
 import { Topbar } from './TopbarMenu.motion'
 import { TopbarContent } from './TopbarMenu.styled'
+import Link from 'next/link'
 
 export interface SidebarMenuRelatedProps {
   isOpen: boolean
@@ -84,9 +85,11 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
         <FlexItem>
           {menuItems.map(item => (
             <BarMenuItem key={item.label}>
-              <BasicButtonMotion {...topbarMenuButtonProps}>
-                {item.label}
-              </BasicButtonMotion>
+              <Link href={`/${item.href}`} passHref>
+                <BasicButtonMotion {...topbarMenuButtonProps} as="a">
+                  {item.label}
+                </BasicButtonMotion>
+              </Link>
             </BarMenuItem>
           ))}
         </FlexItem>

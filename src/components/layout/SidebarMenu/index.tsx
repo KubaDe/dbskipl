@@ -15,6 +15,7 @@ import { BarMenuItem } from '../menu/MenuItems/MenuItems.motion'
 import menuItems from '../menu/items'
 import { Sidebar } from './SidebarMenu.motion'
 import { SidebarContent } from './SidebarMenu.styled'
+import Link from 'next/link';
 
 export interface SidebarMenuRelatedProps {
   isOpen: boolean
@@ -88,9 +89,11 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
           <GridItem {...gridMenuItemsProps}>
             {menuItems.map(item => (
               <BarMenuItem key={item.label}>
-                <BasicButtonMotion {...sidebarMenuButtonProps}>
+                <Link href={`/${item.href}`} passHref>
+                <BasicButtonMotion {...sidebarMenuButtonProps} as="a">
                   {item.label}
                 </BasicButtonMotion>
+                </Link>
               </BarMenuItem>
             ))}
           </GridItem>

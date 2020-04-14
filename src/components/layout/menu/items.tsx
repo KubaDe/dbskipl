@@ -4,9 +4,10 @@ interface MenuItem {
 }
 
 const items: MenuItem[] = [
-  { label: 'Software', href: 'software' },
-  { label: 'Photography', href: 'photography' },
   { label: 'About me', href: 'about_me' },
+  { label: 'Software', href: 'software' },
+  { label: 'Projects', href: 'projects' },
+  { label: 'Photography', href: 'photography' },
   { label: 'Contact', href: 'contact' },
 ]
 
