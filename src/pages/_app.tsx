@@ -1,6 +1,6 @@
 import App from 'next/app'
 import Head from 'next/head'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import theme, { GlobalStyles } from 'config/theme'
@@ -15,6 +15,21 @@ export default class CustomApp extends App {
     return { pageProps }
   }
 
+  componentDidMount(): void {
+    // @ts-ignore
+    if (window.netlifyIdentity) {
+      // @ts-ignore
+      window.netlifyIdentity.on('init', user => {
+        if (!user) {
+          // @ts-ignore
+          window.netlifyIdentity.on('login', () => {
+            document.location.href = '/admin/'
+          })
+        }
+      })
+    }
+  }
+
   render() {
     const { Component, pageProps } = this.props
     return (
@@ -24,6 +39,7 @@ export default class CustomApp extends App {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
+          <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         </Head>
         <GlobalStyles />
         <Component {...pageProps} />
