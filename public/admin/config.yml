@@ -12,13 +12,18 @@ media_library:
 collections:
   - name: "company"
     label: "Company"
-    folder: "src/__data__/company"
+    extension: "json"
     create: true
-    slug: "{{slug}}"
+    format: "json"
+    folder: 'src/__data__/company'
     fields:
-      - {label: "Id", name: "id", widget: "number"}
-      - {label: "Slug", name: "slug", widget: "string"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "string"}
-      - {label: "Start", name: "start", widget: "string"}
-      - {label: "End", name: "end", widget: "string"}
+      - name: companies
+        label: Companies
+        widget: list
+        fields:
+        - {label: "Id", name: "id", widget: "number"}
+        - {label: "Slug", name: "slug", widget: "string"}
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Description", name: "description", widget: "string"}
+        - {label: "Start", name: "start", widget: "string"}
+        - {label: "End", name: "end", widget: "string"}
