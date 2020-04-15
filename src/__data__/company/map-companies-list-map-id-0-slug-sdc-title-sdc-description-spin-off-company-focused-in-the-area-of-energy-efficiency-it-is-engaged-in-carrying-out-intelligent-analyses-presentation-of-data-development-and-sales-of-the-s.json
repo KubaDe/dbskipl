@@ -7,6 +7,14 @@
       "description": "Spin-off company, focused in the area of energy efficiency. It is   engaged in carrying out intelligent analyses, presentation of data,  development and sales of the SES Control technology.",
       "start": "March 2016",
       "end": "March 2017"
+    },
+    {
+      "id": 2,
+      "slug": "qunabu",
+      "title": "Qunabu",
+      "description": "Qunabu Interactive is a creative software house based in Gdańsk,   Poland. It provides comprehensive services from bespoke complex applications   to straightforward websites.",
+      "start": "June 2017",
+      "end": "January 2018"
     }
   ]
 }
