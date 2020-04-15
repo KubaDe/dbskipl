@@ -12,7 +12,7 @@ media_library:
 collections:
   - name: "company"
     label: "Company"
-    folder: "__data__/company"
+    folder: "src/__data__/company"
     create: true
     slug: "{{slug}}"
     fields:
