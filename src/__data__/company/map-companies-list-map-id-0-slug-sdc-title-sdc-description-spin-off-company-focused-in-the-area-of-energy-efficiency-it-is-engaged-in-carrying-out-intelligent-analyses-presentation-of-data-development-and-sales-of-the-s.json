@@ -15,6 +15,14 @@
       "description": "Qunabu Interactive is a creative software house based in Gdańsk,   Poland. It provides comprehensive services from bespoke complex applications   to straightforward websites.",
       "start": "June 2017",
       "end": "January 2018"
+    },
+    {
+      "id": 2,
+      "slug": "ideamotive",
+      "title": "Ideamotive",
+      "description": " Ideamotive is an agile software development company based in the heart of Europe, in Warsaw, Poland working with startups, scaleups, and   corporations.",
+      "start": "February 2018",
+      "end": "May 2019"
     }
   ]
 }
