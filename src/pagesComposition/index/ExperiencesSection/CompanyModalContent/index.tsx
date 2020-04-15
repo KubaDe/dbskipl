@@ -7,11 +7,11 @@ import CompanyModalContentWrapper from './CompanyModalContentWrapper'
 import InformationSection from './InformationSection'
 import ProjectsSection from './ProjectsSection'
 
-import { Experience } from '../__data__/Experiences'
+import { Company } from '__data__/company/List'
 
 interface CompanyModalContentRelatedProps {
   close: () => void
-  experience: Experience
+  experience: Company
 }
 type CompanyModalContentProps = CompanyModalContentRelatedProps
 const CompanyModalContent: React.FC<CompanyModalContentProps> = (

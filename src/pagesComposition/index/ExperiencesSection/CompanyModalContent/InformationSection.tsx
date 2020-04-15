@@ -9,10 +9,10 @@ import DoubleSideExplainer, {
   ExplainerText,
 } from 'components/ui/DoubleSideExplainer'
 
-import { Experience } from '../__data__/Experiences'
+import { Company } from '__data__/company/List'
 
 interface InformationSectionRelatedProps {
-  experience: Experience
+  experience: Company
 }
 type InformationSectionProps = BaseBoxProps & InformationSectionRelatedProps
 const InformationSection: React.FC<InformationSectionProps> = (
@@ -27,12 +27,10 @@ const InformationSection: React.FC<InformationSectionProps> = (
         </LeftExplainer>
         <RightExplainer>
           <ExplainerTitle mb="md">
-            JavaScript developer at Ideamotive in Warsaw
+            {experience.jobTitle}
           </ExplainerTitle>
           <ExplainerText>
-            Developing web applications for small and medium companies from
-            Poland, Germany, UK and Singapore <br />
-            Working mainly on React + Redux + […] technology stack
+            {experience.jobDescription}
           </ExplainerText>
         </RightExplainer>
       </DoubleSideExplainer>

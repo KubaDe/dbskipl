@@ -11,10 +11,10 @@ import Wrapper from './Wrapper.motion'
 import BubbleWrapper from './BubbleWrapper.mobile'
 import Dots from './Dots.motion'
 
-import { Experiences } from './__data__/Experiences'
+import { Company } from '__data__/company/List'
 
 interface SectionRelatedProps {
-  experiences: Experiences
+  experiences: Company[]
   onBubbleClick: (e: ChangeEvent<HTMLAnchorElement> & MouseEvent) => void
 }
 

@@ -12,6 +12,8 @@ media_library:
 collections:
   - name: "company"
     label: "Company"
+    editor:
+      preview: false
     files:
       - label: "List"
         name: "about"
@@ -20,10 +22,14 @@ collections:
           - name: companies
             label: Companies
             widget: list
+            collapsed: false
             fields:
             - {label: "Id", name: "id", widget: "number"}
             - {label: "Slug", name: "slug", widget: "string"}
             - {label: "Title", name: "title", widget: "string"}
-            - {label: "Description", name: "description", widget: "string"}
+            - {label: "Description", name: "description", widget: "text"}
             - {label: "Start", name: "start", widget: "string"}
             - {label: "End", name: "end", widget: "string"}
+            - {label: "Job Title", name: "jobTitle", widget: "string"}
+            - {label: "Job Description", name: "jobDescription", widget: "text"}
+

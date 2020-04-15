@@ -12,9 +12,9 @@ import CompanyModalContent from '../CompanyModalContent'
 import ExperienceSection from '../'
 
 
-import experiencesJson from '../__data__/experiences.json'
-import { Experiences, Experience } from '../__data__/Experiences'
-const experiences = experiencesJson as Experiences
+import experiencesJson from '__data__/company/list.json'
+import { CompanyList } from '__data__/company/List'
+const experiences = (experiencesJson as CompanyList).companies
 
 export default {
   title: 'Pages|Index.ExperienceSection',

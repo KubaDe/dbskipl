@@ -13,9 +13,9 @@ import ExperienceSectionMobile from './ExperienceSection.mobile'
 import ExperienceSectionDesktop from './ExperienceSection.desktop'
 import CompanyModalContent from './CompanyModalContent'
 
-import experiencesJson from './__data__/experiences.json'
-import { Experiences, Experience } from './__data__/Experiences'
-const experiences = experiencesJson as Experiences
+import experiencesJson from '__data__/company/list.json'
+import { Company, CompanyList } from '__data__/company/List.js'
+const experiences = (experiencesJson as CompanyList).companies
 
 interface useMenuBarModalEffectsProps {
   fullPageModalController: FullPageModalController
@@ -33,9 +33,9 @@ const useMenuBarModalEffects = (props: useMenuBarModalEffectsProps) => {
   }, [fullPageModalController, setIsInvertedFalse, setIsInvertedTrue])
 }
 
-const useCurrentExperience = (): Experience | null => {
+const useCurrentExperience = (): Company | null => {
   const router = useRouter()
-  const currentExperience: Experience | null = useMemo(() => {
+  const currentExperience: Company | null = useMemo(() => {
     if (router.query?.company) {
       const experience = experiences.find(
         experience => experience.slug === router.query.company,

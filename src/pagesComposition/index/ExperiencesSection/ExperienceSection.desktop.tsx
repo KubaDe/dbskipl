@@ -16,7 +16,7 @@ import Bubble from 'components/ui/ScrollBubbles/Bubble'
 import BigBubble from 'components/ui/BigBubble'
 import { SectionContent } from 'components/layout/buildingBlocks/SectionContent'
 
-import { Experiences } from './__data__/Experiences'
+import { Company } from '__data__/company/List'
 import SectionLayout from './SectionLayout.desktop.motion'
 import Dots from './Dots.motion'
 
@@ -42,7 +42,7 @@ const useDebouncedMouseHover = (
 }
 
 interface SectionRelatedProps {
-  experiences: Experiences
+  experiences: Company[]
   onBubbleClick: (e: ChangeEvent<HTMLAnchorElement> & MouseEvent) => void
 }
 
