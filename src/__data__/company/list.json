@@ -6,7 +6,9 @@
       "title": "SDC",
       "description": "Spin-off company, focused in the area of energy efficiency. It is engaged in carrying out intelligent analyses, presentation of data,  development and sales of the SES Control technology.",
       "start": "March 2016",
-      "end": "March 2017"
+      "end": "March 2017",
+      "jobDescription": "Developing and refactoring energy measurement web platform\nIntroducing new technologies (i.a. React) to web application",
+      "jobTitle": "Junior Full Stack Developer at Sescom Data Control in Gdansk"
     },
     {
       "id": 2,
@@ -14,7 +16,9 @@
       "title": "Qunabu",
       "description": "Qunabu Interactive is a creative software house based in Gdańsk,   Poland. It provides comprehensive services from bespoke complex applications   to straightforward websites.",
       "start": "June 2017",
-      "end": "January 2018"
+      "end": "January 2018",
+      "jobTitle": "JavaScript developer at Qunabu Interactive in Gdansk",
+      "jobDescription": "Creating from scratch eCommerce web application\nMaintaining and developing Meteor.js + React apps"
     },
     {
       "id": 2,
@@ -22,7 +26,9 @@
       "title": "Ideamotive",
       "description": " Ideamotive is an agile software development company based in the heart of Europe, in Warsaw, Poland working with startups, scaleups, and   corporations.",
       "start": "February 2018",
-      "end": "May 2019"
+      "end": "May 2019",
+      "jobTitle": "JavaScript developer at Ideamotive in Warsaw",
+      "jobDescription": "Developing web applications for small and medium companies from\nPoland, Germany, UK and Singapore\nWorking mainly on React + Redux + […] technology stack"
     },
     {
       "id": 3,
@@ -30,7 +36,9 @@
       "title": "Daftcode",
       "description": "Daftcode is a Polish venture builder. It creates enterprises from   the start, transforms bold ideas into fast-growing products and businesses.",
       "start": "May 2019",
-      "end": "April 2020"
+      "end": "April 2020",
+      "jobTitle": "Frontend developer at Daftcode in Warsaw",
+      "jobDescription": "Implementing and maintaining online ticket and booking marketplace\nplatform for major Polish food festival"
     }
   ]
 }
