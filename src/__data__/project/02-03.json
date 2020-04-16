@@ -1,11 +1,11 @@
 {
   "companySlug": "ideamotive",
   "slug": "02-03",
-  "techStack": "react, react-router-dom, react-i18next, redux, redux-saga, redux-form, redux-persist, lodash, classnames, bootstrap, sass, jest, enzyme",
-  "role": "Part of remote front-end development team",
-  "country": "Singapore",
-  "title": "Shared economy for courier posts",
+  "techStack": "react, react-router-dom, react-loadable, react-helmet, react-i18next, react-list, redux, redux-saga, redux-form, redux-persist, reselect, recompose, axios, lodash, moment, styled-components, material-ui, storybook, eslint, heroku",
+  "role": "One-person frontend development team",
+  "country": "UK",
+  "title": "Booking service for transfer agent",
   "type": "Frontend",
-  "description": "Application for creating and managing car fleets and couriers (Uber for shipping packages)",
-  "features": "Live map, User dashboard, Admin dashboard, Driver management panel,"
+  "description": "Implementation of a web service with white-label features",
+  "features": "Search module, Search results, Booking, Payment, Order view, White labels, RWD,"
 }

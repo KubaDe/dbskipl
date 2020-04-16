@@ -43,7 +43,7 @@ collections:
     extension: "json"
     format: "json"
     slug: "{{slug}}"
-    identifier_field: "slug"
+    identifier_field: "{{slug}} {{title}}"
     fields:
       - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Company Slug", name: "companySlug", widget: "string"}
