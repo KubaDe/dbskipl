@@ -1,0 +1,11 @@
+{
+  "companySlug": "ideamotive",
+  "slug": "02-01",
+  "techStack": "react, lodash, react-map-gl, styled-components, PWA features, interfaces, service-workers, socket.io, node.js, express, mongodb, localforage, cloudinary, heroku",
+  "role": "Part of two-person frontend team",
+  "country": "Poland (Internal app)",
+  "title": "Progressive web app demo",
+  "type": "Frontend, Backend",
+  "description": "Project made for testing and demonstrating abilities of Progresive Web Apps",
+  "features": "Responsive web design, mobile device interfaces, localization, online mode, service workers, push notifications, speach2text,"
+}
