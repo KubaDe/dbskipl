@@ -52,15 +52,8 @@ collections:
       - {label: "Type", name: "type", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Country", name: "country", widget: "string"}
-      - name: "features"
-        label: "Features"
-        widget: list
-        field:
-          {label: "Label", name: "label", widget: "string"}
-      - name: "techStack"
-        label: "Tech Stack"
-        widget: list
-        field:
-          {label: "Label", name: "label", widget: "string"}
+      - {label: "Features", name: "features", widget: "text"}
+      - {label: "Tech stack", name: "techStack", widget: "text"}
+
 
 

@@ -1,22 +1,11 @@
 {
   "companySlug": "sdc",
   "slug": "00-00",
-  "techStack": [
-    "jQuery",
-    "PHP Sympfony",
-    "React - single components",
-    "Highcharts"
-  ],
+  "techStack": "jQuery, PHP Sympfony, React - single components, Highcharts",
   "role": "Junior full-stack developer",
   "country": "Poland",
   "title": "BI dashboard for energy management",
   "type": "Full-stack",
   "description": "Electrical energy data acquisition system for large buildings",
-  "features": [
-    "Admin panel",
-    "Energy consumption charts",
-    "Client management page",
-    "System management pages",
-    "Historical values overview pages"
-  ]
+  "features": "Admin panel, Energy consumption charts, Client management page, System management pages, Historical values overview pages"
 }
