@@ -1,0 +1,11 @@
+{
+  "companySlug": "ideamotive",
+  "slug": "02-03",
+  "techStack": "react, react-router-dom, react-i18next, redux, redux-saga, redux-form, redux-persist, lodash, classnames, bootstrap, sass, jest, enzyme",
+  "role": "Part of remote front-end development team",
+  "country": "Singapore",
+  "title": "Shared economy for courier posts",
+  "type": "Frontend",
+  "description": "Application for creating and managing car fleets and couriers (Uber for shipping packages)",
+  "features": "Live map, User dashboard, Admin dashboard, Driver management panel,"
+}
