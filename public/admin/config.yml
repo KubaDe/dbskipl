@@ -19,10 +19,11 @@ collections:
         name: "about"
         file: "src/__data__/company/list.json"
         fields:
-          - name: companies
-            label: Companies
+          - name: "companies"
+            label: "Companies"
             widget: list
             collapsed: false
+            identifier_field: "title"
             fields:
             - {label: "Id", name: "id", widget: "number"}
             - {label: "Slug", name: "slug", widget: "string"}
@@ -32,4 +33,34 @@ collections:
             - {label: "End", name: "end", widget: "string"}
             - {label: "Job Title", name: "jobTitle", widget: "string"}
             - {label: "Job Description", name: "jobDescription", widget: "text"}
+
+  - name: "project"
+    label: "Project"
+    editor:
+      preview: false
+    folder: "src/__data__/project"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    identifier_field: "slug"
+    fields:
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Company Slug", name: "companySlug", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Role", name: "role", widget: "string"}
+      - {label: "Type", name: "type", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Country", name: "country", widget: "string"}
+      - name: "features"
+        label: "Features"
+        widget: list
+        field:
+          {label: "Label", name: "label", widget: "string"}
+      - name: "techStack"
+        label: "Tech Stack"
+        widget: list
+        field:
+          {label: "Label", name: "label", widget: "string"}
+
 
