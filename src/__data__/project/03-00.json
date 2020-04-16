@@ -1,0 +1,11 @@
+{
+  "companySlug": "daftcode",
+  "slug": "03-00",
+  "techStack": "nextjs, react, react-router, apollo, graphQL, emotion-js, lodash, formik, i18n, storybook, docker, jest, sass",
+  "role": "Part onboard development team",
+  "country": "Poland",
+  "title": "Online ticket booking marketplace for major Polish food festival",
+  "type": "Frontend",
+  "description": "Full platform with white label functionality prepared for operating the largest Polish restaurant festival - Restaurant Week. ",
+  "features": "Admin panel, Calendar scheduler, Festival management, Event management, Restaurant management, Approval system "
+}
