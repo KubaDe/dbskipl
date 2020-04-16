@@ -1,0 +1,11 @@
+{
+  "companySlug": "ideamotive",
+  "slug": "02-00",
+  "techStack": "react, redux, redux-thunk, chart.js, sass, node.js, express, mongodb, heroku",
+  "role": "Part of two-person frontend team + backend middleware developer",
+  "country": "Germany",
+  "title": "BI Dashboard",
+  "type": "Frontend + server side middleware",
+  "description": "Dashboard for multinational conglomerate allowing access data and information collected from plants, machines and sensors distributed in facilities around the world.",
+  "features": "Graphical data presentation (charts, plots), Text data representation (tables), Map with facilities, Data mocking, Data cashing, Data transforming"
+}
