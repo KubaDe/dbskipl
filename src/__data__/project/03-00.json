@@ -5,6 +5,24 @@
   "role": "Part onboard development team",
   "country": "Poland",
   "title": "Online ticket booking marketplace for major Polish food festival",
+  "icons": [
+    {
+      "title": "Fork knife",
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587226085/icons/Icon--ForkKnife.svg"
+    },
+    {
+      "title": "Toast",
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587226084/icons/Icon--Toast.svg"
+    },
+    {
+      "title": "Ticket",
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587226083/icons/Icon--Ticket.svg"
+    },
+    {
+      "title": "Calendar",
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587226083/icons/Icon--Calendar2.svg"
+    }
+  ],
   "type": "Frontend",
   "description": "Full platform with white label functionality prepared for operating the largest Polish restaurant festival - Restaurant Week. ",
   "features": "Admin panel, Calendar scheduler, Festival management, Event management, Restaurant management, Approval system "
