@@ -1,0 +1,29 @@
+{
+  "companySlug": "freelance",
+  "slug": "ff-01",
+  "techStack": "Sketch, Storybook, TypeScript, nextjs, react, styled-system, styled-components,  framer-motion, state, lodash, netlify, netlifyCMS, ",
+  "role": "Freelancer - Design + Development",
+  "country": "Global",
+  "title": "Personal website - dbski.pl",
+  "icons": [
+    {
+      "title": "Personal",
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587226080/icons/Icon--Personal.svg"
+    },
+    {
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587226080/icons/Icon--Photo.svg",
+      "title": "Photography"
+    },
+    {
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587226078/icons/Icon--Code.svg",
+      "title": "Code"
+    },
+    {
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587226078/icons/Icon--Rocket.svg",
+      "title": "Rocket"
+    }
+  ],
+  "type": "Website + CMS + Design",
+  "description": "Personal website with a list of previous projects, photographic portfolio, personal thoughts and some awesome animations.",
+  "features": "Design, Animations, Design system, Projects sites, Experiences, Photo galleries, CMS, Storybook"
+}
