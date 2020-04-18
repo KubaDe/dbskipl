@@ -1,0 +1,29 @@
+{
+  "companySlug": "freelance",
+  "slug": "ff-00",
+  "techStack": "nextjs, react, styled-components, ghost cms, contentful, Heroku, lodash, axios, cloudflare",
+  "role": "Freelancer",
+  "country": "Poland",
+  "title": "Business website - debski-terapiamanualna.pl",
+  "icons": [
+    {
+      "title": "Website",
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587226080/icons/Icon--Website.svg"
+    },
+    {
+      "title": "Bone",
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587226080/icons/Icon--Bone.svg"
+    },
+    {
+      "title": "Broken ",
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587226081/icons/Icon--Broken.svg"
+    },
+    {
+      "title": "Classes",
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587226081/icons/Icon--Classes.svg"
+    }
+  ],
+  "type": "Full website + CMS",
+  "description": "Website design and development for family businesses related to physiotherapy.",
+  "features": "Blog, Knowledgebase, News, Courses catalog, Informations"
+}
