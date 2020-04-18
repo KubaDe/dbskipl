@@ -5,6 +5,24 @@
   "role": "Part of remote front-end development team",
   "country": "Singapore",
   "title": "Shared economy for courier posts",
+  "icons": [
+    {
+      "title": "Truck",
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587226089/icons/Icon--Truck.svg"
+    },
+    {
+      "title": "Package",
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587226089/icons/Icon--Package.svg"
+    },
+    {
+      "title": "Mail",
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587226088/icons/Icon--Mail.svg"
+    },
+    {
+      "title": "Connect",
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587226087/icons/Icon--Connect.svg"
+    }
+  ],
   "type": "Frontend",
   "description": "Application for creating and managing car fleets and couriers (Uber for shipping packages)",
   "features": "Live map, User dashboard, Admin dashboard, Driver management panel,"
