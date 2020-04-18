@@ -5,6 +5,24 @@
   "role": "Junior full-stack developer",
   "country": "Poland",
   "title": "BI dashboard for energy management",
+  "icons": [
+    {
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587226096/icons/Icon--Plug.svg",
+      "title": "Electric plug"
+    },
+    {
+      "title": "Electricity",
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587226098/icons/Icon--Bolt.svg"
+    },
+    {
+      "title": "Bar chart",
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587226095/icons/Icon--BarChart.svg"
+    },
+    {
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587226095/icons/Icon--PieChart.svg",
+      "title": "Pie chart"
+    }
+  ],
   "type": "Full-stack",
   "description": "Electrical energy data acquisition system for large buildings",
   "features": "Admin panel, Energy consumption charts, Client management page, System management pages, Historical values overview pages"
