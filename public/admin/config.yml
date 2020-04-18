@@ -4,7 +4,7 @@ backend:
 
 media_library:
   name: cloudinary
-  output_filename_only: true
+  output_filename_only: false
   config:
     cloud_name: djimngd9g
     api_key: 354114999119245
@@ -54,6 +54,11 @@ collections:
       - {label: "Country", name: "country", widget: "string"}
       - {label: "Features", name: "features", widget: "text"}
       - {label: "Tech stack", name: "techStack", widget: "text"}
-
+      - name: "icons"
+        label: "Icons"
+        widget: list
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Icon", name: "icon", widget: "image"}
 
 
