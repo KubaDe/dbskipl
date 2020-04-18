@@ -5,6 +5,24 @@
   "role": "One-person full-stack development team",
   "country": "Poland",
   "title": "Housekeeping services management",
+  "icons": [
+    {
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587226078/icons/Icon--WashingMachine.svg",
+      "title": "Washing machine"
+    },
+    {
+      "title": "Calendar",
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587226094/icons/Icon--Calendar.svg"
+    },
+    {
+      "title": "Car wash",
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587226094/icons/Icon--CarWash.svg"
+    },
+    {
+      "title": "Plant",
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587226093/icons/Icon--Plant.svg"
+    }
+  ],
   "type": "Full-stack",
   "description": "eComerce application for scheduling and buying housekeeping services allowing to maintain work-life balance.",
   "features": "Admin panel, Client panel, Service provider panel, Services calendar, Availability calendar, Purchase form, Payment, Complaints, Messages/Chat,"
