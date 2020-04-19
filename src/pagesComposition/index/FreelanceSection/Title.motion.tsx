@@ -30,7 +30,7 @@ const Title: React.FC<MotionTitleProps> = (props: MotionTitleProps) => {
       initial="inactive"
       transition={{
         duration: 1,
-        type: 'spring'
+        type: 'spring',
       }}
       variants={variants}
       as="h1"

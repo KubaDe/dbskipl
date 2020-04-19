@@ -20,13 +20,19 @@ import {
   AlignItemsProps,
   justifyItems,
   JustifyItemsProps,
+  justifyContent,
+  JustifyContentProps,
+  alignContent,
+  AlignContentProps,
 } from 'styled-system'
 import Box, { BaseBoxProps } from 'components/simpleUi/Box'
 
 export type BaseGridProps = BaseBoxProps &
   GridProps &
   AlignItemsProps &
-  JustifyItemsProps
+  JustifyItemsProps &
+  JustifyContentProps &
+  AlignContentProps
 
 const Grid: React.FC<BaseGridProps> = styled(Box).attrs({
   display: 'grid',
@@ -34,6 +40,9 @@ const Grid: React.FC<BaseGridProps> = styled(Box).attrs({
   ${grid}
   ${alignItems}
   ${justifyItems}
+  ${justifyContent}
+  ${justifyContent}
+  ${alignContent}
 `
 
 export type BaseGridItemProps = BaseBoxProps &

@@ -13,8 +13,8 @@ const variants: Variants = {
     y: 0,
     transition: {
       duration: 1,
-      type: 'spring'
-    }
+      type: 'spring',
+    },
   },
 }
 

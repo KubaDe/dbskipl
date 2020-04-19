@@ -13,9 +13,8 @@ import ExperienceSectionMobile from './ExperienceSection.mobile'
 import ExperienceSectionDesktop from './ExperienceSection.desktop'
 import CompanyModalContent from './CompanyModalContent'
 
-import experiencesJson from '__data__/company/list.json'
-import { Company, CompanyList } from '__data__/company/List.js'
-const experiences = (experiencesJson as CompanyList).companies
+import experiences from '__data__/company/experiences'
+import { Company } from '__data__/company/List.js'
 
 interface useMenuBarModalEffectsProps {
   fullPageModalController: FullPageModalController
@@ -63,7 +62,7 @@ const Section: React.FC = () => {
         },
       })
     }
-  }, [])
+  }, [currentExperience, fullPageModalController])
 
   const onBubbleClick = useCallback(
     (e: ChangeEvent<HTMLAnchorElement> & MouseEvent) => {

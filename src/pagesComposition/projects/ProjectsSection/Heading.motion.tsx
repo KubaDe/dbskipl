@@ -42,8 +42,8 @@ const Heading: React.FC<MotionHeadingProps> = (props: MotionHeadingProps) => {
       variants={variants}
       transition={transition}
       fontFamily="secondary"
-      fontSize={{_: 'h1', md: 'hero2'}}
-      my={{_: 'md', md: '3xl'}}
+      fontSize={{ _: 'h1', md: 'hero2' }}
+      my={{ _: 'md', md: '3xl' }}
       color="inverted"
       {...props}
     />

@@ -78,7 +78,7 @@ const Section: React.FC<SectionProps> = ({
     <ScrollBlock onProgressChange={onProgressChange} overflow="hidden">
       <SectionLayout animate={state}>
         <SectionContent px="xs">
-          <Dots/>
+          <Dots />
           <Flex
             position="relative"
             width="100%"

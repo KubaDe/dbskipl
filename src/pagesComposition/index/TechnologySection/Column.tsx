@@ -6,7 +6,6 @@ import { breakpoints } from 'config/theme/breakpoints'
 
 import MotionColumn, { MotionColumnProps } from './Column.motion'
 
-
 const ColumnStyled = styled(MotionColumn)<MotionColumnProps>`
   @media (max-width: ${breakpoints.lg}) {
   :after, :before {

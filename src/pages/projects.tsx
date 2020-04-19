@@ -4,7 +4,7 @@ import { NextPage } from 'next'
 import Composition from 'pagesComposition/projects'
 
 const Page: NextPage = () => {
-  return <Composition/>
+  return <Composition />
 }
 
 export default Page

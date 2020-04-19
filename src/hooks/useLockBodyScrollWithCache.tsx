@@ -29,7 +29,7 @@ const useLockBodyScrollWithCache = (isLocked: boolean) => {
         setTimeout(() => window.scrollTo(0, lockedPosition))
       }
     }
-  }, [isLocked])
+  }, [isLocked, lockedPosition, position])
 }
 
 export default useLockBodyScrollWithCache

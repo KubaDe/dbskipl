@@ -23,15 +23,13 @@ const InformationSection: React.FC<InformationSectionProps> = (
     <Box as="section" py="xl">
       <DoubleSideExplainer>
         <LeftExplainer>
-          <ExplainerDisplay>{experience.start} – {experience.end}</ExplainerDisplay>
+          <ExplainerDisplay>
+            {experience.start} – {experience.end}
+          </ExplainerDisplay>
         </LeftExplainer>
         <RightExplainer>
-          <ExplainerTitle mb="md">
-            {experience.jobTitle}
-          </ExplainerTitle>
-          <ExplainerText>
-            {experience.jobDescription}
-          </ExplainerText>
+          <ExplainerTitle mb="md">{experience.jobTitle}</ExplainerTitle>
+          <ExplainerText>{experience.jobDescription}</ExplainerText>
         </RightExplainer>
       </DoubleSideExplainer>
     </Box>

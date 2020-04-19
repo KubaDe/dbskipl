@@ -6,7 +6,6 @@ import VerticalAxis from 'components/ui/ScrollBubbles/VerticalAxis'
 import Bubble from 'components/ui/ScrollBubbles/Bubble'
 import ShallowLink from 'components/helpers/ShallowLink'
 
-
 import Wrapper from './Wrapper.motion'
 import BubbleWrapper from './BubbleWrapper.mobile'
 import Dots from './Dots.motion'
@@ -41,13 +40,13 @@ const Section: React.FC<SectionProps> = ({
     >
       <Wrapper
         animate={isVisible ? 'mobileActive' : 'mobileNotActive'}
-        position='relative'
+        position="relative"
         overflow={'hidden'}
         initial="mobileNotActive"
         minHeight="800px"
         pb="2xl"
       >
-        <Dots/>
+        <Dots />
         <BgText
           mx="md"
           my="tbar"

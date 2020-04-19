@@ -21,13 +21,17 @@ const CompanyModalContent: React.FC<CompanyModalContentProps> = (
   return (
     <CompanyModalContentWrapper close={close}>
       <H1 fontSize={{ _: 'h2', md: 'h1' }}>{experience.title}</H1>
-      <InformationSection experience={experience}/>
-      <H1 fontSize={{ _: 'h2', md: 'h2' }} textAlign={{_: 'center', md: 'left'}} pb='lg'>
+      <InformationSection experience={experience} />
+      <H1
+        fontSize={{ _: 'h2', md: 'h2' }}
+        textAlign={{ _: 'center', md: 'left' }}
+        pb="lg"
+      >
         <BgText as="span" padSize="sm" mx="sm" inverted>
           Projects
         </BgText>
       </H1>
-      <hr/>
+      <hr />
       <ProjectsSection />
       <ProjectsSection />
       <ProjectsSection />

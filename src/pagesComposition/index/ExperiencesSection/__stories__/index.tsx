@@ -11,10 +11,7 @@ import { useMenuBarController } from 'components/layout/Layout/menuBarController
 import CompanyModalContent from '../CompanyModalContent'
 import ExperienceSection from '../'
 
-
-import experiencesJson from '__data__/company/list.json'
-import { CompanyList } from '__data__/company/List'
-const experiences = (experiencesJson as CompanyList).companies
+import experiences from '__data__/company/experiences'
 
 export default {
   title: 'Pages|Index.ExperienceSection',
@@ -23,7 +20,7 @@ export default {
 export const section = () => (
   <Layout>
     <ScrollSpine>
-      <ExperienceSection/>
+      <ExperienceSection />
     </ScrollSpine>
   </Layout>
 )
@@ -44,7 +41,7 @@ const Modal = () => {
 
   return (
     <FullPageModal fullPageModalController={fullPageModalController}>
-      <CompanyModalContent close={() => {}} experience={experiences[0]}/>
+      <CompanyModalContent close={() => {}} experience={experiences[0]} />
     </FullPageModal>
   )
 }

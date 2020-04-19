@@ -23,7 +23,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = (
   props: ProjectsSectionProps,
 ) => {
   return (
-    <Box as="section" py={{_: 0, md: "xl"}}>
+    <Box as="section" py={{ _: 0, md: 'xl' }}>
       <DoubleSideExplainer>
         <LeftExplainer>
           <ExplainerTitle>Booking service for transfer agent</ExplainerTitle>

@@ -9,7 +9,11 @@ const variants: Variants = {
     transition: { staggerChildren: 0.2, delayChildren: 0.4 },
   },
   inactive: {
-    transition: { staggerChildren: 0.2, delayChildren: 0.4, staggerDirection: -1 },
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.4,
+      staggerDirection: -1,
+    },
   },
 }
 

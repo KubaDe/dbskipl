@@ -1,21 +1,21 @@
-import React, { useRef } from 'react';
-import { useIntersection } from 'react-use';
+import React, { useRef } from 'react'
+import { useIntersection } from 'react-use'
 
 import Flex, { FlexItem } from 'components/simpleUi/Flex'
 import Box from 'components/simpleUi/Box'
 import Decoration from 'components/typography/Decoration'
 
 import Background from './Background'
-import BigAvatar from './BigAvatar.motion';
+import BigAvatar from './BigAvatar.motion'
 import Heading from './Heading.motion'
 import headingPhotoSrc from './assets/_DSC6009.png'
 
 const Section: React.FC = () => {
-  const ref = useRef(null);
+  const ref = useRef(null)
   const intersection = useIntersection(ref, {
     rootMargin: '-200px 0px 100px 0px',
-    threshold: .2
-  });
+    threshold: 0.2,
+  })
   const animationState = intersection?.isIntersecting ? 'active' : 'inactive'
 
   return (
@@ -63,7 +63,7 @@ const Section: React.FC = () => {
                 textAlign={{ _: 'center', md: 'left' }}
                 fontSize={{ _: 'display2', lg: 'hero1' }}
                 fontWeight={100}
-                delayTime={.2}
+                delayTime={0.2}
                 zIndex={3}
                 animate={animationState}
               >
@@ -75,7 +75,7 @@ const Section: React.FC = () => {
                 fontSize={{ _: 'display2', lg: 'hero2' }}
                 fontWeight={100}
                 mb={{ _: 'md', lg: '3xl' }}
-                delayTime={.4}
+                delayTime={0.4}
                 zIndex={2}
                 animate={animationState}
               >
@@ -85,7 +85,7 @@ const Section: React.FC = () => {
                 textAlign={{ _: 'center', md: 'left' }}
                 fontSize={{ _: 'display4', lg: 'display1' }}
                 fontWeight={100}
-                delayTime={.6}
+                delayTime={0.6}
                 zIndex={3}
                 animate={animationState}
               >

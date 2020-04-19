@@ -1,8 +1,8 @@
 import inject from 'hoc/inject'
 
 import Flex, { BaseFlexProps } from 'components/simpleUi/Flex'
-import { H2, H3, H4, H5 } from 'components/typography/Heading'
-import BgText  from 'components/typography/BgText'
+import { H2, H4 } from 'components/typography/Heading'
+import BgText from 'components/typography/BgText'
 import Text from 'components/simpleUi/Text'
 
 const DoubleSideExplainer = inject(Flex, {
@@ -31,7 +31,7 @@ export const RightExplainer = inject(Flex, {
   textAlign: 'left',
   pl: { _: 0, md: '3xl' },
   borderBottom: { _: 'inverted', md: 'none' },
-  pb: {_: 'lg', md: 0},
+  pb: { _: 'lg', md: 0 },
   // mb: {_: 'md', md: 0},
 })
 
@@ -40,7 +40,7 @@ export const ExplainerDisplay = inject(H2, {
 })
 
 export const ExplainerTitle = inject(BgText, {
-  fontSize: {_: 'h3', md: 'h5'},
+  fontSize: { _: 'h3', md: 'h5' },
   width: '100%',
   mb: 'xs',
 })
@@ -48,14 +48,14 @@ export const ExplainerTitle = inject(BgText, {
 export const ExplainerSubtitle = inject(H4, {
   fontSize: 'h5',
   width: '100%',
-  mb: {_: 'sm', md: 'lg'},
+  mb: { _: 'sm', md: 'lg' },
 })
 
 export const ExplainerLabel = inject(BgText, {
   inverted: true,
   fontSize: 'h6',
   textAlign: { _: 'center', md: 'left' },
-  mx: 'md'
+  mx: 'md',
 })
 
 export const ExplainerText = inject(Text, {

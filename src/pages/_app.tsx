@@ -1,6 +1,6 @@
 import App from 'next/app'
 import Head from 'next/head'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import theme, { GlobalStyles } from 'config/theme'
