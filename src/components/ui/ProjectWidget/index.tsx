@@ -135,7 +135,7 @@ const Index: React.FC<ProjectWidgetProps> = (props: ProjectWidgetProps) => {
           <TagList>
             <TagListLabel
               width={{ _: '100%', md: '130px' }}
-              textAlign={{ _: 'center', md: 'left' }}
+              textAlign={{ _: 'center', lg: 'left' }}
             >
               Features:
             </TagListLabel>
@@ -148,7 +148,7 @@ const Index: React.FC<ProjectWidgetProps> = (props: ProjectWidgetProps) => {
           <TagList mt="md">
             <TagListLabel
               width={{ _: '100%', md: '130px' }}
-              textAlign={{ _: 'center', md: 'left' }}
+              textAlign={{ _: 'center', lg: 'left' }}
             >
               Technologies:{' '}
             </TagListLabel>
