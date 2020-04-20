@@ -5,6 +5,24 @@
   "role": "Part of two-person frontend team",
   "country": "Poland (Internal app)",
   "title": "Progressive web app demo",
+  "icons": [
+    {
+      "title": "Offline",
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587424430/icons/Icon--Offline.svg"
+    },
+    {
+      "title": "Connect",
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587226087/icons/Icon--Connect.svg"
+    },
+    {
+      "title": "Phone",
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587424430/icons/Icon--Phone.svg"
+    },
+    {
+      "title": "Tablet",
+      "icon": "https://res.cloudinary.com/djimngd9g/image/upload/v1587424430/icons/Icon--Tablet.svg"
+    }
+  ],
   "type": "Frontend, Backend",
   "description": "Project made for testing and demonstrating abilities of Progresive Web Apps",
   "features": "Responsive web design, mobile device interfaces, localization, online mode, service workers, push notifications, speach2text,"
