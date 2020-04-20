@@ -9,7 +9,7 @@ import {
 import { useMenuBarController } from 'components/layout/Layout/menuBarController'
 
 import Heading from './Heading.motion'
-import ProjectWidget from './ProjectWidget'
+import ProjectWidget from 'components/ui/ProjectWidget'
 
 import projects from '__data__/project/projects'
 
@@ -26,6 +26,7 @@ const Section: React.FC = () => {
           alignItems="flex-start"
           justifyContent="flex-start"
           flexDirection="column"
+          pt={{ _: '86px', md: '0' }}
         >
           <Heading>Corporate Projects</Heading>
           <Flex

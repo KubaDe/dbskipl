@@ -25,7 +25,13 @@ export const TopbarWrapper: React.FC<TopbarWrapperProps> = styled(Box)<
     })}
 `
 
-export const TopbarContent: React.FC<BaseBoxProps> = styled(Box)<BaseBoxProps>`
+interface TopbarContentRelatedProps {
+  isOpen: boolean
+}
+type TopbarContentProps = BaseBoxProps & TopbarContentRelatedProps
+export const TopbarContent: React.FC<TopbarContentProps> = styled(Box)<
+  TopbarContentProps
+>`
   position: relative;
   top: 0;
   left: 0;
@@ -35,6 +41,11 @@ export const TopbarContent: React.FC<BaseBoxProps> = styled(Box)<BaseBoxProps>`
   display: flex;
   align-items: center;
   justify-content: center;
+  ${props =>
+    !props.isOpen &&
+    css`
+      pointer-events: none;
+    `}
 `
 
 export type MenuItemProps = BaseBoxProps

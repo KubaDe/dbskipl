@@ -38,7 +38,7 @@ const DetailsSectionWrapper: React.FC<MotionDetailsSectionWrapperProps> = (
       initial="closed"
       variants={variants}
       width="100%"
-      px="xl"
+      px={{ _: 'lg', md: 'xl' }}
       {...props}
     />
   )

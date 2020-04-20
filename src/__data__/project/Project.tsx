@@ -1,3 +1,5 @@
+import { Company } from '../company/List'
+
 interface Icon {
   title: string
   icon: string
@@ -14,6 +16,7 @@ interface Project {
   features: string
   techStack: string
   icons: Icon[]
+  company?: Company
 }
 
 export default Project

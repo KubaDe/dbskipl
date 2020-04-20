@@ -11,7 +11,7 @@ import StyledHeading, { HeadingProps } from 'components/typography/Heading'
 
 const variants: Variants = {
   inactive: {
-    x: -300,
+    x: -900,
   },
   active: {
     x: 0,
@@ -42,8 +42,10 @@ const Heading: React.FC<MotionHeadingProps> = (props: MotionHeadingProps) => {
       variants={variants}
       transition={transition}
       fontFamily="secondary"
-      fontSize={{ _: 'h1', md: 'hero2' }}
-      my={{ _: 'md', md: '3xl' }}
+      fontSize={{ _: 'h1', md: 'hero3', lg: 'hero2' }}
+      textAlign={{_: 'center', md: 'left'}}
+      my={{ _: 'md', md: 'xl', lg: '3xl' }}
+      mb={{ _: 'md', md: 'md', lg: '3xl' }}
       color="inverted"
       {...props}
     />

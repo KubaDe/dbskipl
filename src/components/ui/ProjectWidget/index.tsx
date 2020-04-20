@@ -16,6 +16,7 @@ import Feature from './Feature'
 import WidgetWrapper from './WidgetWrapper.motion'
 import DetailsSectionWrapper from './DetailsSectionWrapper.motion'
 import Shine from './Shine.motion'
+import ExpandButton from './ExpandButton.motion'
 
 import Project from '__data__/project/Project'
 
@@ -46,12 +47,15 @@ const DetailsSection = inject(Flex, {
 })
 
 const IconGrid = inject(Grid, {
-  borderRight: 'inverted',
+  borderRight: { _: 'none', md: 'inverted' },
+  borderBottom: { _: 'inverted', md: 'none' },
   width: '100%',
-  my: 'lg',
-  px: 'lg',
-  gridTemplateRows: '50px 50px',
-  gridTemplateColumns: '50px 50px',
+  my: { _: '3xs', md: 'lg' },
+  px: { _: '0', md: 'lg' },
+  mx: { _: 'lg', md: '0' },
+  py: { _: 'md', md: '0' },
+  gridTemplateRows: { _: '40px', md: '50px 50px' },
+  gridTemplateColumns: { _: '40px 40px 40px 40px', md: '50px 50px' },
   justifyContent: 'center',
   alignContent: 'center',
   gridGap: 'lg',
@@ -63,15 +67,16 @@ interface ProjectWidgetRelatedProps {
 
 export type ProjectWidgetProps = ProjectWidgetRelatedProps & BaseFlexProps
 
-const ProjectWidget: React.FC<ProjectWidgetProps> = (
-  props: ProjectWidgetProps,
-) => {
+const Index: React.FC<ProjectWidgetProps> = (props: ProjectWidgetProps) => {
   const { project } = props
   const [isOpen, setIsOpen] = useState(false)
   return (
-    <Widget onClick={() => setIsOpen(!isOpen)} isOpen={isOpen}>
+    <Widget onClick={() => setIsOpen(true)} isOpen={isOpen}>
       <Shine />
-      <Flex width={{ _: '100%', md: '200px' }} minHeight="200px">
+      <Flex
+        width={{ _: '100%', md: '200px' }}
+        minHeight={{ _: '0', md: '200px' }}
+      >
         <IconGrid>
           {project.icons &&
             project.icons.map(icon => (
@@ -81,18 +86,30 @@ const ProjectWidget: React.FC<ProjectWidgetProps> = (
       </Flex>
       <Flex
         flex="1 1"
+        width={{ _: '100%', md: 'none' }}
         color="inverted"
         fontWeight={200}
-        p="lg"
+        p={{ _: 'lg', md: 'lg' }}
         flexDirection="column"
       >
-        <Heading as="h2" lineHeight="1.15em" fontSize="h3">
+        <Heading as="h2" lineHeight="1.15em" fontSize={{ _: 'h4', md: 'h3' }}>
           {project.title}
         </Heading>
-        <Text as="p" fontSize="lead" lineHeight="1.15em" mt="xs">
+        <Text
+          as="p"
+          fontSize={{ _: 'paragraph', md: 'lead' }}
+          lineHeight="1.15em"
+          mt={{ _: 'lg', md: 'xs' }}
+        >
           {project.description}
         </Text>
-        <Grid mt="xl" mb="md" gridTemplateColumns="1fr 1fr 1fr" gridGap="md">
+        <Grid
+          mt="xl"
+          mb="md"
+          gridTemplateColumns={{ _: '1fr', md: '1fr 1fr 1fr' }}
+          gridTemplateRows={{ _: '1fr 1fr 1fr', md: '1fr' }}
+          gridGap="md"
+        >
           <Feature
             icon={globeIconSrc}
             title="Country"
@@ -102,14 +119,26 @@ const ProjectWidget: React.FC<ProjectWidgetProps> = (
           <Feature
             icon={companyIconSrc}
             title="Employing"
-            value={project.companySlug}
+            value={project?.company?.title || project.companySlug}
           />
         </Grid>
+        <ExpandButton
+          isOpen={isOpen}
+          onClick={e => {
+            e.stopPropagation()
+            setIsOpen(!isOpen)
+          }}
+        />
       </Flex>
       <DetailsSectionWrapper isOpen={isOpen}>
         <DetailsSection>
           <TagList>
-            <TagListLabel width="130px">Features: </TagListLabel>
+            <TagListLabel
+              width={{ _: '100%', md: '130px' }}
+              textAlign={{ _: 'center', md: 'left' }}
+            >
+              Features:
+            </TagListLabel>
             <TagListTags flex="1 1">
               {project.features.split(',').map((feature, i) => (
                 <TagListItem key={`${i}-${feature}`}>{feature}</TagListItem>
@@ -117,7 +146,12 @@ const ProjectWidget: React.FC<ProjectWidgetProps> = (
             </TagListTags>
           </TagList>
           <TagList mt="md">
-            <TagListLabel width="130px">Technologies: </TagListLabel>
+            <TagListLabel
+              width={{ _: '100%', md: '130px' }}
+              textAlign={{ _: 'center', md: 'left' }}
+            >
+              Technologies:{' '}
+            </TagListLabel>
             <TagListTags flex="1 1">
               {project.techStack.split(',').map((feature, i) => (
                 <TagListItem key={`${i}-${feature}`}>{feature}</TagListItem>
@@ -130,4 +164,4 @@ const ProjectWidget: React.FC<ProjectWidgetProps> = (
   )
 }
 
-export default ProjectWidget
+export default Index

@@ -45,6 +45,7 @@ const Shine: React.FC<MotionShineProps> = (props: MotionShineProps) => {
       top={'-30%'}
       width="70px"
       height="150%"
+      invisible="<md"
       {...props}
     />
   )

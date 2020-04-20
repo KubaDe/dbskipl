@@ -81,7 +81,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
           />
         </SidebarButtonWrapper>
       </Flex>
-      <TopbarContent>
+      <TopbarContent isOpen={isOpen}>
         <FlexItem>
           {menuItems.map(item => (
             <BarMenuItem key={item.label}>

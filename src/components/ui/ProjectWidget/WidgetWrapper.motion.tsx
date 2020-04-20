@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react'
+import styled from 'styled-components'
 import { motion, AnimationProps, MotionProps, Variants } from 'framer-motion'
 
 import Flex, { BaseFlexProps } from 'components/simpleUi/Flex'
@@ -33,8 +34,12 @@ export type MotionWidgetWrapperProps = AnimationProps &
   BaseFlexProps &
   MotionProps
 
+const StyledFlex = styled(Flex)`
+  cursor: pointer;
+`
+
 const MotionWidgetWrapper: React.FC<MotionWidgetWrapperProps> = motion.custom(
-  Flex,
+  StyledFlex,
 )
 
 const WidgetWrapper: React.FC<MotionWidgetWrapperProps> = (
