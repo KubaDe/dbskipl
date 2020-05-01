@@ -57,7 +57,7 @@ const CompanyModalContentWrapper: React.FC<CompanyModalContentWrapperProps> = (
         <Content>{children}</Content>
       </ContentWrapper>
       <ButtonBackground />
-      <ShallowLink href={`/`}>
+      <ShallowLink href={`/software`}>
         <CloseButton onClick={close} />
       </ShallowLink>
     </>

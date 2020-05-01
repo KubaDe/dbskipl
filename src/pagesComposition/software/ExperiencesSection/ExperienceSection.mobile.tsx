@@ -65,7 +65,7 @@ const Section: React.FC<SectionProps> = ({
           bubbles={experiences.map((experience, i) => (
             <BubbleWrapper>
               {({ isOpen }) => (
-                <ShallowLink href={`/?company=${experience.slug}`}>
+                <ShallowLink href={`?company=${experience.slug}`}>
                   <Bubble
                     key={i}
                     title={experience.title}

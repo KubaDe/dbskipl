@@ -116,7 +116,7 @@ const Section: React.FC<SectionProps> = ({
             >
               <HorizontalAxis
                 bubbles={experiences.map((experience, i) => (
-                  <ShallowLink href={`/?company=${experience.slug}`}>
+                  <ShallowLink href={`?company=${experience.slug}`}>
                     <Bubble
                       key={i}
                       title={experience.title}

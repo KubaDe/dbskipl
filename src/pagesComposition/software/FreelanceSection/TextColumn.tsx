@@ -50,7 +50,7 @@ const TextColumn: React.FC<TextColumnProps> = (props: TextColumnProps) => {
           cooperation.
         </Description>
         <ButtonWrapper animate={animationState}>
-          <Link href="#" passHref>
+          <Link href="/projects" passHref>
             <ProjectsCta>Previous Projects</ProjectsCta>
           </Link>
         </ButtonWrapper>

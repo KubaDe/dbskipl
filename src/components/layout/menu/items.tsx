@@ -4,7 +4,7 @@ interface MenuItem {
 }
 
 const items: MenuItem[] = [
-  { label: 'About me', href: 'about_me' },
+  { label: 'About me', href: '' },
   { label: 'Software', href: 'software' },
   { label: 'Projects', href: 'projects' },
   { label: 'Photography', href: 'photography' },
