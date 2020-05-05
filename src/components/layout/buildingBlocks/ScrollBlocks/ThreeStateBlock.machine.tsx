@@ -1,6 +1,6 @@
 import { Machine } from 'xstate'
 
-export const thresholds: number[] = [0.2, 1.55]
+export const _thresholds: number[] = [0.2, 1.55]
 
 export const eventFactory = (progress: number): ProgressEvent => ({
   type: 'THRESHOLD',
@@ -48,9 +48,10 @@ export const checkThresholdDown = (
 
 interface GetExperienceSectionMachineProps {
   id: string
+  thresholds?: number[]
 }
 
-export const getSectionMachine = ({ id }: GetExperienceSectionMachineProps) => {
+export const getSectionMachine = ({ id, thresholds=_thresholds }: GetExperienceSectionMachineProps) => {
   return Machine<
     {},
     ExperienceSectionMachineStateSchema,

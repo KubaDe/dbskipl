@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
             fontSize={{ _: 'h2', md: 'h4', lg: 'h3' }}
             mb="md"
           >
-            Jakub Debski
+            Jakub Dębski
           </Text>
           <Text
             display="block"

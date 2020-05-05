@@ -4,7 +4,6 @@ import Flex from 'components/simpleUi/Flex'
 export const SectionLayout = inject(Flex, {
   backgroundColor: 'primary',
   position: 'relative',
-  borderTop: 'primary',
   flexDirection: 'row',
 })
 

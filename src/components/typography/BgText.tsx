@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 import css from '@styled-system/css'
 import { themeGet } from '@styled-system/theme-get'
@@ -39,17 +39,17 @@ const Highlight = styled(Box).attrs({ as: 'span' })<BgTextProps>`
   }
 `
 
-const BgTextProps: React.FC<BgTextProps> = ({
-  children,
-  padSize = 'md',
-  inverted = false,
-  ...props
-}: BgTextProps) => (
-  <BgTextPropsComponent {...props}>
-    <Highlight padSize={padSize} inverted={inverted}>
-      {children}
-    </Highlight>
-  </BgTextPropsComponent>
+const BgTextProps: React.FC<BgTextProps> = forwardRef(
+  (
+    { children, padSize = 'md', inverted = false, ...props }: BgTextProps,
+    ref,
+  ) => (
+    <BgTextPropsComponent {...props}>
+      <Highlight padSize={padSize} inverted={inverted} ref={ref}>
+        {children}
+      </Highlight>
+    </BgTextPropsComponent>
+  ),
 )
 
 export default BgTextProps

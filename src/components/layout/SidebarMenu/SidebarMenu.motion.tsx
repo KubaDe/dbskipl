@@ -26,7 +26,6 @@ const MotionSidebarWrapper: React.FC<MotionSidebarWrapperProps> = motion.custom(
 
 const openBase = {
   width: '246px',
-
   transition: {
     delayChildren: 0.4,
     staggerChildren: 0.05,
@@ -44,22 +43,18 @@ const sidebarVariants: Variants = {
   open_basic: {
     ...openBase,
     backgroundColor: 'rgba(255, 255, 255, 1)',
-    borderRightColor: colors.black,
   },
   closed_basic: {
     ...closeBase,
     backgroundColor: 'rgba(255, 255, 255, 0)',
-    borderRightColor: colors.black,
   },
   open_inverted: {
     ...openBase,
     backgroundColor: 'rgba(0, 0, 0, 1)',
-    borderRightColor: colors.inverted,
   },
   closed_inverted: {
     ...closeBase,
     backgroundColor: 'rgba(255, 255, 255, 0)',
-    borderRightColor: colors.inverted,
   },
 }
 
@@ -78,6 +73,7 @@ export const Sidebar: React.FC<SidebarProps> = (props: SidebarProps) => {
       animate={variant}
       initial={variant}
       variants={sidebarVariants}
+      borderRight={isInverted ? 'inverted' :  'primary'}
       {...props}
     />
   )

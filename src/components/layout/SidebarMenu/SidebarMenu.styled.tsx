@@ -19,7 +19,7 @@ export const SidebarWrapper: React.FC<SidebarWrapperProps> = styled(Box)<
   ${props =>
     css({
       width: 'xl',
-      borderRight: 'primary',
+      // borderRight: 'primary',
       borderRightWidth: 'normal',
     })}
 `
