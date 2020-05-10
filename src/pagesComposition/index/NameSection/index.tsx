@@ -37,7 +37,11 @@ const Section: React.FC = () => {
   return (
     <ScrollBlock onProgressChange={onProgressChange} overflow="hidden">
       <SectionLayout backgroundColor="inverted" overflow="hidden">
-        <SectionContent pt={{ _: '86px', md: '0' }} minHeight="100vh">
+        <SectionContent
+          pt={{ _: '86px', md: '0' }}
+          height={{ md: '100vh' }}
+          maxHeight="1400px"
+        >
           <Wrapper animate={state}>
             <Image />
             <Content animate={state}>

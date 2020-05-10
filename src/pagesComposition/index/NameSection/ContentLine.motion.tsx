@@ -15,14 +15,14 @@ const variants: Variants = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: .8,
+      duration: 0.8,
     },
   },
   after: {
     opacity: 0,
-    x: -100,
+    x: 0,
     transition: {
-      duration: 0.1,
+      duration: 0.8,
     },
   },
 }

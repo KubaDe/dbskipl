@@ -9,15 +9,18 @@ import sideProfileSrc from './assets/sideProfile.png'
 const variants: Variants = {
   before: {
     x: -200,
-    rotate: '-20deg'
+    rotate: '-20deg',
+    opacity: 1,
   },
   active: {
     x: 0,
-    rotate: '0deg'
+    rotate: '0deg',
+    opacity: 1,
   },
   after: {
-    x: 200,
-    rotate: '20deg'
+    x: 0,
+    rotate: '0deg',
+    opacity: 0,
   },
 }
 
