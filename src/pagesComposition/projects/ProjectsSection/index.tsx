@@ -28,7 +28,7 @@ const Section: React.FC = () => {
           flexDirection="column"
           pt={{ _: '86px', md: '0' }}
         >
-          <Heading>Corporate Projects</Heading>
+          <Heading id="corporate">Corporate Projects</Heading>
           <Flex
             flexDirection="column"
             width="100%"
@@ -42,7 +42,7 @@ const Section: React.FC = () => {
                 <ProjectWidget project={project} key={project.slug} />
               ))}
           </Flex>
-          <Heading my="3xl">Freelance Projects</Heading>
+          <Heading my="3xl" id="freelance">Freelance Projects</Heading>
           <Flex
             flexDirection="column"
             width="100%"
