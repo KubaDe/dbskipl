@@ -9,12 +9,9 @@ import {
 } from 'components/layout/buildingBlocks/SectionContent'
 import { useMenuBarController } from 'components/layout/Layout/menuBarController'
 import Flex from 'components/simpleUi/Flex'
-import Box from 'components/simpleUi/Box'
 import Img from 'components/simpleUi/Img'
 import Text from 'components/simpleUi/Text'
 import Button from 'components/buttons/BasicButton'
-import BgText from 'components/typography/BgText'
-import IconButton from 'components/buttons/IconButton'
 import {
   eventFactory,
   getSectionMachine,
@@ -92,7 +89,7 @@ const ProjectLabelRightLine = inject(Text, {
 
 const sectionMachine = getSectionMachine({
   id: 'projects-machine',
-  thresholds: [0.2, 1.55],
+  thresholds: [0.2, 1.3],
 })
 
 const Section: React.FC = () => {

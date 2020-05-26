@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="493px" height="179px" viewBox="0 0 493 179" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 24 Copy</title>
+    <defs>
+        <polygon id="path-1" points="88.5 0 177 492 0 492"></polygon>
+    </defs>
+    <g id="Landing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="DesktopSidebar-aboutMe" transform="translate(-770.000000, -5121.000000)">
+            <g id="Group-14" transform="translate(66.000000, 5059.000000)">
+                <g id="Group-17" transform="translate(0.000000, 62.581998)">
+                    <g id="Group-12" transform="translate(114.000000, 0.000000)">
+                        <g id="Group-24-Copy" transform="translate(836.500000, 89.000000) scale(-1, 1) rotate(-450.000000) translate(-836.500000, -89.000000) translate(748.000000, -157.000000)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g id="Mask"></g>
+                            <g id="Group-24" mask="url(#mask-2)" stroke="#FFFFFF" stroke-linecap="square" stroke-opacity="0.425972465" stroke-width="16">
+                                <g transform="translate(0.000000, -120.000000)">
+                                    <line x1="0.137275353" y1="125.882724" x2="177.222481" y2="125.882724" id="Line-7-Copy-5"></line>
+                                    <line x1="0.137275353" y1="151.059269" x2="177.222481" y2="151.059269" id="Line-7-Copy-6"></line>
+                                    <line x1="0.137275353" y1="176.235813" x2="177.222481" y2="176.235813" id="Line-7-Copy-7"></line>
+                                    <line x1="0.137275353" y1="201.412358" x2="177.222481" y2="201.412358" id="Line-7-Copy-8"></line>
+                                    <line x1="0.137275353" y1="226.588903" x2="177.222481" y2="226.588903" id="Line-7-Copy-9"></line>
+                                    <line x1="0.137275353" y1="251.765448" x2="177.222481" y2="251.765448" id="Line-7-Copy-10"></line>
+                                    <line x1="0.137275353" y1="276.941992" x2="177.222481" y2="276.941992" id="Line-7-Copy-11"></line>
+                                    <line x1="0.137275353" y1="302.118537" x2="177.222481" y2="302.118537" id="Line-7-Copy-12"></line>
+                                    <line x1="0.137275353" y1="327.295082" x2="177.222481" y2="327.295082" id="Line-7-Copy-13"></line>
+                                    <line x1="0.137275353" y1="352.471627" x2="177.222481" y2="352.471627" id="Line-7-Copy-14"></line>
+                                    <line x1="0.137275353" y1="377.648172" x2="177.222481" y2="377.648172" id="Line-7-Copy-15"></line>
+                                    <line x1="0.137275353" y1="402.824716" x2="177.222481" y2="402.824716" id="Line-7-Copy-16"></line>
+                                    <line x1="0.137275353" y1="428.001261" x2="177.222481" y2="428.001261" id="Line-7-Copy-17"></line>
+                                    <line x1="0.137275353" y1="453.177806" x2="177.222481" y2="453.177806" id="Line-7-Copy-18"></line>
+                                    <line x1="0.137275353" y1="478.354351" x2="177.222481" y2="478.354351" id="Line-7-Copy-19"></line>
+                                    <line x1="0.137275353" y1="503.530895" x2="177.222481" y2="503.530895" id="Line-7-Copy-20"></line>
+                                    <line x1="0.137275353" y1="528.70744" x2="177.222481" y2="528.70744" id="Line-7-Copy-21"></line>
+                                    <line x1="0.137275353" y1="553.883985" x2="177.222481" y2="553.883985" id="Line-7-Copy-22"></line>
+                                    <line x1="0.137275353" y1="579.06053" x2="177.222481" y2="579.06053" id="Line-7-Copy-23"></line>
+                                    <line x1="0.137275353" y1="604.237074" x2="177.222481" y2="604.237074" id="Line-7-Copy-24"></line>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
