@@ -17,18 +17,18 @@ const Column = inject(Flex, {
 
 const Section: React.FC = () => {
   return (
-    <Wrapper>
+    <Wrapper borderTop='inverted'>
       <Column>
-        <BgText fontSize="display1" as="h1">
+        <BgText fontSize="display1" as="h1" inverted>
           Contact
         </BgText>
       </Column>
       <Column>
         <Box>
-          <BgText fontSize="h2" as="p">
+          <BgText fontSize="h2" as="p" inverted>
             Jakub Debski
           </BgText>
-          <BgText fontSize="h2" as="p">
+          <BgText fontSize="h2" as="p" inverted>
             <a href="mailto:hello@dbski.pl">hello@dbski.pl</a>
           </BgText>
         </Box>

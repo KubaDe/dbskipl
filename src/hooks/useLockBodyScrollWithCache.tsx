@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react';
 
 const setLockBody = (value: boolean): void => {
   if (typeof window !== 'object') {
@@ -14,15 +14,15 @@ const setLockBody = (value: boolean): void => {
 
 const useLockBodyScrollWithCache = (isLocked: boolean) => {
   const [lockedPosition, setLockedPosition] = useState(0)
-  let position = 0
-  if (typeof window === 'object') {
-    position = window.scrollY
+  let position = useRef(0)
+  if (typeof window === 'object' && window.scrollY) {
+    position.current = window.scrollY
   }
 
   useLayoutEffect(() => {
     if (isLocked) {
-      setTimeout(() => setLockBody(true), 2000)
-      setLockedPosition(position)
+      setTimeout(() => setLockBody(true), 1000)
+      setLockedPosition(position.current)
     } else {
       if (typeof window === 'object') {
         setLockBody(false)

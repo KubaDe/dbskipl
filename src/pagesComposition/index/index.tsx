@@ -6,6 +6,8 @@ import NameSection from './NameSection'
 import SoftwareDeveloperSection from './SoftwareDeveloperSection'
 import ProjectsSection from './ProjectsSection'
 import PhotographyIntro from './PhotographyIntro'
+import Instagram from './Instagram'
+import ContactSection from './ContactSection'
 
 const PageComposition: React.FC = () => {
   return (
@@ -15,6 +17,8 @@ const PageComposition: React.FC = () => {
       <SoftwareDeveloperSection />
       <ProjectsSection />
       <PhotographyIntro />
+      <Instagram />
+      <ContactSection />
     </Layout>
   )
 }

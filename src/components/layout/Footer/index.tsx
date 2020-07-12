@@ -66,11 +66,11 @@ const Footer: React.FC = () => {
             as="p"
           >
             <a
-              href="mailto:contact@dbski.pl"
+              href="mailto:hello@dbski.pl"
               target="_blank"
               rel="noopener noreferrer"
             >
-              contact@dbski.pl
+              hello@dbski.pl
             </a>
           </Text>
         </Column>
