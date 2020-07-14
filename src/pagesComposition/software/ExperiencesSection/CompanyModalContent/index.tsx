@@ -8,6 +8,7 @@ import InformationSection from './InformationSection'
 import ProjectsSection from './ProjectsSection'
 
 import { Company } from '__data__/company/List'
+import projects from '__data__/project/projects'
 
 interface CompanyModalContentRelatedProps {
   close: () => void
@@ -18,6 +19,7 @@ const CompanyModalContent: React.FC<CompanyModalContentProps> = (
   props: CompanyModalContentProps,
 ) => {
   const { close, experience } = props
+  const companyProjects = projects.filter((project) => project.companySlug === experience.slug)
   return (
     <CompanyModalContentWrapper close={close}>
       <H1 fontSize={{ _: 'h2', md: 'h1' }}>{experience.title}</H1>
@@ -32,10 +34,9 @@ const CompanyModalContent: React.FC<CompanyModalContentProps> = (
         </BgText>
       </H1>
       <hr />
-      <ProjectsSection />
-      <ProjectsSection />
-      <ProjectsSection />
-      <ProjectsSection />
+      {
+        companyProjects.map(project => <ProjectsSection key={project.slug} project={project}/>)
+      }
     </CompanyModalContentWrapper>
   )
 }

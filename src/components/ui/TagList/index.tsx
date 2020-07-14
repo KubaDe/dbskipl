@@ -8,7 +8,8 @@ const TagList = inject(Flex, {
 })
 
 export const TagListLabel = inject(FlexItem, {
-  width: '200px',
+  width: '150px',
+  minWidth: '150px',
   my: { _: 'md', lg: '0' },
 })
 

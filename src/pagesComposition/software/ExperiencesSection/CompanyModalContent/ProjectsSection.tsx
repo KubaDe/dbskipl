@@ -15,39 +15,46 @@ import TagList, {
   TagListTags,
 } from 'components/ui/TagList'
 
-interface ProjectsSectionRelatedProps {}
+import Project from '__data__/project/Project'
+import BgTextProps from '../../../../components/typography/BgText'
+
+interface ProjectsSectionRelatedProps {
+  project: Project
+}
 
 type ProjectsSectionProps = BaseBoxProps & ProjectsSectionRelatedProps
 
 const ProjectsSection: React.FC<ProjectsSectionProps> = (
   props: ProjectsSectionProps,
 ) => {
+  const { project } = props
+  console.log(project)
   return (
     <Box as="section" py={{ _: 0, md: 'xl' }}>
       <DoubleSideExplainer>
         <LeftExplainer>
-          <ExplainerTitle>Booking service for transfer agent</ExplainerTitle>
-          <ExplainerSubtitle>
-            One-person frontend development team
-          </ExplainerSubtitle>
-          <ExplainerLabel>Frontend of booking service SPA</ExplainerLabel>
+          <ExplainerTitle fontSize='h3'>{project.title}</ExplainerTitle>
+          <ExplainerSubtitle>{project.role}</ExplainerSubtitle>
+          <Box mb="xs">{project.country}</Box>
+          <ExplainerLabel>{project.type}</ExplainerLabel>
         </LeftExplainer>
         <RightExplainer>
-          <ExplainerSubtitle>
-            Implementation of a web service with white-label features
-          </ExplainerSubtitle>
+          <ExplainerSubtitle>{project.description}</ExplainerSubtitle>
+
           <TagList>
-            <TagListLabel>Country: </TagListLabel>
+            <TagListLabel>Features: </TagListLabel>
             <TagListTags>
-              <TagListItem>Developing web</TagListItem>
-              <TagListItem>applications</TagListItem>
-              <TagListItem>for small and</TagListItem>
-              <TagListItem>companies</TagListItem>
-              <TagListItem>Developing</TagListItem>
-              <TagListItem>web applications</TagListItem>
-              <TagListItem>companies</TagListItem>
-              <TagListItem>web applications</TagListItem>
-              <TagListItem>for small and</TagListItem>
+              {project.features.split(',').map(feature => (
+                <TagListItem>{feature}</TagListItem>
+              ))}
+            </TagListTags>
+          </TagList>
+          <TagList mt='md'>
+            <TagListLabel>Technologies: </TagListLabel>
+            <TagListTags>
+              {project.techStack.split(',').map(feature => (
+                <TagListItem>{feature}</TagListItem>
+              ))}
             </TagListTags>
           </TagList>
         </RightExplainer>
