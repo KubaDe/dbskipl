@@ -10,6 +10,7 @@ import {
 import Img, { BaseImgProps } from 'components/simpleUi/Img'
 
 import diskSrc from './assets/Disk.png'
+import diskPreloadSrc from './assets/Disk-min-2xs.png'
 
 const variants: Variants = {
   active: {
@@ -55,6 +56,11 @@ const Disk: React.FC<Omit<MotionDiskProps, 'src' | 'title'>> = (
       variants={variants}
       transition={transition}
       src={diskSrc}
+      background="black"
+      borderRadius="50%"
+      backgroundImage={`url("${diskPreloadSrc}")`}
+      backgroundPosition="center"
+      backgroundSize="100%"
       title=""
       position="absolute"
       left="0"

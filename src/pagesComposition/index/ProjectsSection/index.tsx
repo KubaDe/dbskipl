@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import LazyLoad from 'react-lazyload'
 import Link from 'next/link'
 import { useMachine } from '@xstate/react'
 
@@ -11,7 +12,7 @@ import { useMenuBarController } from 'components/layout/Layout/menuBarController
 import Flex from 'components/simpleUi/Flex'
 import Img from 'components/simpleUi/Img'
 import Text from 'components/simpleUi/Text'
-import Button from 'components/buttons/BasicButton'
+import Button, { BasicButtonProps } from 'components/buttons/BasicButton'
 import {
   eventFactory,
   getSectionMachine,
@@ -55,7 +56,12 @@ const Column = inject(Flex, {
   my: { _: 'xl', md: 0 },
 })
 
-const ProjectButton = inject(Button, {
+const LazyButton = (props: BasicButtonProps) => (
+  <LazyLoad height={140}>
+    <Button {...props} />
+  </LazyLoad>
+)
+const ProjectButton = inject(LazyButton, {
   width: '140px',
   height: '140px',
   borderRadius: '30px',

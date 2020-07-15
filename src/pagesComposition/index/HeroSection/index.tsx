@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useMachine } from '@xstate/react'
+import LazyLoad from 'react-lazyload'
 
 import inject from 'hoc/inject'
 import {
@@ -60,7 +61,9 @@ const Section: React.FC = () => {
             px="0"
           >
             <DiskWrapper>
-              <Disk />
+              <LazyLoad>
+                <Disk />
+              </LazyLoad>
             </DiskWrapper>
             <TitleWrapper>
               <TitleWord

@@ -1,10 +1,18 @@
 import React from 'react'
-import { motion, AnimationProps, MotionProps, Variants, Transition } from 'framer-motion'
+import LazyLoad from 'react-lazyload'
+import {
+  motion,
+  AnimationProps,
+  MotionProps,
+  Variants,
+  Transition,
+} from 'framer-motion'
 
 import Img from 'components/simpleUi/Img'
 import Flex, { BaseFlexProps } from 'components/simpleUi/Flex'
 
 import sideProfileSrc from './assets/sideProfile.png'
+import sideProfilePreloadSrc from './assets/sideProfile-min.png'
 
 const variants: Variants = {
   before: {
@@ -26,7 +34,7 @@ const variants: Variants = {
 
 const transition: Transition = {
   mass: 2,
-  type: 'spring'
+  type: 'spring',
 }
 
 interface ImageRelatedProps {}
@@ -49,7 +57,16 @@ const Image: React.FC<MotionImageProps> = (props: MotionImageProps) => {
       flex="1 1"
       {...props}
     >
-      <Img width="300px" src={sideProfileSrc} title="" />
+      <LazyLoad>
+        <Img
+          width="300px"
+          src={sideProfileSrc}
+          title="Jakub Dębski"
+          backgroundImage={`url("${sideProfilePreloadSrc}")`}
+          backgroundPosition="center"
+          backgroundSize="100%"
+        />
+      </LazyLoad>
     </MotionImage>
   )
 }

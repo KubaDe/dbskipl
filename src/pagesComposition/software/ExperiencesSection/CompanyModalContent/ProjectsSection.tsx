@@ -28,7 +28,6 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = (
   props: ProjectsSectionProps,
 ) => {
   const { project } = props
-  console.log(project)
   return (
     <Box as="section" py={{ _: 0, md: 'xl' }}>
       <DoubleSideExplainer>

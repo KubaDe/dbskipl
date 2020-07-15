@@ -1,4 +1,5 @@
 import React, { ChangeEvent, useCallback, useEffect, useState } from 'react'
+import LazyLoad from 'react-lazyload'
 import times from 'lodash/times'
 import { useMachine } from '@xstate/react'
 
@@ -107,7 +108,6 @@ const Section: React.FC = () => {
       fullPageModalController.unsubscribe('close', resetActivePhoto)
     }
   }, [fullPageModalController, resetActivePhoto])
-
   return (
     <>
       <ScrollBlock
@@ -124,49 +124,58 @@ const Section: React.FC = () => {
             justifyContent="flex-start"
           >
             <a href="https://instagram.com/dbski.j/" target="_blank">
-              <Title animate={state}>
-                <Bubble animate={state} />
-                <BgText
-                  fontSize={{
-                    _: 'display3',
-                    md: 'display2',
-                    lg: 'display2',
-                    xl: 'display1',
-                    '2xl': '6vw',
-                  }}
-                  fontFamily="secondary"
-                  padSize="sm"
-                  zIndex={2}
-                >
-                  Instagram
-                </BgText>
-                <BgText
-                  fontSize={{
-                    _: 'h3',
-                  }}
-                  mt="-3px"
-                  padSize="sm"
-                  zIndex={2}
-                >
-                  dbski.j
-                </BgText>
-              </Title>
+              <LazyLoad offset={400}>
+                <Title animate={state}>
+                  <Bubble animate={state} />
+                  <BgText
+                    fontSize={{
+                      _: 'display3',
+                      md: 'display2',
+                      lg: 'display2',
+                      xl: 'display1',
+                      '2xl': '6vw',
+                    }}
+                    fontFamily="secondary"
+                    padSize="sm"
+                    zIndex={2}
+                  >
+                    Instagram
+                  </BgText>
+                  <BgText
+                    fontSize={{
+                      _: 'h3',
+                    }}
+                    mt="-3px"
+                    padSize="sm"
+                    zIndex={2}
+                  >
+                    dbski.j
+                  </BgText>
+                </Title>
+              </LazyLoad>
             </a>
-            <Flex alignItems="center" justifyContent="center" py="3xl" pb="128px">
-              <InstagramGrid>
-                {times(12).map(i => {
-                  if (!instagramPhotos || !instagramPhotos?.data[i]) {
-                    return null
-                  }
-                  return (
-                    <InstagramItem
-                      instagramPhoto={instagramPhotos?.data[i]}
-                      onClick={e => onPhotoClick(e, instagramPhotos?.data[i])}
-                      key={instagramPhotos?.data[i]?.timestamp}
-                    />
-                  )
-                })}
-              </InstagramGrid>
+            <Flex
+              alignItems="center"
+              justifyContent="center"
+              py="3xl"
+              pb="128px"
+            >
+              <LazyLoad offset={400}>
+                <InstagramGrid>
+                  {times(12).map(i => {
+                    if (!instagramPhotos || !instagramPhotos?.data[i]) {
+                      return null
+                    }
+                    return (
+                      <InstagramItem
+                        instagramPhoto={instagramPhotos?.data[i]}
+                        onClick={e => onPhotoClick(e, instagramPhotos?.data[i])}
+                        key={instagramPhotos?.data[i]?.timestamp}
+                      />
+                    )
+                  })}
+                </InstagramGrid>
+              </LazyLoad>
             </Flex>
           </SectionContent>
         </SectionLayout>

@@ -10,6 +10,7 @@ import {
 import Img, { BaseImgProps } from 'components/simpleUi/Img'
 
 import photographyAvatarSrc from './assets/photographyAvatar.png'
+import photographyAvatarPreloadSrc from './assets/photographyAvatar-min.png'
 
 const variants: Variants = {
   before: {
@@ -46,6 +47,11 @@ const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
       initial="before"
       variants={variants}
       src={photographyAvatarSrc}
+      background="black"
+      borderRadius="50%"
+      backgroundImage={`url("${photographyAvatarPreloadSrc}")`}
+      backgroundPosition="center"
+      backgroundSize="100%"
       title="Jakub Dębski Photography"
       width={{ _: '65vw', md: '60vw', lg: '45vw' }}
       maxWidth="1000px"

@@ -10,6 +10,7 @@ import InstagramItemPhoto from './InstagramItemPhoto.motion'
 import InstagramItemShadow from './InstagramItemShadow.motion'
 
 import albumSrc from './assets/album.svg'
+import diskPreloadSrc from '../HeroSection/assets/Disk-min-2xs.png'
 
 const variants: Variants = {
   whileHover: {
@@ -63,6 +64,10 @@ const InstagramItem: React.FC<MotionInstagramItemProps> = (
     >
       <InstagramItemPhoto
         src={instagramPhoto.mediaUrl || ''}
+        backgroundImage={`url("${instagramPhoto.permalink}media?size=t")`}
+        backgroundPosition="center"
+        backgroundSize="100%"
+        background="black"
         title=""
         zIndex={2}
         borderRadius="30px"

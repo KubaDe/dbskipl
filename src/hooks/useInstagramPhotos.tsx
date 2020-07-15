@@ -2,7 +2,7 @@ import { useMount } from 'react-use'
 import { useState } from 'react'
 import humps from 'humps'
 
-const URL = `https://graph.instagram.com/me/media?fields=id,media_type,media_url,username,timestamp,caption,children{media_url,thumbnail_url}&access_token=${process.env.NEXT_PUBLIC_IG_TOKEN}`
+const URL = `https://graph.instagram.com/me/media?fields=id,media_type,media_url,username,timestamp,caption,permalink,children{media_url,thumbnail_url}&access_token=${process.env.NEXT_PUBLIC_IG_TOKEN}`
 
 enum MediaType {
   IMAGE = 'IMAGE',
@@ -14,6 +14,7 @@ export interface InstagramPhoto {
   id: string
   mediaType: MediaType
   mediaUrl?: string
+  permalink?: string
   timestamp: string
   username: string
   caption: string
