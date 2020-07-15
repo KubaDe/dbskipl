@@ -1,6 +1,6 @@
 import React from 'react'
-import Layout from 'components/layout/Layout'
 
+import Layout from 'components/layout/Layout'
 import HeroSection from './HeroSection'
 import NameSection from './NameSection'
 import SoftwareDeveloperSection from './SoftwareDeveloperSection'

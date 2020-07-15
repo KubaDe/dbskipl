@@ -1,11 +1,23 @@
-import App from 'next/app'
+import App, { AppProps } from 'next/app'
 import Head from 'next/head'
 import React from 'react'
+import delay from 'lodash/delay'
 import { ThemeProvider } from 'styled-components'
 
 import theme, { GlobalStyles } from 'config/theme'
+import FullPageLoader from 'components/layout/FullPageLoader'
 
-export default class CustomApp extends App {
+interface CustomAppState {
+  loaderVisible: boolean
+}
+
+export default class CustomApp extends App<{}, {}, CustomAppState> {
+  constructor(props: AppProps) {
+    super(props)
+    this.state = {
+      loaderVisible: true,
+    }
+  }
   // @ts-ignore
   static async getInitialProps({ Component, router, ctx }) {
     let pageProps = {}
@@ -16,6 +28,10 @@ export default class CustomApp extends App {
   }
 
   componentDidMount(): void {
+    this.setState({ loaderVisible: true })
+    delay(() => {
+      this.setState({ loaderVisible: false })
+    }, 3500)
     // @ts-ignore
     if (window.netlifyIdentity) {
       // @ts-ignore
@@ -42,6 +58,7 @@ export default class CustomApp extends App {
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         </Head>
         <GlobalStyles />
+        <FullPageLoader isVisible={this.state.loaderVisible}/>
         <Component {...pageProps} />
       </ThemeProvider>
     )
