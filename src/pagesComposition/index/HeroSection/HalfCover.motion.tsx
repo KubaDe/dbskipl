@@ -38,7 +38,7 @@ const HalfCover: React.FC<MotionHalfCoverProps> = (
   return (
     <MotionHalfCover
       animate="active"
-      initial="inactive"
+      initial="active"
       transition={transition}
       variants={variants}
       background="black"

@@ -58,7 +58,7 @@ export default class CustomApp extends App<{}, {}, CustomAppState> {
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         </Head>
         <GlobalStyles />
-        <FullPageLoader isVisible={this.state.loaderVisible}/>
+        {/*<FullPageLoader isVisible={this.state.loaderVisible}/>*/}
         <Component {...pageProps} />
       </ThemeProvider>
     )
