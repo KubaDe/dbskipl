@@ -5,7 +5,6 @@ import delay from 'lodash/delay'
 import { ThemeProvider } from 'styled-components'
 
 import theme, { GlobalStyles } from 'config/theme'
-import FullPageLoader from 'components/layout/FullPageLoader'
 
 interface CustomAppState {
   loaderVisible: boolean
@@ -58,7 +57,6 @@ export default class CustomApp extends App<{}, {}, CustomAppState> {
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         </Head>
         <GlobalStyles />
-        {/*<FullPageLoader isVisible={this.state.loaderVisible}/>*/}
         <Component {...pageProps} />
       </ThemeProvider>
     )

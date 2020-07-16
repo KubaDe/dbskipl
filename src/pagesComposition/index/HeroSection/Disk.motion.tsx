@@ -15,21 +15,17 @@ import diskPreloadSrc from './assets/Disk-min-2xs.png'
 const variants: Variants = {
   active: {
     filter: ['brightness(0%)', 'brightness(0%)', 'brightness(100%)'],
-    // x: ['26vw', '0vw', '0vw'],
   },
   inactive: {
-    // x: '26vw',
     filter: 'brightness(0%)',
   },
   heroFull: {
     scale: 1,
     filter: 'brightness(100%)',
-    // x: '0vw',
   },
   heroCollapsed: {
     scale: 0.5,
     filter: 'brightness(100%)',
-    // x: '0vw',
   },
 }
 

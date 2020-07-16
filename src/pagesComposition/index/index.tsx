@@ -1,4 +1,5 @@
 import React from 'react'
+import LazyLoad from 'react-lazyload'
 
 import Layout from 'components/layout/Layout'
 import HeroSection from './HeroSection'
@@ -13,11 +14,15 @@ const PageComposition: React.FC = () => {
   return (
     <Layout>
       <HeroSection />
-      <NameSection />
+      <LazyLoad height='100vh'>
+        <NameSection />
+      </LazyLoad>
       <SoftwareDeveloperSection />
-      <ProjectsSection />
-      <PhotographyIntro />
-      <Instagram />
+      <LazyLoad offset={300} height="300vh">
+        <ProjectsSection />
+        <PhotographyIntro />
+        <Instagram />
+      </LazyLoad>
       <ContactSection />
     </Layout>
   )
