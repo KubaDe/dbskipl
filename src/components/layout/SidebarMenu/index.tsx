@@ -112,6 +112,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
             icon={<MenuToggleIcon isOpen={isOpen} />}
             onClick={() => setIsOpen(!isOpen)}
             type={isInverted || isOpen ? 'primary' : 'black'}
+            title="Open menu"
           />
         </SidebarButtonWrapper>
       </SidebarContent>

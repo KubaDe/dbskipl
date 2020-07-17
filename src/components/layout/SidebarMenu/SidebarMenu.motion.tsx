@@ -5,7 +5,6 @@ import { motion, AnimationProps, Variants, MotionProps } from 'framer-motion'
 import useOutsideClick from 'hooks/useOutsideClick'
 import { SidebarWrapper, SidebarWrapperProps } from './SidebarMenu.styled'
 
-import { colors } from 'config/theme/colors'
 
 interface SidebarRelatedProps {
   isOpen: boolean

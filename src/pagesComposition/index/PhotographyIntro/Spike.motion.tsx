@@ -50,7 +50,7 @@ const Spike: React.FC<SpikeProps> = (props: SpikeProps) => {
       initial="before"
       variants={variants}
       src={reversed ? spikeLeftSrc : spikeRightSrc}
-      title=""
+      title="Pattern"
       width={{ _: 'auto', md: '30vw' }}
       height={{ _: '50px', md: 'auto' }}
       maxWidth="800px"

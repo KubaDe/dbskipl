@@ -52,7 +52,7 @@ const DotsPlanet: React.FC<DotsPlanetProps> = (props: DotsPlanetProps) => {
       initial="before"
       variants={variants}
       transition={transition}
-      title=""
+      title="Pattern"
       src={dotsPlanetSrc}
       width={{ _: '80px', md: '100px', lg: '150px' }}
       {...props}

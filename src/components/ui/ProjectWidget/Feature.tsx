@@ -17,7 +17,7 @@ const Feature: React.FC<FeatureProps> = (props: FeatureProps) => {
   return (
     <Flex flex="1 1" justifySelf={{_: 'center', md: 'unset'}} {...props}>
       <Flex width="28px" mr={{ _: 'lg', md: 'md' }}>
-        <Img src={icon} title="" width="100%" />
+        <Img src={icon} title="Icon" width="100%" />
       </Flex>
       <Flex flex="1 1">
         <Flex

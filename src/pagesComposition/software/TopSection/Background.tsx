@@ -13,7 +13,7 @@ import blobSrc from './assets/Path 2.svg'
 const plantProps: BackgroundImageProps = {
   noselect: true,
   position: 'absolute',
-  title: '',
+  title: 'plant',
   src: '',
   animate: 'stable',
   initial: 'initial',
@@ -58,7 +58,7 @@ const Background: React.FC = () => {
       />
       <Img
         src={blobSrc}
-        title=""
+        title="Background"
         position="absolute"
         top={{ _: '0%', md: '-12%' }}
         right="-20%"

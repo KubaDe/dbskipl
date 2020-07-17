@@ -98,13 +98,13 @@ const PhotoModalContent: React.FC<PhotoModalContentProps> = (
             <Thumbnail
               key={photo.mediaUrl}
               src={photo.mediaUrl}
-              title=""
+              title="Gallery image"
               onClick={(e: MouseEvent) => {
                 e.stopPropagation()
                 setActiveChildren(i)
               }}
             />
-          ))}
+          ))}s
         </Thumbnails>
       )}
       <Wrapper>

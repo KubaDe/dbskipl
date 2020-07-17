@@ -43,13 +43,13 @@ const DoubleBubble: React.FC<DoubleBubbleProps> = (
       {...rest}
     >
       <Content>
-        <Heading as="h3" fontSize="h4" color="inverted" mb="2xs">
+        <Heading as="span" fontSize="h4" color="inverted" mb="2xs">
           {years}
         </Heading>
         <Heading as="h2" fontSize="h2" color="inverted">
           {title}
         </Heading>
-        <Heading as="h4" fontSize="h4" color="inverted" my="md">
+        <Heading as="h3" fontSize="h4" color="inverted" my="md">
           {school}
         </Heading>
         <Text as="p" fontSize="h6" color="inverted" lineHeight="1.3em">

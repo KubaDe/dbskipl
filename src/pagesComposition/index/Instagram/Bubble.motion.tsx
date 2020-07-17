@@ -46,7 +46,7 @@ const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
       initial="before"
       variants={variants}
       src={photographyAvatarSrc}
-      title=""
+      title="pattern"
       position="absolute"
       top="0"
       height='100%'
