@@ -19,7 +19,7 @@ const variants: Variants = {
     },
   },
   after: {
-    opacity: 0,
+    opacity: 1,
     x: 0,
     transition: {
       duration: 0.8,

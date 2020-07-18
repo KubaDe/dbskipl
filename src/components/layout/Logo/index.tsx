@@ -11,6 +11,7 @@ interface LogoRelatedProps {
   isPhoto?: boolean
   isVertical?: boolean
   isShort?: boolean
+  onClick?: () => void
 }
 
 type LogoProps = LogoRelatedProps
@@ -22,6 +23,7 @@ const Logo: React.FC<LogoProps> = (props: LogoProps) => {
     isPhoto = false,
     isVertical = false,
     isShort = false,
+    onClick = () => {},
   } = props
 
   const animate = [
@@ -37,6 +39,7 @@ const Logo: React.FC<LogoProps> = (props: LogoProps) => {
         baseSize={baseSize}
         animate={[...animate, isPhoto ? 'photo' : 'code']}
         initial={animate}
+        onClick={onClick}
       >
         <IconRect baseSize={baseSize}>
           <Icon mode={isPhoto ? 'photo' : 'code'} />

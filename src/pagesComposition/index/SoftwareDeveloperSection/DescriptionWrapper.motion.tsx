@@ -17,7 +17,7 @@ const variants: Variants = {
     x: 0,
   },
   after: {
-    x: '100%',
+    x: 0,
   },
 }
 

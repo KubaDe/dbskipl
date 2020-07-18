@@ -28,7 +28,7 @@ const variants: Variants = {
   after: {
     x: 0,
     rotate: '0deg',
-    opacity: 0,
+    opacity: 1,
   },
 }
 

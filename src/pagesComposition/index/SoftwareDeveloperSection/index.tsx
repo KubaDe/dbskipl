@@ -106,6 +106,7 @@ const Section: React.FC = () => {
                   sizeVariant="normal"
                   type="inverted"
                   as="a"
+                  title="More about software development"
                 >
                   Read more
                 </Button>

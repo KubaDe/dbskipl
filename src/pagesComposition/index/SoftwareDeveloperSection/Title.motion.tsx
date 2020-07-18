@@ -16,6 +16,9 @@ const variants: Variants = {
   active: {
     x: '0',
   },
+  after: {
+    x: '0',
+  },
 }
 
 const transition: Transition = {

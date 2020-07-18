@@ -1,4 +1,6 @@
 import React from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import Grid, { GridItem } from 'components/simpleUi/Grid'
 import { BaseBoxProps } from 'components/simpleUi/Box'
@@ -15,7 +17,6 @@ import { BarMenuItem } from '../menu/MenuItems/MenuItems.motion'
 import menuItems from '../menu/items'
 import { Sidebar } from './SidebarMenu.motion'
 import { SidebarContent } from './SidebarMenu.styled'
-import Link from 'next/link'
 
 export interface SidebarMenuRelatedProps {
   isOpen: boolean
@@ -69,6 +70,8 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
     type: isInverted ? 'inverted' : 'primary',
   }
 
+  const { push } = useRouter()
+
   return (
     <Sidebar
       isOpen={isOpen}
@@ -84,6 +87,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({
               isVertical={!isOpen}
               isPhoto={isPhoto}
               isShort={isShort}
+              onClick={() => push('/')}
             />
           </GridItem>
           <GridItem {...gridMenuItemsProps}>

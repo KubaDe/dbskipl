@@ -62,6 +62,21 @@ const Footer: React.FC = () => {
           </Text>
           <Text
             display="block"
+            fontSize='h5'
+            mb="md"
+            textAlign='center'
+          >
+            Jakub Dębski - Dbski Software
+          </Text>
+          <Text
+            display="block"
+            fontSize='h5'
+            mb="md"
+          >
+            NIP: 9562360777
+          </Text>
+          <Text
+            display="block"
             fontSize={{ _: 'h4', md: 'h5', lg: 'h4' }}
             as="p"
           >
@@ -76,22 +91,22 @@ const Footer: React.FC = () => {
         </Column>
         <Column>
           <ListItem>
-            <Link href="#" passHref>
-              <a title="Software site">Software</a>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="#" passHref>
-              <a title="Photography site">Photography</a>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="#" passHref>
+            <Link href="/" passHref>
               <a title="About me site">About me</a>
             </Link>
           </ListItem>
           <ListItem>
-            <Link href="#" passHref>
+            <Link href="/software" passHref>
+              <a title="Software site">Software</a>
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link href="/photography" passHref>
+              <a title="Photography site">Photography</a>
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Link href="/contact" passHref>
               <a title="Contact site">Contact</a>
             </Link>
           </ListItem>
