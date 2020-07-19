@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://dev.dbski.pl/</loc>
+  </url>
+  <url>
+    <loc>https://dev.dbski.pl/software</loc>
+  </url>
+  <url>
+    <loc>https://dev.dbski.pl/photography</loc>
+  </url>
+  <url>
+    <loc>https://dev.dbski.pl/projects</loc>
+  </url>
+  <url>
+    <loc>https://dev.dbski.pl/contact</loc>
+  </url>
+  <url>
+    <loc>https://dev.dbski.pl/software?company=sdc</loc>
+  </url>
+  <url>
+    <loc>https://dev.dbski.pl/software?company=qunabu</loc>
+  </url>
+  <url>
+    <loc>https://dev.dbski.pl/software?company=ideamotive</loc>
+  </url>
+  <url>
+    <loc>https://dev.dbski.pl/software?company=daftcode</loc>
+  </url>
+</urlset>

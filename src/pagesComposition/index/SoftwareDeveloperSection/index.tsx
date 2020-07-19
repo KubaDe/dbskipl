@@ -84,21 +84,23 @@ const Section: React.FC = () => {
           <DescriptionWrapper animate={state}>
             <GithubLink href="https://github.com/KubaDe" />
             <DescriptionBlock mt="lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-              faucibus lacus in ligula tincidunt volutpat. Ut porta, tellus id
-              consectetur gravida, erat nisi auctor nulla, id gravida orci leo
-              et mauris.
+              I'm a professional front-end developer, passionate about building
+              and growing amazing digital products.
             </DescriptionBlock>
             <DescriptionBlock>
-              Aenean velit sapien, ullamcorper et pellentesque vitae, convallis
-              vestibulum nisl. Fusce sed venenatis dui, vestibulum commodo eros.
-              Vivamus porttitor diam a est blandit, mollis scelerisque sem
-              maximus.
+              For me, building software is something more than just writing code
+              and competing Jira tasks. It's a creative process, which involves
+              the participation of many people responsible for delivering
+              specific value. For many developers, the outcome of this process
+              is the operating application, but I prefer a wider view. The final
+              product should be a real-world enhancement that meets customers
+              expectations and needs.
             </DescriptionBlock>
             <DescriptionBlock>
-              Fusce pharetra luctus tellus vitae molestie. Praesent ultricies
-              nisi id nulla ultrices, ac auctor ex iaculis.
+              To achieve a positive result that none of the process participants
+              can't forget about the main goal.
             </DescriptionBlock>
+
             <DescriptionBlock as="div" pt="xl" mb="xl">
               <Link href="/software" passHref>
                 <Button
