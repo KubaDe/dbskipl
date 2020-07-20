@@ -8,7 +8,8 @@ import Decoration from 'components/typography/Decoration'
 import Background from './Background'
 import BigAvatar from './BigAvatar.motion'
 import Heading from './Heading.motion'
-import headingPhotoSrc from './assets/_DSC6009.png'
+import headingPhotoSrc from './assets/_DSC6009-min.png'
+import headingPhotoPreloadSrc from './assets/_DSC6009-xs.png'
 
 const Section: React.FC = () => {
   const ref = useRef(null)
@@ -40,6 +41,9 @@ const Section: React.FC = () => {
             <BigAvatar
               zIndex={2}
               src={headingPhotoSrc}
+              backgroundImage={headingPhotoPreloadSrc}
+              backgroundPosition="center"
+              backgroundSize="100%"
               title="Jakub Dębski"
               width={{ _: '65%', md: '380px' }}
               animate={animationState}
