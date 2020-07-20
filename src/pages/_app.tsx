@@ -1,8 +1,10 @@
 import App, { AppProps } from 'next/app'
 import Head from 'next/head'
+import Router from 'next/router'
 import React from 'react'
 import delay from 'lodash/delay'
 import { ThemeProvider } from 'styled-components'
+import ReactGA from 'react-ga';
 
 import theme, { GlobalStyles } from 'config/theme'
 
@@ -11,11 +13,20 @@ interface CustomAppState {
 }
 
 export default class CustomApp extends App<{}, {}, CustomAppState> {
+  private readonly pageView: () => any
+
   constructor(props: AppProps) {
     super(props)
     this.state = {
       loaderVisible: true,
     }
+    this.pageView = () => delay(() => {
+      try {
+        ReactGA.pageview(window.location.pathname + window.location.search);
+      } catch (e) {
+        console.error(e)
+      }
+    }, 300)
   }
   // @ts-ignore
   static async getInitialProps({ Component, router, ctx }) {
@@ -27,6 +38,15 @@ export default class CustomApp extends App<{}, {}, CustomAppState> {
   }
 
   componentDidMount(): void {
+    try {
+      ReactGA.initialize(process.env.NEXT_PUBLIC_GA || "");
+      this.pageView()
+      Router.events.on('routeChangeComplete', () => {
+        this.pageView()
+      })
+    } catch (e) {
+      console.error(e)
+    }
     this.setState({ loaderVisible: true })
     delay(() => {
       this.setState({ loaderVisible: false })

@@ -1,7 +1,7 @@
 const SitemapGenerator = require('sitemap-generator');
 
 // create generator
-const generator = SitemapGenerator('https://dev.dbski.pl/', {
+const generator = SitemapGenerator('https://dbski.pl/', {
   stripQuerystring: false,
   filepath: './public/sitemap.xml',
 });
