@@ -48,7 +48,7 @@ const Section: React.FC = () => {
         />
         <BgText
           fontSize={{ _: 'h3', md: 'display4' }}
-          as="h1"
+          as="h2"
           inverted
           fontFamily="secondary"
           mb={{ _: '120px', md: 0 }}

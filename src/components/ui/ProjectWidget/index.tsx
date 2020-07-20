@@ -92,7 +92,7 @@ const Index: React.FC<ProjectWidgetProps> = (props: ProjectWidgetProps) => {
         p={{ _: 'lg', md: 'lg' }}
         flexDirection="column"
       >
-        <Heading as="h2" lineHeight="1.15em" fontSize={{ _: 'h4', md: 'h3' }}>
+        <Heading as="h3" lineHeight="1.15em" fontSize={{ _: 'h4', md: 'h3' }}>
           {project.title}
         </Heading>
         <Text

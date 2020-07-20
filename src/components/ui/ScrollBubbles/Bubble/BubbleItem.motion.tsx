@@ -44,6 +44,7 @@ const BubbleItem: React.FC<MotionBubbleItemProps> = (
       fontSize="h5"
       my="2xs"
       variants={MotionBubbleItemVariants}
+      as="span"
       {...props}
     />
   )

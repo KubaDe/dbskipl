@@ -27,7 +27,7 @@ const Bubble: React.FC<BigBubbleProps> = (props: BigBubbleProps) => {
     >
       <Title
         color="inverted"
-        as="h1"
+        as="h2"
         fontSize={{ _: 'h3', xl: 'h2', '2xl': 'display1' }}
         key={title}
       >

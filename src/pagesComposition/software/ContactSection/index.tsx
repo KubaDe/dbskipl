@@ -19,7 +19,7 @@ const Section: React.FC = () => {
   return (
     <Wrapper>
       <Column>
-        <BgText fontSize="display1" as="h1">
+        <BgText fontSize="display1" as="h2">
           Contact
         </BgText>
       </Column>

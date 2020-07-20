@@ -45,7 +45,8 @@ const DescriptionBlock = inject(Text, {
   display: 'block',
   p: { _: 'md', '2xl': '3xl' },
   fontSize: { _: 'h5', '2xl': 'h4' },
-  lineHeight: '1.3em',
+  lineHeight: '1.6em',
+  letterSpacing: '0.02em',
 })
 
 const sectionMachine = getSectionMachine({
@@ -86,8 +87,8 @@ const Section: React.FC = () => {
             <DescriptionBlock mt="lg">
               I'm a professional front-end developer, passionate about building
               and growing amazing digital products.
-            </DescriptionBlock>
-            <DescriptionBlock>
+              <br />
+              <br />
               For me, building software is something more than just writing code
               and completing Jira tasks. It's a creative process, which involves
               the participation of many people responsible for delivering
@@ -95,10 +96,10 @@ const Section: React.FC = () => {
               is the operating application, but I prefer a wider view. The final
               product should be a real-world enhancement that meets customers
               expectations and needs.
-            </DescriptionBlock>
-            <DescriptionBlock>
-              To achieve a positive result that none of the process participants
-              can't forget about the main goal.
+              <br />
+              <br />
+              To achieve a positive result, none of the process participants
+              shouldn't forget about it.
             </DescriptionBlock>
 
             <DescriptionBlock as="div" pt="xl" mb="xl">

@@ -33,7 +33,7 @@ const Title: React.FC<MotionTitleProps> = (props: MotionTitleProps) => {
         type: 'spring',
       }}
       variants={variants}
-      as="h1"
+      as="h2"
       fontFamily="secondary"
       width="100%"
       textAlign={{ _: 'center', md: 'left' }}

@@ -101,7 +101,7 @@ const Section: React.FC<SectionProps> = ({
               left="3xl"
               m="md"
               padSize="md"
-              as="h1"
+              as="h2"
               fontSize={{ _: 'display4', xl: 'display2', '2xl': 'display1' }}
               fontFamily="secondary"
             >

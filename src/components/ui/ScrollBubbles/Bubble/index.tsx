@@ -63,7 +63,7 @@ const Bubble: React.FC<BubbleProps> = (props: BubbleProps) => {
         alignItems="center"
         justifyContent="center"
       >
-        <Heading color="inverted" zIndex={1} fontSize="h4">
+        <Heading color="inverted" zIndex={1} fontSize="h4" as="h3">
           {title}
         </Heading>
       </Flex>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { H1 } from 'components/typography/Heading'
+import { H2, H3 } from 'components/typography/Heading'
 import BgText from 'components/typography/BgText'
 
 import CompanyModalContentWrapper from './CompanyModalContentWrapper'
@@ -22,9 +22,9 @@ const CompanyModalContent: React.FC<CompanyModalContentProps> = (
   const companyProjects = projects.filter((project) => project.companySlug === experience.slug)
   return (
     <CompanyModalContentWrapper close={close}>
-      <H1 fontSize={{ _: 'h2', md: 'h1' }}>{experience.title}</H1>
+      <H2 fontSize={{ _: 'h2', md: 'h1' }}>{experience.title}</H2>
       <InformationSection experience={experience} />
-      <H1
+      <H3
         fontSize={{ _: 'h2', md: 'h2' }}
         textAlign={{ _: 'center', md: 'left' }}
         pb="lg"
@@ -32,7 +32,7 @@ const CompanyModalContent: React.FC<CompanyModalContentProps> = (
         <BgText as="span" padSize="sm" mx="sm" inverted>
           Projects
         </BgText>
-      </H1>
+      </H3>
       <hr />
       {
         companyProjects.map(project => <ProjectsSection key={project.slug} project={project}/>)

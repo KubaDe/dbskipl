@@ -24,7 +24,7 @@ const Section: React.FC = () => {
   return (
     <Wrapper borderTop="inverted">
       <Column>
-        <BgText fontSize="display1" as="h1" inverted>
+        <BgText fontSize="display1" as="h2" inverted>
           Contact
         </BgText>
       </Column>

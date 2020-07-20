@@ -47,6 +47,7 @@ const Heading: React.FC<MotionHeadingProps> = (props: MotionHeadingProps) => {
       my={{ _: 'md', md: 'xl', lg: '3xl' }}
       mb={{ _: 'md', md: 'md', lg: '3xl' }}
       color="inverted"
+      as='h2'
       {...props}
     />
   )

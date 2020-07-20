@@ -41,7 +41,7 @@ const Title: React.FC<MotionTitleProps> = (props: MotionTitleProps) => {
       variants={variants}
       transition={transition}
       initial="before"
-      as="h1"
+      as="h2"
       fontSize={{ _: 'display4', md: 'display3', lg: 'display2' }}
       fontWeight={200}
       lineHeight="22px"

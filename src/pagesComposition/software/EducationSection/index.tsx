@@ -29,7 +29,7 @@ const Section: React.FC = () => {
   return (
     <Wrapper>
       <BgText
-        as="h1"
+        as="h2"
         fontSize={{ _: 'display3', xl: 'display2' }}
         textAlign={{ _: 'center', md: 'left' }}
         mt="3xl"
