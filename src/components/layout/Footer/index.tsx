@@ -102,7 +102,7 @@ const Footer: React.FC = () => {
           </ListItem>
           <ListItem>
             <Link href="/projects" passHref>
-              <a title="Projects">Software</a>
+              <a title="Projects">Projects</a>
             </Link>
           </ListItem>
           <ListItem>

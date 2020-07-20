@@ -28,7 +28,7 @@ const TitleWrapper = inject(Flex, {
   alignItems: 'center',
   justifyContent: { _: 'center', md: 'flex-end' },
   pr: { _: 0, md: '3xl' },
-  pb: { _: '3xl', md: 0 },
+  py: { _: '3xl', md: 0 },
 })
 
 const TitleLine = inject(BgText, {
@@ -50,7 +50,7 @@ const DescriptionBlock = inject(Text, {
 
 const sectionMachine = getSectionMachine({
   id: 'hero-machine',
-  thresholds: [0.5, 1.55],
+  thresholds: [0.4, 1.55],
 })
 
 const Section: React.FC = () => {
@@ -89,7 +89,7 @@ const Section: React.FC = () => {
             </DescriptionBlock>
             <DescriptionBlock>
               For me, building software is something more than just writing code
-              and competing Jira tasks. It's a creative process, which involves
+              and completing Jira tasks. It's a creative process, which involves
               the participation of many people responsible for delivering
               specific value. For many developers, the outcome of this process
               is the operating application, but I prefer a wider view. The final

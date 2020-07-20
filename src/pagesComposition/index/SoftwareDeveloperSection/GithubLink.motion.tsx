@@ -50,7 +50,7 @@ const GithubLink: React.FC<MotionGithubLinkProps> = (
       variants={variants}
       transition={transition}
       position="absolute"
-      top="lg"
+      top={{ _: 'md', md: 'lg' }}
       right={0}
       {...props}
     >

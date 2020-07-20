@@ -45,15 +45,15 @@ const DescriptionWrapper: React.FC<MotionDescriptionWrapperProps> = (
       initial="before"
       variants={variants}
       transition={transition}
-      flex={{md: "1 1"}}
+      flex={{ md: '1 1' }}
       flexDirection="column"
       alignItems="center"
       justifyContent="center"
       backgroundColor="black"
-      height='auto'
-      px="3xl"
-      py="3xl"
-      position='relative'
+      height="auto"
+      px={{ _: 'sm', md: '3xl' }}
+      py={{ _: 'xl', md: '3xl' }}
+      position="relative"
       {...props}
     />
   )
