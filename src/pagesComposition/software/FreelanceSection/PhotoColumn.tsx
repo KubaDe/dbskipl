@@ -1,5 +1,4 @@
 import React from 'react'
-import LazyLoad from 'react-lazyload'
 import inject from 'hoc/inject'
 
 import Flex, { FlexItem, BaseFlexProps } from 'components/simpleUi/Flex'
@@ -29,15 +28,13 @@ const PhotoColumn: React.FC<PhotoColumnProps> = (props: PhotoColumnProps) => {
         height="100%"
         width="100%"
       >
-        <LazyLoad offset={400}>
-          <Image
-            zIndex={2}
-            src={SpaceSrc}
-            title="Jakub Dębski"
-            width={{ _: '65%', md: '300px', lg: '340px' }}
-            animate={animationState}
-          />
-        </LazyLoad>
+        <Image
+          zIndex={2}
+          src={SpaceSrc}
+          title="Jakub Dębski"
+          width={{ _: '65%', md: '300px', lg: '340px' }}
+          animate={animationState}
+        />
       </Flex>
     </Wrapper>
   )

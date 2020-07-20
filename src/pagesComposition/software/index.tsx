@@ -1,4 +1,5 @@
 import React from 'react'
+import LazyLoad from 'react-lazyload'
 
 import { ScrollSpine } from 'components/layout/buildingBlocks/ScrollBlocks'
 import Layout from 'components/layout/Layout'
@@ -16,7 +17,9 @@ const PageComposition: React.FC = () => {
       <ScrollSpine>
         <TopSection />
         <ExperiencesSection />
-        <FreelanceSection />
+        <LazyLoad offset={400} height="90vh">
+          <FreelanceSection />
+        </LazyLoad>
         <TechnologySection />
         <EducationSection />
         <ContactSection />

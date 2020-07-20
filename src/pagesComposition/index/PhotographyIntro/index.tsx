@@ -36,9 +36,9 @@ const Section: React.FC = () => {
     state === 'active' && setIsInverted(true)
   }, [state])
   return (
-    <ScrollBlock onProgressChange={onProgressChange} overflow="hidden">
-      <SectionLayout backgroundColor="black" overflow="hidden">
-        <LazyLoad offset={400}>
+    <LazyLoad offset={400}>
+      <ScrollBlock onProgressChange={onProgressChange} overflow="hidden">
+        <SectionLayout backgroundColor="black" overflow="hidden">
           <SectionContent
             pt={{ sm: '2xl', md: '3xl' }}
             width="100%"
@@ -110,9 +110,9 @@ const Section: React.FC = () => {
               </Subtitle>
             </Flex>
           </SectionContent>
-        </LazyLoad>
-      </SectionLayout>
-    </ScrollBlock>
+        </SectionLayout>
+      </ScrollBlock>
+    </LazyLoad>
   )
 }
 

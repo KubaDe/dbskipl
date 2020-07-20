@@ -104,7 +104,7 @@ const PhotoModalContent: React.FC<PhotoModalContentProps> = (
                 setActiveChildren(i)
               }}
             />
-          ))}s
+          ))}
         </Thumbnails>
       )}
       <Wrapper>
