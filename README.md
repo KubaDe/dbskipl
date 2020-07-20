@@ -1,10 +1,5 @@
-# dbski.pl - new page
-
-
-| Project under development
+# dbski.pl - Landing page
 
 Demo: 
-https://dbski-dbskipl.netlify.com/
+https://dbski.pl/
 
-Storybook: 
-https://dbski-dbskipl-storybook.netlify.com/
