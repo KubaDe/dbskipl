@@ -101,6 +101,11 @@ const Footer: React.FC = () => {
             </Link>
           </ListItem>
           <ListItem>
+            <Link href="/projects" passHref>
+              <a title="Projects">Software</a>
+            </Link>
+          </ListItem>
+          <ListItem>
             <Link href="/photography" passHref>
               <a title="Photography site">Photography</a>
             </Link>

@@ -4,9 +4,10 @@ import Router from 'next/router'
 import React from 'react'
 import delay from 'lodash/delay'
 import { ThemeProvider } from 'styled-components'
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga'
 
 import theme, { GlobalStyles } from 'config/theme'
+import ogImgSrc from 'pagesComposition/index/HeroSection/assets/Disk.png'
 
 interface CustomAppState {
   loaderVisible: boolean
@@ -20,13 +21,14 @@ export default class CustomApp extends App<{}, {}, CustomAppState> {
     this.state = {
       loaderVisible: true,
     }
-    this.pageView = () => delay(() => {
-      try {
-        ReactGA.pageview(window.location.pathname + window.location.search);
-      } catch (e) {
-        console.error(e)
-      }
-    }, 300)
+    this.pageView = () =>
+      delay(() => {
+        try {
+          ReactGA.pageview(window.location.pathname + window.location.search)
+        } catch (e) {
+          console.error(e)
+        }
+      }, 300)
   }
   // @ts-ignore
   static async getInitialProps({ Component, router, ctx }) {
@@ -39,7 +41,7 @@ export default class CustomApp extends App<{}, {}, CustomAppState> {
 
   componentDidMount(): void {
     try {
-      ReactGA.initialize(process.env.NEXT_PUBLIC_GA || "");
+      ReactGA.initialize(process.env.NEXT_PUBLIC_GA || '')
       this.pageView()
       Router.events.on('routeChangeComplete', () => {
         this.pageView()
@@ -74,6 +76,7 @@ export default class CustomApp extends App<{}, {}, CustomAppState> {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
+          <meta property="og:image" content={ogImgSrc} />
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         </Head>
         <GlobalStyles />
